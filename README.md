@@ -26,4 +26,4 @@ https://www.stephenmwangi.com/obsidian-spaced-repetition/flashcards/q-and-a-card
 5. Sử dụng Copilot Github để hướng dẫn thực hành, debug lỗi khi code.
 6. Đọc lại toàn bộ nội dung bằng tiếng anh của các nguồn tài liệu.
 7. Tạo ghi chú dạng Flashcard trong Obsidian để liên tục ôn tập.
-8. 
+8. ok 
