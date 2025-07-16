@@ -1,5 +1,5 @@
 > # Tạo Alias Git
-?  
+?
 Khi làm việc với Git chúng ta thường phải sử dụng rất thường xuyên hàng ngày, ví dụ sau mỗi thay đổi quan trọng ta cần dùng :
 ```
 git add .
@@ -30,10 +30,10 @@ alias gp='git push origin main'
 ```
 source ~/.bashrc
 ```
-- Bây giờ thử thay đổi nội dung file nào đó 1 chút, rồi trong terminal gõ thử lệnh **gs** rồi Enter, nếu thấy git hoạt động bình thường là đã thành công. 
+- Bây giờ thử thay đổi nội dung file nào đó 1 chút, rồi trong terminal gõ thử lệnh **gs** rồi Enter, nếu thấy git hoạt động bình thường là đã thành công.
 - Trong file trên ta có thể đặt alias là bất kỳ điều gì muốn, ví dụ thay vì gán **'git status'** cho alias **gs** thì có thể gán cho 1 cái gì đó khác, chẳng hạn **sta**. Miễn sao bạn dễ nhớ là được.
 ## 2. Alias function
-- Ở trên là ta thêm alias cho từng lệnh riêng lẻ. TRong trường hợp ta muốn gọi tất cả các lệnh trên cùng nhau thì nên sử dụng alias function. 
+- Ở trên là ta thêm alias cho từng lệnh riêng lẻ. TRong trường hợp ta muốn gọi tất cả các lệnh trên cùng nhau thì nên sử dụng alias function.
 - Mở file **.bashrc** rồi thêm 1 hàm với nội dung sau:
 ```
 function gitpush() {
@@ -46,7 +46,7 @@ function gitpush() {
 - Lúc này chỉ cần gõ lệnh **gitpush** rồi **Enter** thì lệnh sẽ chạy theo thứ tự:
 1. Đầu tiên là **git add .** được chạy
 2. Tiếp theo là **git commit**, lúc này 1 cửa sổ mới mở ra để bạn viết *Thông tin commit*. Sau khi viết xong, bạn đóng cửa số editor đó lại và lệnh commit hoàn thành.
-3. Tiếp theo đó lệnh **git push origin main** sẽ được thực hiện. 
+3. Tiếp theo đó lệnh **git push origin main** sẽ được thực hiện.
 4. Kết thúc.
 - Lưu ý là ở trên tên hàm có thể là bất cứ cái gì mà bạn thấy tiện, không nhất định phải là **gitpush**.
 ## 3. Nên thêm hàm như thế nào.
@@ -68,5 +68,6 @@ function gitpush() {
   }
   ```
 > ⭐ **Theo dõi [kênh Threads](https://www.threads.com/@kaitaku.88) để đọc mới mỗi ngày!** ⭐
+<!--SR:!2025-07-19,3,250-->
 
 
