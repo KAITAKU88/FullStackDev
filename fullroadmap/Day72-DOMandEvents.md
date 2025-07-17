@@ -1,5 +1,33 @@
 # DOM Manipulation and Events (Thao tác DOM và các Sự kiện)
-?
+
+```
+DOM Manipulation and Events (Thao tác DOM và các Sự kiện)
+Tầm quan trọng
+I. Giới Thiệu về DOM và Sự Kiện (Events)
+    1. 🎯 Mô hình Đối tượng Tài liệu (Document Object Model - DOM)
+    2. 🎯 Sự kiện (Events)
+II. Thao Tác (Manipulation) DOM
+    1. Chọn các phần tử (Targeting Elements)
+    2. Tạo và Đặt các Nút Mới (Creating and Placing New Nodes)
+    3. Di chuyển và Xóa các phần tử (Moving and Removing Elements)
+    4. Thay đổi thuộc tính và kiểu dáng (Altering Attributes and Styles)
+    5. Tải tập lệnh (Script Loading)
+III. Xử Lý Sự Kiện (Handling Events)
+    1. Cơ chế Lắng nghe Sự kiện (Event Listener Mechanisms)
+    2. Đối tượng Sự kiện (Event Object)
+    3. Luồng Sự kiện (Event Flow)
+    4. Các loại Sự kiện Phổ biến Khác
+    5. Ủy quyền Sự kiện (Event Delegation)
+    6. Hiệu suất và Debouncing
+    7. Web Workers
+IV. Sự Kiện Tùy Chỉnh (Custom Events)
+    1. Tạo một sự kiện tùy chỉnh:
+    2. Kích hoạt (Dispatching) một sự kiện tùy chỉnh:
+    3. Ví dụ tổng hợp cách tạo và kích hoạt sự kiện tùy chỉnh:
+Tài liệu đọc khi HỌC LẦN 2 (Mỗi lần ôn tập ĐỌc 1 nhất 1 bài)
+```
+
+
 ## **Tầm quan trọng**
 🎯 DOM Manipulation and Events là một phần cực kỳ quan trọng trong lộ trình phát triển full-stack, nhất là với những ai đang xây dựng nền tảng front-end. Nó quan trọng bởi vì:
 > - Hiểu cách trình duyệt hoạt động: DOM (Document Object Model) là cách trình duyệt tổ chức cấu trúc trang web. Việc thao tác với DOM giúp bạn điều khiển nội dung, giao diện, hành vi của trang theo cách tinh tế và linh hoạt.
@@ -7,7 +35,7 @@
 >- Cơ sở để học framework hiện đại: Các thư viện như React, Vue, Angular đều tương tác với DOM—dù là gián tiếp thông qua Virtual DOM hay template bindings. Nắm được cách DOM vận hành giúp bạn hiểu rõ hơn cách hoạt động của các framework này.
 >- Thực thi logic người dùng: Nhiều tính năng như form validation, dynamic rendering, animation... đều cần kiến thức DOM và sự kiện.
 ## **I. Giới Thiệu về DOM và Sự Kiện (Events)**
-#### **1. 🎯 Mô hình Đối tượng Tài liệu (Document Object Model - DOM)**
+### **1. 🎯 Mô hình Đối tượng Tài liệu (Document Object Model - DOM)**
 **DOM** là một **biểu diễn cấu trúc dạng cây** của nội dung một trang web. Khi trình duyệt tải và phân tích cú pháp (parse) mã HTML của trang web, nó sẽ xây dựng mô hình này và sử dụng nó để vẽ trang lên màn hình. DOM là một **cấu trúc dữ liệu "sống" (live data structure)**, có nghĩa là khi nó được sửa đổi, trang web trên màn hình sẽ tự động cập nhật để phản ánh những thay đổi đó.  
 
 **Các thành phần chính của trình duyệt có thể tương tác với JavaScript**:  
@@ -27,7 +55,7 @@
 >-  **`Text` nodes**: Đại diện cho các đoạn văn bản (`#text`).
 >-  Các loại nút khác như `Comment` nodes cũng tồn tại.
 
-#### **2. 🎯 Sự kiện (Events)**
+### **2. 🎯 Sự kiện (Events)**
 >-Một **sự kiện (event)** là một hành động mà trình duyệt web có thể phát hiện và phản ứng lại, chẳng hạn như một cú nhấp chuột (mouse click) hoặc tải trang (page load). Khi một sự kiện xảy ra, hệ thống sẽ "kích hoạt" (fires) một tín hiệu, và có một cơ chế để thực hiện tự động một hành động (chạy một đoạn mã) khi sự kiện đó xảy ra.
 
 >-**Ví dụ về các sự kiện**:  
@@ -45,7 +73,7 @@
 
 Thao tác DOM là quá trình thay đổi cấu trúc, nội dung hoặc kiểu dáng của một tài liệu HTML bằng JavaScript.
 
-#### **1. Chọn các phần tử (Targeting Elements)**
+### **1. Chọn các phần tử (Targeting Elements)**
 >Để thao tác một phần tử trong DOM, trước tiên bạn cần chọn nó và lưu trữ một tham chiếu đến nó trong một biến. Bạn có thể sử dụng kết hợp các bộ chọn kiểu CSS (`CSS-style selectors`) và thuộc tính quan hệ (`relationship properties`).  
 
 >**Phương thức hiện đại được khuyến nghị**:  
@@ -64,7 +92,7 @@ Thao tác DOM là quá trình thay đổi cấu trúc, nội dung hoặc kiểu 
     >-  `element.previousElementSibling`: Chọn anh chị em liền trước của `element`.  
     >-  `element.children`: Trả về một `HTMLCollection` chỉ chứa các phần tử con (element children), không bao gồm các nút văn bản (text nodes).
 
-#### **2. Tạo và Đặt các Nút Mới (Creating and Placing New Nodes)**
+### **2. Tạo và Đặt các Nút Mới (Creating and Placing New Nodes)**
 > **Tạo phần tử**
 >*   `document.createElement(tagName, [options])`: Tạo một phần tử mới có loại thẻ (`tagName`) đã cho. Chức năng này **không đặt phần tử mới của bạn vào DOM ngay lập tức**; nó tạo ra phần tử đó trong bộ nhớ. Điều này cho phép bạn thao tác phần tử (thêm kiểu dáng, lớp, ID, văn bản, v.v.) trước khi đặt nó lên trang.
 >*   `document.createTextNode(text)`: Tạo một nút văn bản (`text node`) với nội dung văn bản được cung cấp.
@@ -73,13 +101,13 @@ Thao tác DOM là quá trình thay đổi cấu trúc, nội dung hoặc kiểu 
     >*   `parentNode.appendChild(childNode)`: Thêm `childNode` làm con cuối cùng của `parentNode`. Một nút chỉ có thể tồn tại ở một vị trí trong tài liệu; việc chèn nó vào một vị trí mới sẽ tự động loại bỏ nó khỏi vị trí hiện tại.  
     >-   `parentNode.insertBefore(newNode, referenceNode)`: Chèn `newNode` vào `parentNode` trước `referenceNode`.
 
-#### **3. Di chuyển và Xóa các phần tử (Moving and Removing Elements)**
+### **3. Di chuyển và Xóa các phần tử (Moving and Removing Elements)**
 >*   `parentNode.removeChild(child)`: Xóa `child` khỏi `parentNode` trên DOM và trả về một tham chiếu đến `child`.
 >*   `element.remove()`: Xóa phần tử khỏi DOM, chỉ cần tham chiếu đến chính nó.   
 **Lưu ý**: Phương thức này không được hỗ trợ trong các trình duyệt cũ hơn. Trong trường hợp đó, bạn phải sử dụng `element.parentNode.removeChild(element)`.
 >*   `element.replaceChild(newChild, oldChild)`: Thay thế một nút con (`oldChild`) bằng một nút khác (`newChild`).
 
-#### **4. Thay đổi thuộc tính và kiểu dáng (Altering Attributes and Styles)**
+### **4. Thay đổi thuộc tính và kiểu dáng (Altering Attributes and Styles)**
 
 >   **Nội dung văn bản và HTML**:  
     *   `element.textContent`: Thiết lập hoặc lấy nội dung văn bản kết hợp của một phần tử, bao gồm các hậu duệ của nó. **Được ưu tiên hơn `innerHTML`** để thêm văn bản vì an toàn hơn.
@@ -104,142 +132,141 @@ Thao tác DOM là quá trình thay đổi cấu trúc, nội dung hoặc kiểu 
 >   **Các thuộc tính boolean (Boolean Attributes)**:   
 > Nếu một thuộc tính boolean (ví dụ: `required`, `readonly`, `disabled`) có mặt, giá trị của nó là `true`. Nếu nó không có mặt, giá trị của nó là `false`. Giá trị `"true"` và `"false"` không được phép trên các thuộc tính boolean; để biểu thị giá trị `false`, thuộc tính phải được bỏ qua hoàn toàn.
 
-#### **5. Tải tập lệnh (Script Loading)**
-*   Khi trình duyệt tải HTML và gặp một thẻ `<script>`, nó sẽ dừng việc xây dựng DOM và phải thực thi tập lệnh ngay lập tức. Điều này có thể dẫn đến việc tập lệnh không thể nhìn thấy các phần tử DOM bên dưới nó hoặc chặn hiển thị trang nếu tập lệnh lớn.
-*   **Giải pháp**:
-    *   Đặt thẻ `<script>` ở cuối tài liệu HTML, ngay trước thẻ `</body>` đóng, để đảm bảo các nút DOM được phân tích cú pháp và tạo trước khi tập lệnh chạy.
-    *   Sử dụng thuộc tính **`defer`** trong thẻ `<script>` trong phần `<head>` của tài liệu HTML (`<script src="js-file.js" defer></script>`). Thuộc tính `defer` yêu cầu trình duyệt không đợi tập lệnh; thay vào đó, trình duyệt sẽ tiếp tục xử lý HTML và xây dựng DOM trong khi tập lệnh tải "trong nền". Tập lệnh sau đó sẽ chạy khi DOM được xây dựng hoàn chỉnh, **trước khi sự kiện `DOMContentLoaded` xảy ra**. Các tập lệnh `defer` duy trì thứ tự tương đối của chúng.
-    *   Sử dụng thuộc tính **`async`**. Thuộc tính `async` cũng làm cho tập lệnh không chặn (`non-blocking`), nhưng nó hoàn toàn độc lập: các tập lệnh khác không đợi tập lệnh `async`, và tập lệnh `async` cũng không đợi chúng. Tập lệnh `async` chạy khi sẵn sàng, theo thứ tự "tải trước" (`load-first order`), không có sự đảm bảo về thứ tự thực thi tương đối giữa chúng hoặc với sự kiện `DOMContentLoaded`. `async` thường được dùng cho các tập lệnh bên thứ ba độc lập như phân tích hoặc quảng cáo.
-    *   **Tập lệnh động (Dynamic scripts)**: Các tập lệnh được tạo và thêm vào tài liệu bằng JavaScript (`document.createElement('script')`) mặc định hoạt động như `async`. Hành vi này có thể được thay đổi bằng cách đặt `script.async = false`, khiến chúng thực thi theo thứ tự tài liệu, giống như `defer`.
+### **5. Tải tập lệnh (Script Loading)**
+>*   Khi trình duyệt tải HTML và gặp một thẻ `<script>`, nó sẽ dừng việc xây dựng DOM và phải thực thi tập lệnh ngay lập tức. Điều này có thể dẫn đến việc tập lệnh không thể nhìn thấy các phần tử DOM bên dưới nó hoặc chặn hiển thị trang nếu tập lệnh lớn.
 
-### **III. Xử Lý Sự Kiện (Handling Events)**
+>   **Giải pháp**:  
+>-    Đặt thẻ `<script>` ở cuối tài liệu HTML, ngay trước thẻ `</body>` đóng, để đảm bảo các nút DOM được phân tích cú pháp và tạo trước khi tập lệnh chạy.
+>-   Sử dụng thuộc tính **`defer`** trong thẻ `<script>` trong phần `<head>` của tài liệu HTML (`<script src="js-file.js" defer></script>`). Thuộc tính `defer` yêu cầu trình duyệt không đợi tập lệnh; thay vào đó, trình duyệt sẽ tiếp tục xử lý HTML và xây dựng DOM trong khi tập lệnh tải "trong nền". Tập lệnh sau đó sẽ chạy khi DOM được xây dựng hoàn chỉnh, **trước khi sự kiện `DOMContentLoaded` xảy ra**. Các tập lệnh `defer` duy trì thứ tự tương đối của chúng.
+>-    Sử dụng thuộc tính **`async`**. Thuộc tính `async` cũng làm cho tập lệnh không chặn (`non-blocking`), nhưng nó hoàn toàn độc lập: các tập lệnh khác không đợi tập lệnh `async`, và tập lệnh `async` cũng không đợi chúng. Tập lệnh `async` chạy khi sẵn sàng, theo thứ tự "tải trước" (`load-first order`), không có sự đảm bảo về thứ tự thực thi tương đối giữa chúng hoặc với sự kiện `DOMContentLoaded`. `async` thường được dùng cho các tập lệnh bên thứ ba độc lập như phân tích hoặc quảng cáo.
+>-    **Tập lệnh động (Dynamic scripts)**: Các tập lệnh được tạo và thêm vào tài liệu bằng JavaScript (`document.createElement('script')`) mặc định hoạt động như `async`. Hành vi này có thể được thay đổi bằng cách đặt `script.async = false`, khiến chúng thực thi theo thứ tự tài liệu, giống như `defer`.
+
+## **III. Xử Lý Sự Kiện (Handling Events)**
 
 Khi một sự kiện xảy ra, trình duyệt web sẽ chuyển một đối tượng `Event` cho trình xử lý sự kiện.
 
-#### **1. Cơ chế Lắng nghe Sự kiện (Event Listener Mechanisms)**
-Có ba cách chính để xử lý sự kiện trong JavaScript:
+### **1. Cơ chế Lắng nghe Sự kiện (Event Listener Mechanisms)**
+Có ***3 cách chính*** để xử lý sự kiện trong JavaScript:
 
-*   **1. `addEventListener()` (Được khuyến nghị)**:
-    *   Đây là cơ chế được khuyến nghị để thêm trình lắng nghe sự kiện vì nó là phương thức mạnh mẽ nhất và mở rộng tốt nhất với các chương trình phức tạp.
-    *   Cú pháp: `element.addEventListener(eventType, handlerFunction, [options])`.
-    *   **`eventType`**: Một chuỗi biểu thị tên của sự kiện (ví dụ: `"click"`, `"mouseover"`, `"keydown"`).
-    *   **`handlerFunction`**: Hàm sẽ được gọi khi sự kiện xảy ra. Có thể là hàm ẩn danh (`anonymous function`), hàm mũi tên (`arrow function`) hoặc hàm có tên (`named function`).
-    *   **`options` (tùy chọn)**: Một đối tượng có thể chứa các thuộc tính như `capture` và `once`.
-        *   `capture`: Một giá trị boolean xác định xem trình xử lý có được kích hoạt trong giai đoạn `capturing` hay không. Mặc định là `false` (giai đoạn `bubbling`).
-        *   `once`: Một giá trị boolean. Nếu `true`, trình lắng nghe sự kiện sẽ tự động bị gỡ bỏ sau khi được gọi một lần. Điều này hữu ích cho các nút mà bạn chỉ muốn người dùng nhấp một lần (ví dụ: nút thanh toán).
-    *   **Ưu điểm**: Cho phép bạn thêm **nhiều trình xử lý** cho cùng một sự kiện trên một phần tử.
-    *   **Xóa trình lắng nghe**: Bạn có thể xóa một trình lắng nghe sự kiện đã thêm bằng `addEventListener()` bằng cách sử dụng phương thức `removeEventListener(eventType, handlerFunction)`. Hàm được truyền cho `removeEventListener` phải là cùng một giá trị hàm được truyền cho `addEventListener`.
+>   **1.1 Sử dụng `addEventListener()` (Được khuyến nghị)**:  
+  >-   Đây là cơ chế được khuyến nghị để thêm trình lắng nghe sự kiện vì nó là phương thức mạnh mẽ nhất và mở rộng tốt nhất với các chương trình phức tạp.
+  >-   Cú pháp: `element.addEventListener(eventType, handlerFunction, [options])`.
+ >-   **`eventType`**: Một chuỗi biểu thị tên của sự kiện (ví dụ: `"click"`, `"mouseover"`, `"keydown"`).
+ >-   **`handlerFunction`**: Hàm sẽ được gọi khi sự kiện xảy ra. Có thể là hàm ẩn danh (`anonymous function`), hàm mũi tên (`arrow function`) hoặc hàm có tên (`named function`).
+>-   **`options` (tùy chọn)**: Một đối tượng có thể chứa các thuộc tính như `capture` và `once`.  
+>>- `capture`: Một giá trị boolean xác định xem trình xử lý có được kích hoạt trong giai đoạn `capturing` hay không. Mặc định là `false` (giai đoạn `bubbling`).
+>>-   `once`: Một giá trị boolean. Nếu `true`, trình lắng nghe sự kiện sẽ tự động bị gỡ bỏ sau khi được gọi một lần. Điều này hữu ích cho các nút mà bạn chỉ muốn người dùng nhấp một lần (ví dụ: nút thanh toán).
+>-   **Ưu điểm**: Cho phép bạn thêm **nhiều trình xử lý** cho cùng một sự kiện trên một phần tử.  
+ >-   **Xóa trình lắng nghe**: Bạn có thể xóa một trình lắng nghe sự kiện đã thêm bằng `addEventListener()` bằng cách sử dụng phương thức `removeEventListener(eventType, handlerFunction)`. Hàm được truyền cho `removeEventListener` phải là cùng một giá trị hàm được truyền cho `addEventListener`.
 
-*   **2. Thuộc tính trình xử lý sự kiện (`Event Handler Properties`)**:
-    *   Các đối tượng có thể kích hoạt sự kiện thường có các thuộc tính có tên là `on` theo sau là tên sự kiện (ví dụ: `onclick`, `onmousedown`).
-    *   Để lắng nghe sự kiện, bạn có thể gán hàm xử lý cho thuộc tính này.
-    *   **Nhược điểm**: Bạn chỉ có thể gán **một trình lắng nghe** cho mỗi thuộc tính. Bất kỳ lần gán nào sau đó sẽ ghi đè lên các gán trước đó.
+>   **1.2 Sử dụng Thuộc tính trình xử lý sự kiện (`Event Handler Properties`)**:  
+>    *   Các đối tượng có thể kích hoạt sự kiện thường có các thuộc tính có tên là `on` theo sau là tên sự kiện (ví dụ: `onclick`, `onmousedown`).
+>    *   Để lắng nghe sự kiện, bạn có thể gán hàm xử lý cho thuộc tính này.
+>    *   **Nhược điểm**: Bạn chỉ có thể gán **một trình lắng nghe** cho mỗi thuộc tính. Bất kỳ lần gán nào sau đó sẽ ghi đè lên các gán trước đó.
 
-*   **3. Thuộc tính trình xử lý sự kiện nội tuyến (`Inline Event Handler Attributes`) - KHÔNG NÊN DÙNG**:
-    *   Là phương pháp sớm nhất để đăng ký trình xử lý sự kiện trên Web, trong đó mã JavaScript được đặt trực tiếp trong thuộc tính HTML (ví dụ: `<button onclick="alert('...')">`).
-    *   **Nên tránh sử dụng** vì chúng được coi là thực hành không tốt (`bad practice`).
-    *   **Lý do**:
-        *   **Trộn lẫn HTML và JavaScript**: Gây khó đọc và khó bảo trì mã.
-        *   **Không hiệu quả**: Nếu có nhiều phần tử cần cùng một trình xử lý, bạn phải thêm thuộc tính vào từng phần tử, gây khó khăn cho việc bảo trì. Với JavaScript riêng biệt, bạn có thể dễ dàng thêm trình xử lý cho nhiều phần tử bằng một đoạn mã.
-        *   **Rủi ro bảo mật**: Nhiều cấu hình máy chủ phổ biến sẽ không cho phép JavaScript nội tuyến như một biện pháp bảo mật.
+>   **1.3 ~~Thuộc tính trình xử lý sự kiện nội tuyến (`Inline Event Handler Attributes`)~~ - KHÔNG NÊN DÙNG**:  
+>    *   Là phương pháp sớm nhất để đăng ký trình xử lý sự kiện trên Web, trong đó mã JavaScript được đặt trực tiếp trong thuộc tính HTML (ví dụ: `<button onclick="alert('...')">`).
+>    *   **Nên tránh sử dụng** vì chúng được coi là thực hành không tốt (`bad practice`).
+>>    *   **Lý do**:
+>>        *   **Trộn lẫn HTML và JavaScript**: Gây khó đọc và khó bảo trì mã.
+>>        *   **Không hiệu quả**: Nếu có nhiều phần tử cần cùng một trình xử lý, bạn phải thêm thuộc tính vào từng phần tử, gây khó khăn cho việc bảo trì. Với JavaScript riêng biệt, bạn có thể dễ dàng thêm trình xử lý cho nhiều phần tử bằng một đoạn mã.
+>>        *   **Rủi ro bảo mật**: Nhiều cấu hình máy chủ phổ biến sẽ không cho phép JavaScript nội tuyến như một biện pháp bảo mật.
 
-#### **2. Đối tượng Sự kiện (Event Object)**
+### **2. Đối tượng Sự kiện (Event Object)**
 Khi một sự kiện xảy ra, trình duyệt web sẽ tự động chuyển một **đối tượng `Event`** (thường được đặt tên là `event`, `e`, hoặc `evt`) cho hàm xử lý sự kiện. Đối tượng này chứa thông tin bổ sung về sự kiện.
 
-*   **Các thuộc tính và phương thức quan trọng của đối tượng `Event`**:
-    *   `event.target`: Là tham chiếu đến phần tử mà sự kiện thực sự xảy ra (`occurred upon`).
-    *   `event.type`: Một chuỗi xác định loại sự kiện (ví dụ: `"click"`, `"keydown"`, `"mousedown"`).
-    *   `event.isTrusted`: Một giá trị boolean. `true` nếu sự kiện được tạo bởi hành động của người dùng, `false` nếu được tạo bởi mã chương trình.
-    *   `event.preventDefault()`: Phương thức này dừng hành vi mặc định của trình duyệt liên quan đến sự kiện (ví dụ: ngăn liên kết điều hướng, ngăn biểu mẫu gửi đi). Tuy nhiên, nó **không ngăn sự kiện nổi bọt (bubbling)** qua DOM.
-    *   `event.stopPropagation()`: Phương thức này ngay lập tức dừng luồng (`flow`) của một sự kiện qua cây DOM (dừng cả `capturing` và `bubbling` ở điểm được gọi). Tuy nhiên, nó **không dừng hành vi mặc định** của trình duyệt.
+>   **Các thuộc tính và phương thức quan trọng của đối tượng `Event`**: 
+>    *   `event.target`: Là tham chiếu đến phần tử mà sự kiện thực sự xảy ra (`occurred upon`).
+>    *   `event.type`: Một chuỗi xác định loại sự kiện (ví dụ: `"click"`, `"keydown"`, `"mousedown"`).
+>    *   `event.isTrusted`: Một giá trị boolean. `true` nếu sự kiện được tạo bởi hành động của người dùng, `false` nếu được tạo bởi mã chương trình.
+>    *   `event.preventDefault()`: Phương thức này dừng hành vi mặc định của trình duyệt liên quan đến sự kiện (ví dụ: ngăn liên kết điều hướng, ngăn biểu mẫu gửi đi). Tuy nhiên, nó **không ngăn sự kiện nổi bọt (bubbling)** qua DOM.
+>    *   `event.stopPropagation()`: Phương thức này ngay lập tức dừng luồng (`flow`) của một sự kiện qua cây DOM (dừng cả `capturing` và `bubbling` ở điểm được gọi). Tuy nhiên, nó **không dừng hành vi mặc định** của trình duyệt.
 
-*   **Các thuộc tính bổ sung tùy thuộc vào loại sự kiện**:
+>   **Các thuộc tính bổ sung tùy thuộc vào loại sự kiện**:
+>    *   **Sự kiện chuột (Mouse Events)** (`MouseEvent`):
+>        *   `event.button`: Chỉ ra nút chuột nào đã được nhấn để kích hoạt sự kiện: `0` (nút chính, thường là trái), `1` (phụ trợ, thường là giữa/bánh xe), `2` (thứ cấp, thường là phải), v.v..
+>        *   `event.clientX`, `event.clientY`: Tọa độ ngang và dọc của con trỏ chuột trong khu vực hiển thị (`viewport`) của ứng dụng.
+>        *   `event.pageX`, `event.pageY`: Tọa độ ngang và dọc tương đối với góc trên bên trái của toàn bộ tài liệu.
+>        *   `event.screenX`, `event.screenY`: Tọa độ ngang và dọc của con trỏ chuột tương đối với toàn bộ màn hình.
 
-    *   **Sự kiện chuột (Mouse Events)** (`MouseEvent`):
-        *   `event.button`: Chỉ ra nút chuột nào đã được nhấn để kích hoạt sự kiện: `0` (nút chính, thường là trái), `1` (phụ trợ, thường là giữa/bánh xe), `2` (thứ cấp, thường là phải), v.v..
-        *   `event.clientX`, `event.clientY`: Tọa độ ngang và dọc của con trỏ chuột trong khu vực hiển thị (`viewport`) của ứng dụng.
-        *   `event.pageX`, `event.pageY`: Tọa độ ngang và dọc tương đối với góc trên bên trái của toàn bộ tài liệu.
-        *   `event.screenX`, `event.screenY`: Tọa độ ngang và dọc của con trỏ chuột tương đối với toàn bộ màn hình.
+>    *   **Sự kiện bàn phím (Keyboard Events)** (`KeyboardEvent`):
+>        *   `event.key`: Trả về một chuỗi biểu thị ký tự hoặc tên của phím đã được nhấn (ví dụ: `"z"`, `"Enter"`, `"ArrowUp"`, `"Shift"`, `"v"`, `"V"`, `"!"`). Đây là cách được khuyến nghị để xác định ký tự mà một lần nhấn phím tương ứng.
+>        *   `event.code`: Trả về mã vật lý (`physical key code`) của phím trên bàn phím. Giá trị này không bị thay đổi bởi bố cục bàn phím hoặc trạng thái của các phím bổ trợ (`modifier keys`). Hữu ích khi bạn muốn xử lý các phím dựa trên vị trí vật lý của chúng trên thiết bị nhập liệu (ví dụ: trong các trò chơi).  
+>        ~~*   `event.keyCode` (Đã lỗi thời/`Deprecated`): Là một thuộc tính cũ hơn để xác định phím nhấn, nhưng đã bị lỗi thời.~~ Nên sử dụng `event.key` hoặc `event.code` thay thế.
+>        *   **Các phím bổ trợ (`Modifier keys`)**: `event.shiftKey`, `event.ctrlKey`, `event.altKey`, `event.metaKey` *(phím Windows trên bàn phím Windows, phím Command trên bàn phím Apple) là các thuộc tính boolean, `true` nếu phím đang được giữ xuống.*
 
-    *   **Sự kiện bàn phím (Keyboard Events)** (`KeyboardEvent`):
-        *   `event.key`: Trả về một chuỗi biểu thị ký tự hoặc tên của phím đã được nhấn (ví dụ: `"z"`, `"Enter"`, `"ArrowUp"`, `"Shift"`, `"v"`, `"V"`, `"!"`). Đây là cách được khuyến nghị để xác định ký tự mà một lần nhấn phím tương ứng.
-        *   `event.code`: Trả về mã vật lý (`physical key code`) của phím trên bàn phím. Giá trị này không bị thay đổi bởi bố cục bàn phím hoặc trạng thái của các phím bổ trợ (`modifier keys`). Hữu ích khi bạn muốn xử lý các phím dựa trên vị trí vật lý của chúng trên thiết bị nhập liệu (ví dụ: trong các trò chơi).
-        *   `event.keyCode` (Đã lỗi thời/`Deprecated`): Là một thuộc tính cũ hơn để xác định phím nhấn, nhưng đã bị lỗi thời. Nên sử dụng `event.key` hoặc `event.code` thay thế.
-        *   **Các phím bổ trợ (`Modifier keys`)**: `event.shiftKey`, `event.ctrlKey`, `event.altKey`, `event.metaKey` (phím Windows trên bàn phím Windows, phím Command trên bàn phím Apple) là các thuộc tính boolean, `true` nếu phím đang được giữ xuống.
+### **3. Luồng Sự kiện (Event Flow)**
+>Luồng sự kiện giải thích thứ tự mà các sự kiện được nhận trên trang từ phần tử nơi sự kiện xảy ra và được lan truyền qua cây DOM.
+>*   **Mô hình nổi bọt sự kiện (Event Bubbling)**: Một sự kiện bắt đầu ở phần tử cụ thể nhất và sau đó nổi bọt (`flows upward`) lên các phần tử ít cụ thể hơn (nút cha, `document`, hoặc thậm chí `window`). Khi bạn nhấp vào một nút, sự kiện nhấp chuột xảy ra trên nút đó trước, sau đó nổi bọt lên `div` chứa nó, rồi `body`, `html`, và cuối cùng là `document` (hoặc `window`).
+>*   **Mô hình bắt giữ sự kiện (Event Capturing)**: Một sự kiện bắt đầu ở phần tử ít cụ thể nhất và sau đó chảy xuống (`flows downward`) các phần tử cụ thể hơn. Khi nhấp vào nút, sự kiện bắt đầu từ `document`, sau đó `html`, `body`, `div`, và cuối cùng là `button`.
 
-#### **3. Luồng Sự kiện (Event Flow)**
-Luồng sự kiện giải thích thứ tự mà các sự kiện được nhận trên trang từ phần tử nơi sự kiện xảy ra và được lan truyền qua cây DOM.
+>*   **Luồng sự kiện DOM Level 2**: Quy định rằng luồng sự kiện có ba giai đoạn:
+>>    1.  **Giai đoạn bắt giữ sự kiện (Event Capturing Phase)**: Cung cấp cơ hội để chặn sự kiện.
+>>    2.  **Giai đoạn đích thực (Target Phase)**: Phần tử đích thực nhận sự kiện.
+>>    3.  **Giai đoạn nổi bọt sự kiện (Event Bubbling Phase)**: Cho phép phản hồi cuối cùng với sự kiện.
 
-*   **Mô hình nổi bọt sự kiện (Event Bubbling)**: Một sự kiện bắt đầu ở phần tử cụ thể nhất và sau đó nổi bọt (`flows upward`) lên các phần tử ít cụ thể hơn (nút cha, `document`, hoặc thậm chí `window`). Khi bạn nhấp vào một nút, sự kiện nhấp chuột xảy ra trên nút đó trước, sau đó nổi bọt lên `div` chứa nó, rồi `body`, `html`, và cuối cùng là `document` (hoặc `window`).
-*   **Mô hình bắt giữ sự kiện (Event Capturing)**: Một sự kiện bắt đầu ở phần tử ít cụ thể nhất và sau đó chảy xuống (`flows downward`) các phần tử cụ thể hơn. Khi nhấp vào nút, sự kiện bắt đầu từ `document`, sau đó `html`, `body`, `div`, và cuối cùng là `button`.
+### **4. Các loại Sự kiện Phổ biến Khác**
 
-*   **Luồng sự kiện DOM Level 2**: Quy định rằng luồng sự kiện có ba giai đoạn:
-    1.  **Giai đoạn bắt giữ sự kiện (Event Capturing Phase)**: Cung cấp cơ hội để chặn sự kiện.
-    2.  **Giai đoạn đích thực (Target Phase)**: Phần tử đích thực nhận sự kiện.
-    3.  **Giai đoạn nổi bọt sự kiện (Event Bubbling Phase)**: Cho phép phản hồi cuối cùng với sự kiện.
+>   **Sự kiện tải trang (Page Load Events)**:  
+>    *   `DOMContentLoaded`: Kích hoạt khi trình duyệt đã tải đầy đủ HTML và hoàn thành việc xây dựng cây DOM, nhưng chưa tải các tài nguyên bên ngoài như bảng kiểu (stylesheets) và hình ảnh. Tại sự kiện này, bạn có thể bắt đầu chọn các nút DOM hoặc khởi tạo giao diện.
+>    *   `load`: Kích hoạt khi trình duyệt đã tải đầy đủ cả HTML và tất cả các tài nguyên bên ngoài (hình ảnh, bảng kiểu, v.v.).
+>    *   `beforeunload`: Kích hoạt trước khi trang và tài nguyên bị dỡ bỏ (`unloaded`). Có thể được sử dụng để hiển thị hộp thoại xác nhận nếu người dùng muốn rời khỏi trang, giúp ngăn mất dữ liệu.
+>    *   `unload`: Kích hoạt khi trang đã được dỡ tải hoàn toàn. Có thể sử dụng để gửi dữ liệu phân tích hoặc dọn dẹp tài nguyên.
 
-#### **4. Các loại Sự kiện Phổ biến Khác**
+>   **Sự kiện tập trung (Focus Events)**:  
+>    *   `focus`: Kích hoạt khi một phần tử nhận được sự tập trung (`focus`).
+>    *   `blur`: Kích hoạt khi một phần tử mất sự tập trung.
+>    *   **Lưu ý**: Hai sự kiện này không nổi bọt (`do not propagate`). Đối tượng `window` sẽ nhận các sự kiện `focus` và `blur` khi người dùng chuyển từ hoặc đến tab hoặc cửa sổ trình duyệt mà tài liệu được hiển thị.
 
-*   **Sự kiện tải trang (Page Load Events)**:
-    *   `DOMContentLoaded`: Kích hoạt khi trình duyệt đã tải đầy đủ HTML và hoàn thành việc xây dựng cây DOM, nhưng chưa tải các tài nguyên bên ngoài như bảng kiểu (stylesheets) và hình ảnh. Tại sự kiện này, bạn có thể bắt đầu chọn các nút DOM hoặc khởi tạo giao diện.
-    *   `load`: Kích hoạt khi trình duyệt đã tải đầy đủ cả HTML và tất cả các tài nguyên bên ngoài (hình ảnh, bảng kiểu, v.v.).
-    *   `beforeunload`: Kích hoạt trước khi trang và tài nguyên bị dỡ bỏ (`unloaded`). Có thể được sử dụng để hiển thị hộp thoại xác nhận nếu người dùng muốn rời khỏi trang, giúp ngăn mất dữ liệu.
-    *   `unload`: Kích hoạt khi trang đã được dỡ tải hoàn toàn. Có thể sử dụng để gửi dữ liệu phân tích hoặc dọn dẹp tài nguyên.
+>   **Sự kiện cuộn (Scroll Events)**:  
+>    *   `scroll`: Kích hoạt bất cứ khi nào một phần tử được cuộn. Trình xử lý sự kiện chỉ được gọi **sau khi** việc cuộn diễn ra, và gọi `preventDefault()` trên sự kiện cuộn không ngăn việc cuộn xảy ra.
 
-*   **Sự kiện tập trung (Focus Events)**:
-    *   `focus`: Kích hoạt khi một phần tử nhận được sự tập trung (`focus`).
-    *   `blur`: Kích hoạt khi một phần tử mất sự tập trung.
-    *   **Lưu ý**: Hai sự kiện này không nổi bọt (`do not propagate`). Đối tượng `window` sẽ nhận các sự kiện `focus` và `blur` khi người dùng chuyển từ hoặc đến tab hoặc cửa sổ trình duyệt mà tài liệu được hiển thị.
+### **5. Ủy quyền Sự kiện (Event Delegation)**
+>**Ủy quyền sự kiện** là một kỹ thuật sử dụng sự nổi bọt sự kiện (`event bubbling`) để xử lý các sự kiện ở mức cao hơn trong DOM (trên phần tử cha) thay vì phải đăng ký nhiều trình xử lý sự kiện cho từng phần tử con.
 
-*   **Sự kiện cuộn (Scroll Events)**:
-    *   `scroll`: Kích hoạt bất cứ khi nào một phần tử được cuộn. Trình xử lý sự kiện chỉ được gọi **sau khi** việc cuộn diễn ra, và gọi `preventDefault()` trên sự kiện cuộn không ngăn việc cuộn xảy ra.
+>*   **Ví dụ**: Thay vì gán một trình xử lý `click` riêng cho mỗi mục trong danh sách `<ul>`, bạn có thể gán một trình xử lý duy nhất cho phần tử `<ul>` cha. Khi một mục `<li>` hoặc `<a>` bên trong được nhấp, sự kiện sẽ nổi bọt lên `<ul>`, nơi trình xử lý chung có thể nhận và xác định phần tử con nào đã được nhấp thông qua `event.target`.
 
-#### **5. Ủy quyền Sự kiện (Event Delegation)**
-**Ủy quyền sự kiện** là một kỹ thuật sử dụng sự nổi bọt sự kiện (`event bubbling`) để xử lý các sự kiện ở mức cao hơn trong DOM (trên phần tử cha) thay vì phải đăng ký nhiều trình xử lý sự kiện cho từng phần tử con.
+>*   **Lợi ích**:
+>>    *   **Sử dụng ít bộ nhớ hơn, hiệu suất tốt hơn**: Mỗi trình xử lý sự kiện là một hàm và chiếm bộ nhớ. Giảm số lượng trình xử lý cải thiện hiệu suất.
+>>    *   **Thời gian thiết lập nhanh hơn**: Ít thời gian hơn để gán tất cả các trình xử lý sự kiện, dẫn đến tương tác nhanh hơn trên trang.
+>>    *   **Hoạt động với các phần tử được thêm động**: Cho phép các phần tử được thêm vào DOM sau khi tải trang vẫn được xử lý mà không cần thêm trình xử lý riêng biệt cho chúng.
 
-*   **Ví dụ**: Thay vì gán một trình xử lý `click` riêng cho mỗi mục trong danh sách `<ul>`, bạn có thể gán một trình xử lý duy nhất cho phần tử `<ul>` cha. Khi một mục `<li>` hoặc `<a>` bên trong được nhấp, sự kiện sẽ nổi bọt lên `<ul>`, nơi trình xử lý chung có thể nhận và xác định phần tử con nào đã được nhấp thông qua `event.target`.
+### **6. Hiệu suất và Debouncing**
+>Một số loại sự kiện có thể kích hoạt rất nhanh và nhiều lần liên tiếp (ví dụ: `mousemove`, `scroll`). Điều này có thể dẫn đến các vấn đề về hiệu suất nếu hàm xử lý sự kiện phức tạp.
+>*   Để tránh vấn đề này, bạn có thể thêm trình xử lý sự kiện `mousemove` chỉ khi cần và loại bỏ nó ngay khi không cần nữa.
+>*   **`Debouncing`**: Là kỹ thuật sử dụng `setTimeout` và `clearTimeout` để đảm bảo rằng một hàm xử lý sự kiện chỉ được thực thi sau một khoảng thời gian nhất định không có sự kiện nào khác cùng loại được kích hoạt, hoặc để giới hạn tần suất thực thi của nó. Điều này ngăn không cho hàm chạy quá thường xuyên và làm chậm trang.
 
-*   **Lợi ích**:
-    *   **Sử dụng ít bộ nhớ hơn, hiệu suất tốt hơn**: Mỗi trình xử lý sự kiện là một hàm và chiếm bộ nhớ. Giảm số lượng trình xử lý cải thiện hiệu suất.
-    *   **Thời gian thiết lập nhanh hơn**: Ít thời gian hơn để gán tất cả các trình xử lý sự kiện, dẫn đến tương tác nhanh hơn trên trang.
-    *   **Hoạt động với các phần tử được thêm động**: Cho phép các phần tử được thêm vào DOM sau khi tải trang vẫn được xử lý mà không cần thêm trình xử lý riêng biệt cho chúng.
+### **7. Web Workers**
+>Đối với các tác vụ tốn thời gian mà bạn không muốn làm đóng băng trang web, trình duyệt cung cấp **`web workers`**. Một `worker` là một tiến trình JavaScript chạy song song với tập lệnh chính, trên dòng thời gian riêng của nó. `Workers` không chia sẻ phạm vi toàn cục hoặc bất kỳ dữ liệu nào với môi trường của tập lệnh chính; thay vào đó, bạn phải giao tiếp với chúng bằng cách gửi và nhận tin nhắn (`postMessage`, `onmessage`).
 
-#### **6. Hiệu suất và Debouncing**
-Một số loại sự kiện có thể kích hoạt rất nhanh và nhiều lần liên tiếp (ví dụ: `mousemove`, `scroll`). Điều này có thể dẫn đến các vấn đề về hiệu suất nếu hàm xử lý sự kiện phức tạp.
-
-*   Để tránh vấn đề này, bạn có thể thêm trình xử lý sự kiện `mousemove` chỉ khi cần và loại bỏ nó ngay khi không cần nữa.
-*   **`Debouncing`**: Là kỹ thuật sử dụng `setTimeout` và `clearTimeout` để đảm bảo rằng một hàm xử lý sự kiện chỉ được thực thi sau một khoảng thời gian nhất định không có sự kiện nào khác cùng loại được kích hoạt, hoặc để giới hạn tần suất thực thi của nó. Điều này ngăn không cho hàm chạy quá thường xuyên và làm chậm trang.
-
-#### **7. Web Workers**
-Đối với các tác vụ tốn thời gian mà bạn không muốn làm đóng băng trang web, trình duyệt cung cấp **`web workers`**. Một `worker` là một tiến trình JavaScript chạy song song với tập lệnh chính, trên dòng thời gian riêng của nó. `Workers` không chia sẻ phạm vi toàn cục hoặc bất kỳ dữ liệu nào với môi trường của tập lệnh chính; thay vào đó, bạn phải giao tiếp với chúng bằng cách gửi và nhận tin nhắn (`postMessage`, `onmessage`).
-
-### **IV. Sự Kiện Tùy Chỉnh (Custom Events)**
+## **IV. Sự Kiện Tùy Chỉnh (Custom Events)**
 
 **Sự kiện tùy chỉnh (Custom events)** trong JavaScript cho phép bạn tạo và kích hoạt các sự kiện của riêng mình. Điều này hữu ích để **tách rời việc thực thi mã (decouple code execution)**, cho phép một đoạn mã chạy sau khi một đoạn mã khác hoàn thành.
 
-*   **1. Tạo một sự kiện tùy chỉnh**:
-    Bạn sử dụng hàm tạo `CustomEvent()` để tạo một sự kiện tùy chỉnh mới:
-    ```javascript
-    let event = new CustomEvent(eventType, options);
-    ```
-    *   `eventType`: Là một chuỗi đại diện cho tên của sự kiện (ví dụ: `'highlight'`).
-    *   `options`: Là một đối tượng có thuộc tính `detail` chứa bất kỳ thông tin tùy chỉnh nào về sự kiện.
-    *   **Ví dụ**:
-        ```javascript
-        let event = new CustomEvent('highlight', {
-            detail: { backgroundColor: 'yellow' }
-        });
-        ```
+###   1. Tạo một sự kiện tùy chỉnh:  
+>    Bạn sử dụng hàm tạo `CustomEvent()` để tạo một sự kiện tùy chỉnh mới:
+>    ```javascript
+>    let event = new CustomEvent(eventType, options);
+>    ```
+>    *   `eventType`: Là một chuỗi đại diện cho tên của sự kiện (ví dụ: `'highlight'`).
+>    *   `options`: Là một đối tượng có thuộc tính `detail` chứa bất kỳ thông tin tùy chỉnh nào về sự kiện.
+>    *   **Ví dụ**:  
+>        ```javascript
+>        let event = new CustomEvent('highlight', {
+>            detail: { backgroundColor: 'yellow' }
+>        });
+>        ```
        
 
-*   **2. Kích hoạt (Dispatching) một sự kiện tùy chỉnh**:
-    Sau khi tạo một sự kiện tùy chỉnh, bạn cần gắn sự kiện đó vào một phần tử DOM và kích hoạt nó bằng cách sử dụng phương thức `dispatchEvent()`:
-    ```javascript
-    domElement.dispatchEvent(event);
-    ```
+###   2. Kích hoạt (Dispatching) một sự kiện tùy chỉnh:  
+>    Sau khi tạo một sự kiện tùy chỉnh, bạn cần gắn sự kiện đó vào một phần tử DOM và kích hoạt nó bằng cách sử dụng phương thức `dispatchEvent()`:
+>    ```javascript
+>    domElement.dispatchEvent(event);
+>    ```
    
 
-*   **Ví dụ tổng hợp cách tạo và kích hoạt sự kiện tùy chỉnh**:
+###   3. Ví dụ tổng hợp cách tạo và kích hoạt sự kiện tùy chỉnh:
+
     ```html
     <!DOCTYPE html>
     <html lang="en">
@@ -251,68 +278,50 @@ Một số loại sự kiện có thể kích hoạt rất nhanh và nhiều l�
     <body>
         <div class="note">JS Custom Event</div>
         <script>
-            function highlight(elem) {
+            let div = document.querySelector('.note');                   //Dòng này được chạy trước,trả về phần tử div 
+
+            function highlight(elem) {                                   //Dòng 2, gán nền màu vàng cho phần tử div 
                 const bgColor = 'yellow';
                 elem.style.backgroundColor = bgColor;
 
-                // create the event
-                let event = new CustomEvent('highlight', {
-                    detail: { backgroundColor: bgColor }
+                let event = new CustomEvent('highlight', {              // Dòng 3, sự kiện tùy chỉnh tên là highlight được tạo ra 
+                    detail: { backgroundColor: bgColor }                // Khi mà màu nền là màu vàng thì sự kiện này sẽ xảy ra 
                 });
 
-                // dispatch the event
-                elem.dispatchEvent(event);
+                elem.dispatchEvent(event);                              //Dòng 4, kích hoạt sự kiện này trên phần tử div, vì phần tử này có màu vàng 
             }
 
-            // Select the div element
-            let div = document.querySelector('.note');
-
-            // Add border style
-            function addBorder(elem) {
+            function addBorder(elem) {                                   //Dòng 5, Hàm này sẽ tạo border màu đỏ cho 1 phần tử 
                 elem.style.border = "solid 1px red";
             }
 
-            // Listen to the highlight event
-            div.addEventListener('highlight', function (e) {
-                addBorder(this);
-                // examine the background
-                console.log(e.detail);
+            div.addEventListener('highlight', function (e) {             //Dòng 6, trình lắng nghe sự kiện highlight được gắn vào phần tử div 
+                addBorder(this);                                         //Khi phát hiện ra sự kiện highlight được/bị kích hoạt thì gọi hàm này  
+                console.log(e.detail);                                   //Khi đó phần tử div sẽ được tạo border màu đỏ 
             });
 
             // highlight div element
-            highlight(div);
+            highlight(div);                                              //Khi hàm highlight được gọi thì Dòng 2 bắt đầu được thực thi 
         </script>
     </body>
     </html>
     ```
    
 
-*   **Giải thích ví dụ**:
-    1.  Hàm `highlight()` được khai báo để tô sáng một phần tử và kích hoạt sự kiện `highlight`.
-    2.  Phần tử `<div>` được chọn bằng `querySelector()`.
-    3.  Một trình lắng nghe được thiết lập trên `<div>` để lắng nghe sự kiện `highlight`. Bên trong trình lắng nghe, hàm `addBorder()` được gọi và thuộc tính `detail` của sự kiện được hiển thị trong `Console`.
-    4.  Cuối cùng, hàm `highlight(div)` được gọi, kích hoạt sự kiện `highlight` và làm cho `addBorder` được thực thi.
+>   **Giải thích ví dụ**:  
+>    1.  Hàm `highlight()` được khai báo để tô sáng một phần tử và kích hoạt sự kiện `highlight`.
+>    2.  Phần tử `<div>` được chọn bằng `querySelector()`.
+>    3.  Một trình lắng nghe được thiết lập trên `<div>` để lắng nghe sự kiện `highlight`. Bên trong trình lắng nghe, hàm `addBorder()` được gọi và thuộc tính `detail` của sự kiện được hiển thị trong `Console`.
+>    4.  Cuối cùng, hàm `highlight(div)` được gọi, kích hoạt sự kiện `highlight` và làm cho `addBorder` được thực thi.
 
-*   **Tổng kết**: Sử dụng `CustomEvent()` để tạo và `dispatchEvent()` để kích hoạt sự kiện. Custom events cho phép tách rời mã và có thể có nhiều trình lắng nghe cho cùng một sự kiện tùy chỉnh, đặt trong các tệp script riêng biệt.
+>   **Tổng kết**:   
+>- Sử dụng `CustomEvent()` để tạo và `dispatchEvent()` để kích hoạt sự kiện. Custom events cho phép tách rời mã và có thể có nhiều trình lắng nghe cho cùng một sự kiện tùy chỉnh, đặt trong các tệp script riêng biệt.
 
-----
-
-
-
+---
 
 
-
-
-
-
-
-
-
-
-
-
-
-## Tài liệu đọc khi HỌC LẦN 2 :
+## Tài liệu đọc khi HỌC LẦN 2 (Mỗi lần ôn tập ĐỌc 1 nhất 1 bài)
+***(Kỹ thuật học "Đóng cọc hàng rào)***
 > 1. https://www.theodinproject.com/lessons/foundations-dom-manipulation-and-events
 > 2. https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_operator
 > 3. https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes
@@ -340,7 +349,10 @@ Một số loại sự kiện có thể kích hoạt rất nhanh và nhiều l�
 > 25. https://www.youtube.com/watch?v=F1anRyL37lE
 > 26. https://dev.to/i3uckwheat/understanding-callbacks-2o9e
 > 27. https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/keyCode
-> 28. https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/code 
-> ⭐ **Theo dõi [kênh Threads](https://www.threads.com/@kaitaku.88) để đọc bài mới mỗi ngày!** ⭐
-**[<== Bài Trước](link)          |[Trang Chủ](./README.md)|           [Bài Sau ==>](link)**
+> 28. https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/code   
+
+
+⭐ **Theo dõi [kênh Threads](https://www.threads.com/@kaitaku.88) để đọc bài mới mỗi ngày!** ⭐  
+
+**[<== Bài Trước](./Day71-create-alias-git.md)          |[Trang Chủ](./README.md)|           [Bài Sau ==>](link)**
 <!--SR:!2025-07-21,4,270-->
