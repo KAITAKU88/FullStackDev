@@ -1,12 +1,12 @@
-# DOM Manipulation and Events
+# DOM Manipulation and Events (Thao tác DOM và các Sự kiện)
 ?
-## Tầm quan trọng
+## **Tầm quan trọng**
 🎯 DOM Manipulation and Events là một phần cực kỳ quan trọng trong lộ trình phát triển full-stack, nhất là với những ai đang xây dựng nền tảng front-end. Nó quan trọng bởi vì:
 > - Hiểu cách trình duyệt hoạt động: DOM (Document Object Model) là cách trình duyệt tổ chức cấu trúc trang web. Việc thao tác với DOM giúp bạn điều khiển nội dung, giao diện, hành vi của trang theo cách tinh tế và linh hoạt.
 > - Xây dựng UI tương tác: Sự kiện (Events) như click, submit, hover... là cầu nối giữa người dùng và ứng dụng. DOM event handling giúp tạo ra trải nghiệm mượt mà, phản hồi tốt.
 >- Cơ sở để học framework hiện đại: Các thư viện như React, Vue, Angular đều tương tác với DOM—dù là gián tiếp thông qua Virtual DOM hay template bindings. Nắm được cách DOM vận hành giúp bạn hiểu rõ hơn cách hoạt động của các framework này.
 >- Thực thi logic người dùng: Nhiều tính năng như form validation, dynamic rendering, animation... đều cần kiến thức DOM và sự kiện.
-### **I. Giới Thiệu về DOM và Sự Kiện (Events)**
+## **I. Giới Thiệu về DOM và Sự Kiện (Events)**
 #### **1. 🎯 Mô hình Đối tượng Tài liệu (Document Object Model - DOM)**
 **DOM** là một **biểu diễn cấu trúc dạng cây** của nội dung một trang web. Khi trình duyệt tải và phân tích cú pháp (parse) mã HTML của trang web, nó sẽ xây dựng mô hình này và sử dụng nó để vẽ trang lên màn hình. DOM là một **cấu trúc dữ liệu "sống" (live data structure)**, có nghĩa là khi nó được sửa đổi, trang web trên màn hình sẽ tự động cập nhật để phản ánh những thay đổi đó.  
 
@@ -28,78 +28,81 @@
 >-  Các loại nút khác như `Comment` nodes cũng tồn tại.
 
 #### **2. 🎯 Sự kiện (Events)**
-Một **sự kiện (event)** là một hành động mà trình duyệt web có thể phát hiện và phản ứng lại, chẳng hạn như một cú nhấp chuột (mouse click) hoặc tải trang (page load). Khi một sự kiện xảy ra, hệ thống sẽ "kích hoạt" (fires) một tín hiệu, và có một cơ chế để thực hiện tự động một hành động (chạy một đoạn mã) khi sự kiện đó xảy ra.
+>-Một **sự kiện (event)** là một hành động mà trình duyệt web có thể phát hiện và phản ứng lại, chẳng hạn như một cú nhấp chuột (mouse click) hoặc tải trang (page load). Khi một sự kiện xảy ra, hệ thống sẽ "kích hoạt" (fires) một tín hiệu, và có một cơ chế để thực hiện tự động một hành động (chạy một đoạn mã) khi sự kiện đó xảy ra.
 
-*   **Ví dụ về các sự kiện**:
-    *   Người dùng chọn, nhấp chuột hoặc di chuột qua một phần tử nhất định.
-    *   Người dùng nhấn một phím trên bàn phím.
-    *   Người dùng thay đổi kích thước hoặc đóng cửa sổ trình duyệt.
-    *   Một trang web tải xong.
-    *   Một biểu mẫu được gửi (submitted).
-    *   Một video được phát, tạm dừng hoặc kết thúc.
-    *   Một lỗi xảy ra.
+>-**Ví dụ về các sự kiện**:  
+  - Người dùng chọn, nhấp chuột hoặc di chuột qua một phần tử nhất định.  
+  - Người dùng nhấn một phím trên bàn phím.  
+  -  Người dùng thay đổi kích thước hoặc đóng cửa sổ trình duyệt.  
+  -  Một trang web tải xong.  
+  -  Một biểu mẫu được gửi (submitted).  
+  -  Một video được phát, tạm dừng hoặc kết thúc.  
+  -   Một lỗi xảy ra.  
 
-*   Để phản ứng với một sự kiện, bạn gắn một **trình lắng nghe sự kiện (event listener)** vào nó. Khi sự kiện được kích hoạt, một **hàm xử lý sự kiện (event handler function)** (được tham chiếu bởi, hoặc chứa bên trong trình lắng nghe sự kiện) sẽ được gọi để phản ứng với sự kiện đó.
+>-Để phản ứng với một sự kiện, bạn gắn một **trình lắng nghe sự kiện (event listener)** vào nó. Khi sự kiện được kích hoạt, một **hàm xử lý sự kiện (event handler function)** (***được tham chiếu bởi, hoặc chứa bên trong trình lắng nghe sự kiện***) sẽ được gọi để phản ứng với sự kiện đó.
 
-### **II. Thao Tác (Manipulation) DOM**
+## **II. Thao Tác (Manipulation) DOM**
 
 Thao tác DOM là quá trình thay đổi cấu trúc, nội dung hoặc kiểu dáng của một tài liệu HTML bằng JavaScript.
 
 #### **1. Chọn các phần tử (Targeting Elements)**
-Để thao tác một phần tử trong DOM, trước tiên bạn cần chọn nó và lưu trữ một tham chiếu đến nó trong một biến. Bạn có thể sử dụng kết hợp các bộ chọn kiểu CSS (`CSS-style selectors`) và thuộc tính quan hệ (`relationship properties`).
+>Để thao tác một phần tử trong DOM, trước tiên bạn cần chọn nó và lưu trữ một tham chiếu đến nó trong một biến. Bạn có thể sử dụng kết hợp các bộ chọn kiểu CSS (`CSS-style selectors`) và thuộc tính quan hệ (`relationship properties`).  
 
-*   **Phương thức hiện đại được khuyến nghị**:
-    *   `document.querySelector(selector)`: Trả về **tham chiếu đến phần tử đầu tiên** khớp với bộ chọn (`selector`) được cung cấp. Nó tiện lợi vì cho phép bạn chọn các phần tử bằng các bộ chọn CSS.
-    *   `document.querySelectorAll(selectors)`: Trả về một **`NodeList`** chứa tham chiếu đến **tất cả các phần tử** khớp với bộ chọn (`selectors`).
-        *   **Lưu ý quan trọng**: `NodeList` **không phải là một mảng (array)** thực sự. Nó trông giống và hoạt động phần nào giống một mảng, nhưng thiếu một số phương thức của mảng. Bạn có thể chuyển đổi `NodeList` thành một mảng thực sự bằng cách sử dụng `Array.from()` hoặc toán tử trải rộng (`spread operator` - `...`).
+>**Phương thức hiện đại được khuyến nghị**:  
+>-   `document.querySelector(selector)`: Trả về **tham chiếu đến phần tử đầu tiên** khớp với bộ chọn (`selector`) được cung cấp. Nó tiện lợi vì cho phép bạn chọn các phần tử bằng các bộ chọn CSS.  
+>-   `document.querySelectorAll(selectors)`: Trả về một **`NodeList`** chứa tham chiếu đến **tất cả các phần tử** khớp với bộ chọn (`selectors`).  
+>    - **Lưu ý quan trọng**: `NodeList` **không phải là một mảng (array)** thực sự. Nó trông giống và hoạt động phần nào giống một mảng, nhưng thiếu một số phương thức của mảng. Bạn có thể chuyển đổi `NodeList` thành một mảng thực sự bằng cách sử dụng `Array.from()` hoặc toán tử trải rộng (`spread operator` - `...`).
 
-*   **Các phương thức cũ hơn để chọn phần tử**:
-    *   `document.getElementById(id)`: Chọn một phần tử có giá trị thuộc tính `id` đã cho.
-    *   `document.getElementsByTagName(tagName)`: Trả về một đối tượng giống mảng (`array-like object`) chứa tất cả các phần tử trên trang có loại thẻ đã cho (ví dụ: `<p>`, `<a>`).
-    *   `document.getElementsByClassName(className)`: Trả về một đối tượng giống mảng chứa tất cả các phần tử có tên lớp (`class name`) đã cho.
-    *   **Lưu ý**: Các phương thức này hoạt động tốt hơn trong các trình duyệt cũ hơn so với các phương thức hiện đại như `querySelector()`, nhưng không tiện lợi bằng.
+> **Các phương thức cũ hơn để chọn phần tử**:  
+    >- `document.getElementById(id)`: Chọn một phần tử có giá trị thuộc tính `id` đã cho.
+    >-  `document.getElementsByTagName(tagName)`: Trả về một đối tượng giống mảng (`array-like object`) chứa tất cả các phần tử trên trang có loại thẻ đã cho (ví dụ: `<p>`, `<a>`).
+    >-  `document.getElementsByClassName(className)`: Trả về một đối tượng giống mảng chứa tất cả các phần tử có tên lớp (`class name`) đã cho.
+    >-  **Lưu ý**: Các phương thức này hoạt động tốt hơn trong các trình duyệt cũ hơn so với các phương thức hiện đại như `querySelector()`, nhưng không tiện lợi bằng.
 
-*   **Bộ chọn quan hệ (Relational Selectors)**: Bạn cũng có thể sử dụng các bộ chọn quan hệ (ví dụ: `firstElementChild`, `lastElementChild`, `previousElementSibling`, `nextElementSibling`) với các thuộc tính đặc biệt của các nút để chọn các nút mong muốn.
-    *   `element.firstElementChild`: Chọn con đầu tiên của `element`.
-    *   `element.previousElementSibling`: Chọn anh chị em liền trước của `element`.
-    *   `element.children`: Trả về một `HTMLCollection` chỉ chứa các phần tử con (element children), không bao gồm các nút văn bản (text nodes).
+>**Bộ chọn quan hệ (Relational Selectors)**: Bạn cũng có thể sử dụng các bộ chọn quan hệ (ví dụ: `firstElementChild`, `lastElementChild`, `previousElementSibling`, `nextElementSibling`) với các thuộc tính đặc biệt của các nút để chọn các nút mong muốn.  
+    >- `element.firstElementChild`: Chọn con đầu tiên của `element`.  
+    >-  `element.previousElementSibling`: Chọn anh chị em liền trước của `element`.  
+    >-  `element.children`: Trả về một `HTMLCollection` chỉ chứa các phần tử con (element children), không bao gồm các nút văn bản (text nodes).
 
 #### **2. Tạo và Đặt các Nút Mới (Creating and Placing New Nodes)**
-*   `document.createElement(tagName, [options])`: Tạo một phần tử mới có loại thẻ (`tagName`) đã cho. Chức năng này **không đặt phần tử mới của bạn vào DOM ngay lập tức**; nó tạo ra nó trong bộ nhớ. Điều này cho phép bạn thao tác phần tử (thêm kiểu dáng, lớp, ID, văn bản, v.v.) trước khi đặt nó lên trang.
-*   `document.createTextNode(text)`: Tạo một nút văn bản (`text node`) với nội dung văn bản được cung cấp.
+> **Tạo phần tử**
+>*   `document.createElement(tagName, [options])`: Tạo một phần tử mới có loại thẻ (`tagName`) đã cho. Chức năng này **không đặt phần tử mới của bạn vào DOM ngay lập tức**; nó tạo ra phần tử đó trong bộ nhớ. Điều này cho phép bạn thao tác phần tử (thêm kiểu dáng, lớp, ID, văn bản, v.v.) trước khi đặt nó lên trang.
+>*   `document.createTextNode(text)`: Tạo một nút văn bản (`text node`) với nội dung văn bản được cung cấp.
 
-*   **Thêm phần tử vào DOM**:
-    *   `parentNode.appendChild(childNode)`: Thêm `childNode` làm con cuối cùng của `parentNode`. Một nút chỉ có thể tồn tại ở một vị trí trong tài liệu; việc chèn nó vào một vị trí mới sẽ tự động loại bỏ nó khỏi vị trí hiện tại.
-    *   `parentNode.insertBefore(newNode, referenceNode)`: Chèn `newNode` vào `parentNode` trước `referenceNode`.
+>   **Thêm phần tử vào DOM**:  
+    >*   `parentNode.appendChild(childNode)`: Thêm `childNode` làm con cuối cùng của `parentNode`. Một nút chỉ có thể tồn tại ở một vị trí trong tài liệu; việc chèn nó vào một vị trí mới sẽ tự động loại bỏ nó khỏi vị trí hiện tại.  
+    >-   `parentNode.insertBefore(newNode, referenceNode)`: Chèn `newNode` vào `parentNode` trước `referenceNode`.
 
 #### **3. Di chuyển và Xóa các phần tử (Moving and Removing Elements)**
-*   `parentNode.removeChild(child)`: Xóa `child` khỏi `parentNode` trên DOM và trả về một tham chiếu đến `child`.
-*   `element.remove()`: Xóa phần tử khỏi DOM, chỉ cần tham chiếu đến chính nó. **Lưu ý**: Phương thức này không được hỗ trợ trong các trình duyệt cũ hơn. Trong trường hợp đó, bạn phải sử dụng `element.parentNode.removeChild(element)`.
-*   `element.replaceChild(newChild, oldChild)`: Thay thế một nút con (`oldChild`) bằng một nút khác (`newChild`).
+>*   `parentNode.removeChild(child)`: Xóa `child` khỏi `parentNode` trên DOM và trả về một tham chiếu đến `child`.
+>*   `element.remove()`: Xóa phần tử khỏi DOM, chỉ cần tham chiếu đến chính nó.   
+**Lưu ý**: Phương thức này không được hỗ trợ trong các trình duyệt cũ hơn. Trong trường hợp đó, bạn phải sử dụng `element.parentNode.removeChild(element)`.
+>*   `element.replaceChild(newChild, oldChild)`: Thay thế một nút con (`oldChild`) bằng một nút khác (`newChild`).
 
 #### **4. Thay đổi thuộc tính và kiểu dáng (Altering Attributes and Styles)**
 
-*   **Nội dung văn bản và HTML**:
+>   **Nội dung văn bản và HTML**:  
     *   `element.textContent`: Thiết lập hoặc lấy nội dung văn bản kết hợp của một phần tử, bao gồm các hậu duệ của nó. **Được ưu tiên hơn `innerHTML`** để thêm văn bản vì an toàn hơn.
     *   `element.innerText`: Tương tự như `textContent`, nhưng nó trả về nội dung văn bản "được hiển thị" của phần tử, có tính đến kiểu dáng (`styling`) (ví dụ: các phần tử có `display: none` sẽ không được bao gồm).
-    *   `element.innerHTML`: Hiển thị nội dung HTML bên trong một phần tử. **Nên sử dụng một cách tiết kiệm** để tránh các rủi ro bảo mật tiềm ẩn như tấn công kịch bản chéo trang (`Cross-Site Scripting` - XSS).
+    *   `element.innerHTML`: Hiển thị nội dung HTML bên trong một phần tử. **Nên sử dụng tối thiểu** để tránh các rủi ro bảo mật tiềm ẩn như tấn công kịch bản chéo trang (`Cross-Site Scripting` - XSS).
 
-*   **Thuộc tính HTML (HTML Attributes)**:
-    *   `element.setAttribute(name, value)`: Thiết lập giá trị của một thuộc tính trên phần tử.
-    *   `element.getAttribute(name)`: Trả về giá trị của thuộc tính đã chỉ định.
-    *   `element.removeAttribute(name)`: Xóa thuộc tính đã chỉ định.
-    *   **Thuộc tính `class`**: Vì `class` là một từ khóa trong JavaScript, thuộc tính được sử dụng để truy cập nó là `className`. Tuy nhiên, bạn cũng có thể truy cập nó bằng tên thật của nó, `"class"`, với các phương thức `getAttribute` và `setAttribute`.
-    *   **Thuộc tính tùy chỉnh (`Custom attributes`)**: Nên đặt tiền tố `data-` vào tên các thuộc tính tự tạo để đảm bảo chúng không xung đột với các thuộc tính khác (ví dụ: `data-key`).
+>   **Thuộc tính HTML (HTML Attributes)**:
+    >*   `element.setAttribute(name, value)`: Thiết lập giá trị của một thuộc tính trên phần tử.
+    >*   `element.getAttribute(name)`: Trả về giá trị của thuộc tính đã chỉ định.
+    >*   `element.removeAttribute(name)`: Xóa thuộc tính đã chỉ định.
+    >*   **Thuộc tính `class`**: Vì `class` là một từ khóa trong JavaScript, thuộc tính được sử dụng để truy cập nó là `className`. Tuy nhiên, bạn cũng có thể truy cập nó bằng tên thật của nó, `"class"`, với các phương thức `getAttribute` và `setAttribute`.
+    >*   **Thuộc tính tùy chỉnh (`Custom attributes`)**: Nên đặt tiền tố `data-` vào tên các thuộc tính tự tạo để đảm bảo chúng không xung đột với các thuộc tính khác (ví dụ: `data-key`).
 
-*   **Kiểu dáng (Styling)**:
-    *   **`element.style.propertyName`**: Trực tiếp thao tác kiểu dáng CSS nội tuyến (`inline CSS styles`) của một phần tử. Đối với các tên thuộc tính CSS có dấu gạch ngang (ví dụ: `background-color`), bạn cần sử dụng quy ước chữ lạc đà (`camelCase`) trong JavaScript (ví dụ: `backgroundColor`).
-    *   **`element.classList.add/remove/toggle(className)`**: Thêm, xóa hoặc chuyển đổi một lớp CSS trên một phần tử. Phương pháp này thường được ưu tiên hơn việc thêm kiểu dáng nội tuyến trực tiếp bằng JavaScript, vì nó giúp tách biệt mã CSS và JavaScript, làm cho mã sạch hơn và dễ bảo trì hơn.
+>   **Kiểu dáng (Styling)**:
+    >*   **`element.style.propertyName`**: Trực tiếp thao tác kiểu dáng CSS nội tuyến (`inline CSS styles`) của một phần tử. Đối với các tên thuộc tính CSS có dấu gạch ngang (ví dụ: `background-color`), bạn cần sử dụng quy ước chữ lạc đà (`camelCase`) trong JavaScript (ví dụ: `backgroundColor`).
+    >*   **`element.classList.add/remove/toggle(className)`**: Thêm, xóa hoặc chuyển đổi một lớp CSS trên một phần tử. Phương pháp này thường được ưu tiên hơn việc thêm kiểu dáng nội tuyến trực tiếp bằng JavaScript, vì nó giúp tách biệt mã CSS và JavaScript, làm cho mã sạch hơn và dễ bảo trì hơn.
 
-*   **Điểm khác biệt giữa thuộc tính nội dung (Content Attributes) và thuộc tính IDL (IDL Attributes)**:
-    *   **Thuộc tính nội dung (Content attribute)**: Là thuộc tính như bạn đặt nó trong mã HTML. Luôn là một chuỗi (`string`), ngay cả khi giá trị mong đợi là một số nguyên. Bạn có thể thiết lập hoặc lấy nó qua `element.setAttribute()` hoặc `element.getAttribute()`.
-    *   **Thuộc tính IDL (IDL attribute)** (còn gọi là thuộc tính JavaScript): Là các thuộc tính bạn có thể đọc hoặc thiết lập bằng các thuộc tính JavaScript (ví dụ: `element.foo`). Các thuộc tính IDL sẽ trả về giá trị của chúng theo loại dữ liệu mong muốn (ví dụ: `input.maxlength` là một số), và khi bạn thiết lập chúng, chúng mong muốn một giá trị thuộc loại đó.
+>   **Điểm khác biệt giữa thuộc tính nội dung (Content Attributes) và thuộc tính IDL (IDL Attributes)**:  
+    >*   **Thuộc tính nội dung (Content attribute)**: Là thuộc tính như bạn đặt nó trong mã HTML. Luôn là một chuỗi (`string`), ngay cả khi giá trị mong đợi là một số nguyên. Bạn có thể thiết lập hoặc lấy nó qua `element.setAttribute()` hoặc `element.getAttribute()`.
+    >*   **Thuộc tính IDL (IDL attribute)** (còn gọi là thuộc tính JavaScript)(Interface Definition Language attributes) là khái niệm mô tả các thuộc tính của phần tử HTML mà bạn có thể truy cập và thay đổi trực tiếp bằng JavaScript thông qua đối tượng DOM. Những thuộc tính này không phải là một phần của HTML trực tiếp, mà nằm trong định nghĩa của các API DOM. Bạn có thể đọc hoặc thiết lập bằng các thuộc tính JavaScript (ví dụ: `element.foo`). Các thuộc tính IDL sẽ trả về giá trị của chúng theo loại dữ liệu mong muốn (ví dụ: `input.maxlength` là một số), và khi bạn thiết lập chúng, chúng mong muốn một giá trị thuộc loại đó.
 
-*   **Các thuộc tính boolean (Boolean Attributes)**: Nếu một thuộc tính boolean (ví dụ: `required`, `readonly`, `disabled`) có mặt, giá trị của nó là `true`. Nếu nó không có mặt, giá trị của nó là `false`. Giá trị `"true"` và `"false"` không được phép trên các thuộc tính boolean; để biểu thị giá trị `false`, thuộc tính phải được bỏ qua hoàn toàn.
+>   **Các thuộc tính boolean (Boolean Attributes)**:   
+> Nếu một thuộc tính boolean (ví dụ: `required`, `readonly`, `disabled`) có mặt, giá trị của nó là `true`. Nếu nó không có mặt, giá trị của nó là `false`. Giá trị `"true"` và `"false"` không được phép trên các thuộc tính boolean; để biểu thị giá trị `false`, thuộc tính phải được bỏ qua hoàn toàn.
 
 #### **5. Tải tập lệnh (Script Loading)**
 *   Khi trình duyệt tải HTML và gặp một thẻ `<script>`, nó sẽ dừng việc xây dựng DOM và phải thực thi tập lệnh ngay lập tức. Điều này có thể dẫn đến việc tập lệnh không thể nhìn thấy các phần tử DOM bên dưới nó hoặc chặn hiển thị trang nếu tập lệnh lớn.
