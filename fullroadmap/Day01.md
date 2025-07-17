@@ -1,6 +1,9 @@
-# Đây là file mẫu 
+# Đây là file mẫu
+?
+<!--SR:!2025-07-21,4,270-->
 
 
 
 
-> ⭐ **Theo dõi [kênh Threads](https://www.threads.com/@kaitaku.88) để đọc mới mỗi ngày!** ⭐
+> ⭐ **Theo dõi [kênh Threads](https://www.threads.com/@kaitaku.88) để đọc bài mới mỗi ngày!** ⭐
+**[Trang Chủ](./README.md)|           [Bài Sau ==>](link)**

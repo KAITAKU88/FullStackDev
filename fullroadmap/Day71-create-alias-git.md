@@ -68,8 +68,10 @@ function gitpush() {
   }
   ```
 > ⭐ **Theo dõi [kênh Threads](https://www.threads.com/@kaitaku.88) để đọc bài mới mỗi ngày!** ⭐
+<!--SR:!2025-07-21,4,270-->
 
-**[<== Bài Trước](./Day70.md)          |           [Bài Sau ==>](./Day72-DOMandEvents.md)**
+**[<== Bài Trước](./Day70.md)          |[Trang Chủ](./README.md)|           [Bài Sau ==>](./Day72-DOMandEvents.md)**
+<!--SR:!2025-07-21,4,270-->
       
 <!--SR:!2025-07-19,3,250-->
 
