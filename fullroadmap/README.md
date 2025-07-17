@@ -12,12 +12,12 @@
 > Ngày 03: [Cách hỏi để được giúp đỡ](./Day03-HowToAsk.md)    
 > Ngày 04: [Cách giúp đỡ người khác](./Day04-HowTOHelp.md)   
 > Ngày 04: [Vấn đề XY là gì?](./Day04-XYProblems.md)  
+
+### Điều kiện cần thiết
 > Ngày 05: []()  
 
 
 
-
-### Điều kiện cần thiết
 ### Cơ bản về Git
 ### Nền tảng về HTML
 ### Nền tảng về CSS
