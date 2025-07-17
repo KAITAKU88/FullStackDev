@@ -67,15 +67,10 @@ function gitpush() {
     git push origin main
   }
   ```
+> ⭐ **Theo dõi [kênh Threads](https://www.threads.com/@kaitaku.88) để đọc bài mới mỗi ngày!** ⭐
 
-<div style = "display: flex; justify-content: center;">
-  <strong>⭐ Theo dõi <a href = "https://www.threads.com/@kaitaku.88">kênh Threads</a> để đọc bài mới mỗi ngày ⭐ </strong>
-</div>
+**[<== Bài Trước](./Day70.md)          |           [Bài Sau ==>](./Day72-DOMandEvents.md)**
       
-<div style="display: flex; justify-content: center;">
-  <span><strong><a href="./Day70.md"><== Bài trước -- </strong></span>
-  <span><strong><a href="./Day72-DOMandEvents.md"> -- Bài sau ==></strong></span>
-</div>
 <!--SR:!2025-07-19,3,250-->
 
 
