@@ -208,10 +208,10 @@ Khi một sự kiện xảy ra, trình duyệt web sẽ tự động chuyển m�
 ### **4. Các loại Sự kiện Phổ biến Khác**
 
 >   **Sự kiện tải trang (Page Load Events)**:  
->    *   `DOMContentLoaded`: Kích hoạt khi trình duyệt đã tải đầy đủ HTML và hoàn thành việc xây dựng cây DOM, nhưng chưa tải các tài nguyên bên ngoài như bảng kiểu (stylesheets) và hình ảnh. Tại sự kiện này, bạn có thể bắt đầu chọn các nút DOM hoặc khởi tạo giao diện.
->    *   `load`: Kích hoạt khi trình duyệt đã tải đầy đủ cả HTML và tất cả các tài nguyên bên ngoài (hình ảnh, bảng kiểu, v.v.).
->    *   `beforeunload`: Kích hoạt trước khi trang và tài nguyên bị dỡ bỏ (`unloaded`). Có thể được sử dụng để hiển thị hộp thoại xác nhận nếu người dùng muốn rời khỏi trang, giúp ngăn mất dữ liệu.
->    *   `unload`: Kích hoạt khi trang đã được dỡ tải hoàn toàn. Có thể sử dụng để gửi dữ liệu phân tích hoặc dọn dẹp tài nguyên.
+>- `DOMContentLoaded`: Kích hoạt khi trình duyệt đã tải đầy đủ HTML và hoàn thành việc xây dựng cây DOM, nhưng chưa tải các tài nguyên bên ngoài như bảng kiểu (stylesheets) và hình ảnh. Tại sự kiện này, bạn có thể bắt đầu chọn các nút DOM hoặc khởi tạo giao diện.
+>- `load`: Kích hoạt khi trình duyệt đã tải đầy đủ cả HTML và tất cả các tài nguyên bên ngoài (hình ảnh, bảng kiểu, v.v.).
+>- `beforeunload`: Kích hoạt trước khi trang và tài nguyên bị dỡ bỏ (`unloaded`). Có thể được sử dụng để hiển thị hộp thoại xác nhận nếu người dùng muốn rời khỏi trang, giúp ngăn mất dữ liệu.
+>- `unload`: Kích hoạt khi trang đã được dỡ tải hoàn toàn. Có thể sử dụng để gửi dữ liệu phân tích hoặc dọn dẹp tài nguyên.
 
 >   **Sự kiện tập trung (Focus Events)**:  
 >    *   `focus`: Kích hoạt khi một phần tử nhận được sự tập trung (`focus`).
