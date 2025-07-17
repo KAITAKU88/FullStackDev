@@ -24,4 +24,4 @@ Khi bạn nhận được câu trả lời thô lỗ như vậy, hãy cảm th�
 
 > ⭐ **Theo dõi [kênh Threads](https://www.threads.com/@kaitaku.88) để đọc bài mới mỗi ngày!** ⭐  
 
-**[<== Bài Trước  ](./Day04-HowTOHelp.md)          |[  Trang Chủ  ](./README.md)|           [  Bài Sau ==>](link)**
+**[<== Bài Trước  ](./Day04-HowTOHelp.md)          |[  Trang Chủ  ](./README.md)|           [  Bài Sau ==>](Day05-HowInternetWork.md)**

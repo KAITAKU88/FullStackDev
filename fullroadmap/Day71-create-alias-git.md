@@ -1,4 +1,4 @@
-> # Tạo Alias Git
+> # Tạo Alias Git (Đóng cọc xong)
 ?
 Khi làm việc với Git chúng ta thường phải sử dụng rất thường xuyên hàng ngày, ví dụ sau mỗi thay đổi quan trọng ta cần dùng :
 ```

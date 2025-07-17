@@ -1,4 +1,4 @@
-# DOM Manipulation and Events (Thao tác DOM và các Sự kiện)
+# DOM Manipulation and Events (Thao tác DOM và các Sự kiện) (Đã đóng cọc lần 1)
 
 ```
 DOM Manipulation and Events (Thao tác DOM và các Sự kiện)

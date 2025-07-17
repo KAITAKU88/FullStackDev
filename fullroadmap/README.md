@@ -14,11 +14,9 @@
 > Ngày 04: [Vấn đề XY là gì?](./Day04-XYProblems.md)  
 
 ### Điều kiện cần thiết
-> Ngày 05: []()  
+> Ngày 05: [Internet làm việc như thế nào?](./Day05-HowInternetWork.md)  
 
 
-
-### Cơ bản về Git
 ### Nền tảng về HTML
 ### Nền tảng về CSS
 ### Flexbox
