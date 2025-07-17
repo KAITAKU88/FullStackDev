@@ -74,7 +74,7 @@ function gitpush() {
       
 <div style="display: flex; justify-content: center;">
   <span><strong><a href="./Day70.md"><== Bài trước -- </strong></span>
-  <span><strong><a href="./Day72.md"> -- Bài sau ==></strong></span>
+  <span><strong><a href="./Day72-DOMandEvents.md"> -- Bài sau ==></strong></span>
 </div>
 <!--SR:!2025-07-19,3,250-->
 
