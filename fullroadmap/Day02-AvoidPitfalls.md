@@ -48,4 +48,4 @@ Việc ghi chú lại để làm tài liệu tham khảm có thể sẽ làm lã
 
 > ⭐ **Theo dõi [kênh Threads](https://www.threads.com/@kaitaku.88) để đọc bài mới mỗi ngày!** ⭐  
 
-**[<== Bài Trước  ](./Day02-SuccessSecret.md)          |[  Trang Chủ  ](./README.md)|           [  Bài Sau ==>](link)**
+**[<== Bài Trước  ](./Day02-SuccessSecret.md)          |[  Trang Chủ  ](./README.md)|           [  Bài Sau ==>](./Day03-HowToAsk.md)**

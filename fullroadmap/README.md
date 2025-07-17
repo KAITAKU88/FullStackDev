@@ -9,8 +9,10 @@
 > Ngày 02: [Chế độ tập trung và phân tán](./Day02-FocusAndDiffuseMode.md)  
 > Ngày 02: [Bí quyết đạt tới thành công bất kể lĩnh vực nào ](Day02-SuccessSecret.md)    
 > Ngày 02: [Những cạm bẫy cần tránh khi học lập trình](Day02-AvoidPitfalls.md)   
-> Ngày 03: []()  
-
+> Ngày 03: [Cách hỏi để được giúp đỡ](./Day03-HowToAsk.md)    
+> Ngày 04: [Cách giúp đỡ người khác](./Day04-HowTOHelp.md)   
+> Ngày 04: [Vấn đề XY là gì?](./Day04-XYProblems.md)  
+> Ngày 05: []()  
 
 
 
