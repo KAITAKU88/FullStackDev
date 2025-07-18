@@ -296,10 +296,10 @@ Khi bạn đẩy các thay đổi từ kho lưu trữ cục bộ (local reposito
 
     *Ví dụ về cách sử dụng:*
     ```
-    git push -u git@github.com:username/example.git master
+    git push -u git@github.com:username/example.git main
     ```
-    Lệnh trên đẩy các thay đổi từ nhánh cục bộ của bạn lên nhánh `master` của kho lưu trữ `example`.
-    Vì cờ `-u` được sử dụng, nhánh cục bộ của bạn tự động được liên kết với nhánh `master`. Do đó, bất cứ khi nào bạn cần kéo (pull) các thay đổi từ nhánh `master`, bạn có thể sử dụng lệnh `git pull` mà không cần bất kỳ đối số nào.
+    Lệnh trên đẩy các thay đổi từ nhánh cục bộ của bạn lên nhánh `main` của kho lưu trữ `example`.
+    Vì cờ `-u` được sử dụng, nhánh cục bộ của bạn tự động được liên kết với nhánh `main`. Do đó, bất cứ khi nào bạn cần kéo (pull) các thay đổi từ nhánh `main`, bạn có thể sử dụng lệnh `git pull` mà không cần bất kỳ đối số nào.
 
 
 

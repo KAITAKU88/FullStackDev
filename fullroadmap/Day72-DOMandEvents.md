@@ -354,5 +354,5 @@ Khi một sự kiện xảy ra, trình duyệt web sẽ tự động chuyển m�
 
 ⭐ **Theo dõi [kênh Threads](https://www.threads.com/@kaitaku.88) để đọc bài mới mỗi ngày!** ⭐  
 
-**[<== Bài Trước](./Day71-create-alias-git.md)          |[Trang Chủ](./README.md)|           [Bài Sau ==>](link)**
+**[<== Bài Trước](./Day71-create-alias-git.md)          |[Trang Chủ](./README.md)|           [Bài Sau ==>](./Day72-GitBranchingBasics.md)**
 <!--SR:!2025-07-21,4,270-->

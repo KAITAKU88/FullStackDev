@@ -22,5 +22,5 @@
 ### Flexbox
 ### JavaScript cơ bản
 > Ngày 71: [Tạo Alias cho Git](./Day71-create-alias-git.md)  
-> Ngày 72: [DOM và Các sự kiện (Events)](./Day72-DOMandEvents.md)
-
+> Ngày 72: [DOM và Các sự kiện (Events)](./Day72-DOMandEvents.md)  
+> Ngày 73: [Git Branching và Mergin căn bản](./Day72-GitBranchingBasics.md)
