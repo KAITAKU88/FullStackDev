@@ -70,6 +70,9 @@ Khi bạn thực hiện các **commit** trên một nhánh cụ thể, những t
     ```
     git branch 
     ```
+*   **Nội dung được tạo ra trong nhánh nào thì chỉ hiển thị trong nhánh đó**  
+>-  Ví dụ trong nhánh iss53 bạn tạo file iss53.html, vậy thì iss53.html chỉ xuất hiện trong nhánh này. Nếu giờ chuyển sang nhánh khác thì sẽ không thấy file iss53.html nữa.
+
 
 **Ví dụ minh họa quy trình làm việc cơ bản với nhánh:**
 
@@ -123,10 +126,10 @@ Khi bạn thực hiện các **commit** trên một nhánh cụ thể, những t
 
 ## **2. Các thao tác hợp nhất cơ bản (Basic Merging)**
 
-Sau khi bản vá nóng hoàn tất và được kiểm tra, bạn cần hợp nhất nó trở lại nhánh `master` để triển khai (deploy) vào môi trường sản xuất (production). Bạn thực hiện điều này với lệnh `git merge`:
+Sau khi bản vá nóng hoàn tất và được kiểm tra, bạn cần hợp nhất nó trở lại nhánh `main` để triển khai (deploy) vào môi trường sản xuất (production). Bạn thực hiện điều này với lệnh `git merge`:
 
 1.  **Hợp nhất nhánh `hotfix` vào `master`:**  
-    Bạn cần chắc chắn mình đang ở trên nhánh `master` trước khi hợp nhất `hotfix` vào nó:
+    Bạn cần chắc chắn mình đang ở trên nhánh `main` trước khi hợp nhất `hotfix` vào nó:
     ```
     $ git checkout master
     $ git merge hotfix
@@ -140,10 +143,10 @@ Sau khi bản vá nóng hoàn tất và được kiểm tra, bạn cần hợp n
     *   **Hợp nhất "Fast-forward" (Fast-forward merge):**  
         Bởi vì commit `C4` mà nhánh `hotfix` bạn đã hợp nhất vào **trực tiếp ở phía trước** của commit `C2` mà bạn đang ở, Git chỉ đơn giản là di chuyển con trỏ về phía trước. Nói cách khác, khi bạn cố gắng hợp nhất một commit với một commit có thể được đạt tới bằng cách theo dõi lịch sử của commit đầu tiên, Git đơn giản hóa mọi thứ bằng cách di chuyển con trỏ về phía trước vì **không có công việc phân kỳ** (divergent work) nào để hợp nhất lại với nhau — đây được gọi là "fast-forward".
 
-    Bản sửa lỗi của bạn hiện đã nằm trong ảnh chụp nhanh (snapshot) của commit mà nhánh `master` trỏ đến, và bạn có thể triển khai bản sửa lỗi.
+    Bản sửa lỗi của bạn hiện đã nằm trong ảnh chụp nhanh (snapshot) của commit mà nhánh `main` trỏ đến, và bạn có thể triển khai bản sửa lỗi.
 
 2.  **Xóa nhánh sau khi hợp nhất (Deleting branches after merge):**  
-    Sau khi bản sửa lỗi quan trọng được triển khai, bạn có thể xóa nhánh `hotfix` vì bạn không cần nó nữa — nhánh `master` đã trỏ đến cùng một vị trí. Bạn có thể xóa nó bằng tùy chọn `-d` của `git branch`:
+    Sau khi bản sửa lỗi quan trọng được triển khai, bạn có thể xóa nhánh `hotfix` vì bạn không cần nó nữa — nhánh `main` đã trỏ đến cùng một vị trí. Bạn có thể xóa nó bằng tùy chọn `-d` của `git branch`:
     ```
     $ git branch -d hotfix
     Deleted branch hotfix (3a0874c).
@@ -155,18 +158,18 @@ Sau khi bản vá nóng hoàn tất và được kiểm tra, bạn cần hợp n
     ```
     $ git checkout iss53
     Switched to branch "iss53"
-    $ vim index.html
+    //Thực hiện chỉnh sửa nội dụng sau đó:
     $ git commit -a -m 'Finish the new footer [issue 53]'
     [iss53 ad82d7a] Finish the new footer [issue 53]
     1 file changed, 1 insertion(+)
     ```
-    **Lưu ý:** Công việc bạn đã làm trong nhánh `hotfix` không được chứa trong các tệp ở nhánh `iss53` của bạn. Nếu bạn cần đưa nó vào, bạn có thể hợp nhất nhánh `master` vào nhánh `iss53` bằng cách chạy `git merge master`, hoặc bạn có thể đợi để tích hợp những thay đổi đó cho đến khi bạn quyết định đưa nhánh `iss53` trở lại `master` sau này.
+    **Lưu ý:** Công việc bạn đã làm trong nhánh `hotfix` không được chứa trong các tệp ở nhánh `iss53` của bạn. Nếu bạn cần đưa nó vào, bạn có thể hợp nhất nhánh `main` vào nhánh `iss53` bằng cách chạy `git merge main`, hoặc bạn có thể đợi để tích hợp những thay đổi đó cho đến khi bạn quyết định đưa nhánh `iss53` trở lại `main` sau này.
 
-4.  **Hợp nhất nhánh `iss53` vào `master`:**  
-    Giả sử bạn đã quyết định rằng công việc của vấn đề #53 đã hoàn thành và sẵn sàng được hợp nhất vào nhánh `master` của bạn. Bạn sẽ hợp nhất nhánh `iss53` của mình vào `master`, giống như bạn đã hợp nhất nhánh `hotfix` trước đó. Tất cả những gì bạn phải làm là chuyển đến nhánh mà bạn muốn hợp nhất vào, sau đó chạy lệnh `git merge`:
+4.  **Hợp nhất nhánh `iss53` vào `main`:**  
+    Giả sử bạn đã quyết định rằng công việc của vấn đề #53 đã hoàn thành và sẵn sàng được hợp nhất vào nhánh `main` của bạn. Bạn sẽ hợp nhất nhánh `iss53` của mình vnh `main`, giống như bạn đã hợp nhất nhánh `hotfix` trước đó. Tất cả những gì bạn phải làm là chuyển đến nhánh mà bạn muốn hợp nhất vào, sau đó chạy lệnh `git merge`:
     ```
-    $ git checkout master
-    Switched to branch 'master'
+    $ git checkout main
+    Switched to branch main'
     $ git merge iss53
     Merge made by the 'recursive' strategy.
     index.html | 1 +
@@ -210,7 +213,7 @@ Sau khi bản vá nóng hoàn tất và được kiểm tra, bạn cần hợp n
 
     no changes added to commit (use "git add" and/or "git commit -a")
     ```
-    Bất cứ thứ gì có xung đột hợp nhất và chưa được giải quyết đều được liệt kê là "unmerged".
+    Bất cứ thứ gì có xung đột hợp nhất và chưa được giải quyết đều được liệt kê là "**unmerged**".
 
 *   **Giải quyết xung đột thủ công (Manual conflict resolution):**  
     Git thêm các dấu hiệu giải quyết xung đột chuẩn vào các tệp có xung đột, vì vậy bạn có thể mở chúng theo cách thủ công và giải quyết các xung đột đó. Tệp của bạn sẽ chứa một phần trông giống như thế này:
@@ -305,10 +308,10 @@ Khi bạn đẩy các thay đổi từ kho lưu trữ cục bộ (local reposito
 
 
 ## Tài liệu phải đọc khi ĐÓNG CỌC LẦN 2:
->- https://www.theodinproject.com/lessons/foundations-revisiting-rock-paper-scissors
->- https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging#_basic_merging
->- https://www.educative.io/edpresso/what-is-the-git-push--u-remote-branch-name-command
->- https://learngitbranching.js.org/
+>1. https://www.theodinproject.com/lessons/foundations-revisiting-rock-paper-scissors
+>2. https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging#_basic_merging
+>3. https://www.educative.io/edpresso/what-is-the-git-push--u-remote-branch-name-command
+>4. https://learngitbranching.js.org/
 
 > ⭐ **Theo dõi [kênh Threads](https://www.threads.com/@kaitaku.88) để đọc bài mới mỗi ngày!** ⭐  
 
