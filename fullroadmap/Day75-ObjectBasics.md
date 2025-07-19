@@ -274,6 +274,19 @@ Ngoài những khác biệt về hình thức, còn có những khác biệt k�
     console.log(obj);       // Kết quả: { data: 43 }
     console.log(objCopy);   // Kết quả: { data: 43 }
     ```
+    ```mermaid
+      graph TD
+        obj(obj)
+        objCopy(objCopy)
+        value(data: 42)
+        newValue(data: 43)
+
+        obj --1--> value
+        obj --2--> newValue
+        objCopy --1--> value
+        objCopy --2--> newValue
+    ```
+    
     Hành vi này cũng cần được xem xét khi chúng ta truyền đối số (arguments) vào một hàm.
     Ví dụ:
     ```javascript
@@ -308,8 +321,21 @@ Ngoài những khác biệt về hình thức, còn có những khác biệt k�
     console.log(animal); // Kết quả: { species: "cat" }
     console.log(dog);    // Kết quả: { species: "dog" } (vẫn tham chiếu đến đối tượng cũ)
     ```
+```mermaid
+  flowchart TD
+    animal(animal)
+    dog(dog)
+    dogObj[species: dog]
+    catObj[species: cat]
 
-**9. Hạn chế tên thuộc tính (Property names limitations) và toán tử `in`**
+    animal--1-->dogObj
+    dog--1-->dogObj
+    animal--2-->catObj
+
+
+
+```
+## **9. Hạn chế tên thuộc tính (Property names limitations) và toán tử `in`**
 
 *   **Hạn chế tên thuộc tính**: Đối với một thuộc tính của đối tượng, **không có hạn chế nào về tên thuộc tính**. Chúng có thể là bất kỳ chuỗi (strings) hoặc ký hiệu (symbols) nào. Các kiểu khác sẽ tự động được chuyển đổi thành chuỗi.
     Ví dụ:
