@@ -22,7 +22,7 @@ code ~/.bashrc
 ```
 alias gs='git status'
 alias ga='git add .'
-alias gc='git commit'
+alias gc='git commit -m'
 alias gp='git push origin main'
 ```
 - Lưu ý là giữa **gs** và dấu **=** không có dấu cách khoảng trắng, nên không được viết **gs ='git status'**, sẽ gây lỗi.
@@ -32,6 +32,8 @@ source ~/.bashrc
 ```
 - Bây giờ thử thay đổi nội dung file nào đó 1 chút, rồi trong terminal gõ thử lệnh **gs** rồi Enter, nếu thấy git hoạt động bình thường là đã thành công.
 - Trong file trên ta có thể đặt alias là bất kỳ điều gì muốn, ví dụ thay vì gán **'git status'** cho alias **gs** thì có thể gán cho 1 cái gì đó khác, chẳng hạn **sta**. Miễn sao bạn dễ nhớ là được.
+- Ta có thể **alias** với toàn bộ câu lệnh hoặc chỉ 1 phần câu lệnh. Ví dụ ở trên ta có `gc ="git commit -m"`, nên :
+Thay vì viết: `git commit -m "Thông báo "` thì chỉ cần viết `gc "Thông báo"`.
 ## 2. Alias function
 - Ở trên là ta thêm alias cho từng lệnh riêng lẻ. TRong trường hợp ta muốn gọi tất cả các lệnh trên cùng nhau thì nên sử dụng alias function.
 - Mở file **.bashrc** rồi thêm 1 hàm với nội dung sau:
