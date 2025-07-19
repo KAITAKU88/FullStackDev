@@ -131,32 +131,54 @@ person[myDataName] = myDataValue; // Tạo thuộc tính với tên từ biến 
 console.log(person.height); // Kết quả: "1.75m"
 ```
 
-**5. Từ khóa "this" (The "this" keyword)**
-Trong các phương thức của đối tượng, từ khóa `this` thường đề cập đến **đối tượng hiện tại mà đoạn mã đang được thực thi trong đó**. Cụ thể, trong ngữ cảnh của một phương thức đối tượng, `this` đề cập đến **đối tượng mà phương thức đó được gọi trên**. Điều này cho phép cùng một định nghĩa phương thức hoạt động cho nhiều đối tượng khác nhau.
+## **5. Từ khóa "this" (The "this" keyword)**
+Trong các phương thức của đối tượng, từ khóa `this` thường đề cập đến **đối tượng hiện tại mà đoạn mã đang được thực thi trong đó**. Cụ thể, trong ngữ cảnh của một phương thức đối tượng, `this` đề cập đến **đối tượng mà phương thức đó được gọi trên**. Điều này cho phép định nghĩa cùng 1 phương thức hoạt động cho nhiều đối tượng khác nhau.
 Ví dụ:
 ```javascript
 const person1 = {
   name: "Chris",
   introduceSelf() {
-    console.log(`Hi! I'm ${this.name}.`);
+    console.log(`Hi! I'm ${this.name}.`); //(this ở đây là person1)
   },
 };
 
 const person2 = {
   name: "Deepti",
   introduceSelf() {
-    console.log(`Hi! I'm ${this.name}.`);
+    console.log(`Hi! I'm ${this.name}.`); //(this ở đây là person2)
   },
 };
 
-person1.introduceSelf(); // Kết quả: "Hi! I'm Chris." (this ở đây là person1)
-person2.introduceSelf(); // Kết quả: "Hi! I'm Deepti." (this ở đây là person2)
+person1.introduceSelf(); // Kết quả: "Hi! I'm Chris." 
+person2.introduceSelf(); // Kết quả: "Hi! I'm Deepti." 
 ```
+Hoặc ta sẽ viết 1 cách khác dễ hiểu hơn:
+```javascript 
+function introduceSelf() {
+  console.log(`Hi! I'm ${this.name}.`);
+}
 
-**6. Hàm tạo (Constructors)**
+const person1 = {
+  name: "Chris",
+  introduceSelf: introduceSelf
+};
+
+const person2 = {
+  name: "Deepti",
+  introduceSelf: introduceSelf
+};
+
+person1.introduceSelf(); //Hi! I'm Chris.
+person2.introduceSelf(); //Hi! I'm Deepti.
+```
+Hàm `introduceSelf()` sử dụng `this.name` — nhưng không hề gán trực tiếp giá trị nào bên trong hàm.
+
+Khi hàm này được gán vào mỗi đối tượng (`student1`, `student2`) → `this` sẽ tham chiếu đến chính đối tượng đó tại thời điểm gọi.
+
+## **6. Hàm tạo (Constructors)**
 Việc sử dụng đối tượng nguyên bản (object literals) là tốt khi bạn chỉ cần tạo một đối tượng. Tuy nhiên, nếu bạn phải tạo nhiều đối tượng giống nhau, việc này sẽ rất không hiệu quả vì bạn phải viết lại cùng một mã cho mỗi đối tượng.
 
-Để giải quyết vấn đề này, chúng ta cần một cách để định nghĩa "hình dạng" (shape) của một đối tượng — tập hợp các phương thức (methods) và thuộc tính (properties) mà nó có thể có — và sau đó tạo bao nhiêu đối tượng tùy thích, chỉ cập nhật các giá trị cho các thuộc tính khác nhau.
+Để giải quyết vấn đề này, chúng ta cần một cách để định nghĩa "**hình dạng**" (shape) của một đối tượng — tập hợp các phương thức (methods) và thuộc tính (properties) mà nó có thể có — và sau đó tạo bao nhiêu đối tượng tùy thích, chỉ cập nhật các giá trị cho các thuộc tính khác nhau.
 
 Một cách đầu tiên để làm điều này là sử dụng một hàm (function):
 ```javascript
@@ -177,13 +199,13 @@ salva.introduceSelf(); // Kết quả: "Hi! I'm Salva."
 const frankie = createPerson("Frankie");
 frankie.introduceSelf(); // Kết quả: "Hi! I'm Frankie."
 ```
-Cách này hoạt động tốt nhưng hơi dài dòng. Một cách tốt hơn là sử dụng một **hàm tạo** (constructor). Một hàm tạo chỉ đơn giản là một hàm được gọi bằng từ khóa `new`. Khi bạn gọi một hàm tạo, nó sẽ:
+Cách này hoạt động tốt nhưng hơi dài dòng. Một cách tốt hơn là sử dụng một **hàm tạo** (**constructor**). Một hàm tạo chỉ đơn giản là một hàm được gọi bằng từ khóa `new`. Khi bạn gọi một hàm tạo, nó sẽ:
 *   Tạo một đối tượng mới.
 *   Liên kết `this` với đối tượng mới, để bạn có thể tham chiếu đến `this` trong mã hàm tạo của mình.
 *   Chạy mã trong hàm tạo.
 *   Trả về đối tượng mới.
 
-Theo quy ước, các hàm tạo thường bắt đầu bằng một chữ cái viết hoa và được đặt tên theo loại đối tượng mà chúng tạo. Vì vậy, chúng ta có thể viết lại ví dụ trên như sau:
+Theo quy ước, các hàm tạo thường bắt đầu bằng một chữ cái viết hoa và được đặt tên theo loại đối tượng mà chúng tạo (**Ví dụ nếu các đối tượng là con người thì tên hàm tạo là Person, nếu các đối tượng là động vật thì tên hàm tạo là Animal**). Vì vậy, chúng ta có thể viết lại ví dụ trên như sau:
 ```javascript
 function Person(name) {
   this.name = name;
@@ -194,21 +216,42 @@ function Person(name) {
 ```
 Để gọi `Person()` như một hàm tạo, chúng ta sử dụng `new`:
 ```javascript
+/* Chạy dòng dưới đây sẽ tạo 1 đối tượng mới là salva
+- this sẽ được liên kết với đối tượng salva 
+*/
 const salva = new Person("Salva");
 salva.introduceSelf(); // Kết quả: "Hi! I'm Salva."
 
 const frankie = new Person("Frankie");
 frankie.introduceSelf(); // Kết quả: "Hi! I'm Frankie."
 ```
+Ví dụ khác:
+```javascript
+function Animal(name, numsLeg, say) {
+    this.name = name;
+    this.numsLeg = numsLeg;
+    this.say = say;
+    this.tell = function () {
+        console.log(`I'm a ${this.name}, I say ${this.say}`);
+    }
+}
 
-**7. Bạn đã sử dụng đối tượng từ lâu (You've been using objects all along)**
+const dog = new Animal("Dog", 4, "Gâu Gâu");
+const duck = new Animal("Duck", 2, "Cạc Cạc");
+console.log(dog);
+console.log(duck);
+
+dog.tell();
+duck.tell();
+```
+## **7. Bạn đã sử dụng đối tượng từ lâu (You've been using objects all along)**
 Bạn có thể nhận thấy rằng cú pháp dấu chấm (dot notation) rất quen thuộc. Đó là bởi vì bạn đã sử dụng nó trong suốt quá trình học! Mỗi khi bạn làm việc với một API tích hợp sẵn của trình duyệt (built-in browser API) hoặc đối tượng JavaScript, bạn đã sử dụng đối tượng rồi.
 
 *   Khi bạn sử dụng các phương thức chuỗi (string methods) như `myString.split(",")`, bạn đang sử dụng một phương thức có sẵn trên một đối tượng `String`. Mỗi khi bạn tạo một chuỗi, chuỗi đó sẽ tự động được tạo như một phiên bản của `String` và do đó có một số phương thức và thuộc tính chung có sẵn trên đó.
 *   Khi bạn truy cập đối tượng mô hình tài liệu (document object model - DOM) bằng các dòng như `document.createElement("div")` hoặc `document.querySelector("video")`, bạn đang sử dụng các phương thức có sẵn trên một đối tượng `Document`. Đối với mỗi trang web được tải, một phiên bản của `Document` được tạo, gọi là `document`, đại diện cho toàn bộ cấu trúc, nội dung và các tính năng khác của trang.
 *   Điều tương tự cũng đúng với hầu hết các đối tượng hoặc API tích hợp sẵn khác mà bạn đã sử dụng — `Array`, `Math`, v.v..
 
-**8. Sự khác biệt giữa đối tượng và kiểu dữ liệu nguyên thủy (Differences between objects and primitives)**
+## **8. Sự khác biệt giữa đối tượng và kiểu dữ liệu nguyên thủy (Differences between objects and primitives)**
 Kiểu dữ liệu nguyên thủy (primitive data types) có thể chứa một thứ duy nhất (chuỗi, số, v.v.). Trong khi đó, kiểu dữ liệu đối tượng (object data types), bao gồm nhưng không giới hạn ở đối tượng `{key: value}`, mảng (arrays) và hàm (functions), được sử dụng để lưu trữ một tập hợp dữ liệu và các thực thể phức tạp hơn.
 
 Ngoài những khác biệt về hình thức, còn có những khác biệt kỹ thuật ảnh hưởng đến cách chúng ta sử dụng từng kiểu dữ liệu:
