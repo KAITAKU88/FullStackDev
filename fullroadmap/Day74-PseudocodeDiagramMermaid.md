@@ -8,6 +8,7 @@ Có thể dùng cú pháp Mermaid để tạo ra nhiều dạng sơ đồ khác 
 Thay vì sử dụng text để tạo pseudocode khi lập trình, chúng ta sẽ sử dụng cú pháp Mermaid để tạo sơ đồ dạng flowchart, dễ hiểu hơn nhiều (1 bức tranh bằng 1000 lời nói).
 
 **Cú pháp chung như sau:**
+
 ![alt text](./images/mermaid.png)
 
 Kết quả như ta thấy dưới đây: 

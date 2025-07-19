@@ -1,11 +1,11 @@
-# Các Khái Niệm Cơ Bản về Đối Tượng (Object Basics) trong JavaScript (Đóng cọc lần 1)
+# Các Khái Niệm Cơ Bản về Đối Tượng (Object) trong JavaScript (Đóng cọc lần 1)
 
-**1. Đối tượng là gì? (What is an object?)**
+## **1. Đối tượng là gì? (What is an object?)**
 Trong JavaScript, một đối tượng (object) là một **tập hợp các dữ liệu và/hoặc chức năng liên quan**. Chúng thường bao gồm nhiều biến (variables) và hàm (functions). Khi các biến và hàm này nằm bên trong một đối tượng, chúng được gọi là các **thuộc tính** (properties) và **phương thức** (methods) của đối tượng đó.
 
 Khác với các kiểu dữ liệu nguyên thủy (primitive data types) như chuỗi (string), số (number), boolean, v.v., mà chỉ chứa một giá trị duy nhất, các đối tượng được sử dụng để **lưu trữ một tập hợp dữ liệu được đánh khóa** (keyed collections of various data) và các thực thể phức tạp hơn. Các đối tượng thâm nhập hầu hết mọi khía cạnh của ngôn ngữ JavaScript.
 
-**2. Tạo Đối Tượng (Creating Objects)**
+## **2. Tạo Đối Tượng (Creating Objects)**
 Có hai cách chính để tạo một đối tượng trong JavaScript:
 
 *   **Cú pháp hàm tạo đối tượng (Object constructor syntax)**: `let user = new Object();`
@@ -26,10 +26,10 @@ const person = {
   name: ["Bob", "Smith"],
   age: 32,
   bio: function () {
-    console.log(`${this.name} ${this.name} is ${this.age} years old.`);
+    console.log(`${this.name[0]} ${this.name[1]} is ${this.age} years old.`);
   },
   introduceSelf: function () {
-    console.log(`Hi! I'm ${this.name}.`);
+    console.log(`Hi! I'm ${this.name[0]}.`);
   },
 };
 ```
@@ -42,16 +42,16 @@ const person = {
   name: ["Bob", "Smith"],
   age: 32,
   bio() { // Shorter syntax for methods
-    console.log(`${this.name} ${this.name} is ${this.age} years old.`);
+    console.log(`${this.name[0]} ${this.name[1]} is ${this.age} years old.`);
   },
   introduceSelf() { // Shorter syntax for methods
-    console.log(`Hi! I'm ${this.name}.`);
+    console.log(`Hi! I'm ${this.name[0]}.`);
   },
 };
 ```
 Một đối tượng như thế này được gọi là một **đối tượng nguyên bản** (object literal) — nội dung của đối tượng được viết ra ngay tại thời điểm tạo.
 
-**3. Truy cập các thành viên của đối tượng (Accessing Object Members)**
+## **3. Truy cập các thành viên của đối tượng (Accessing Object Members)**
 Bạn có thể truy cập các thuộc tính (properties) và phương thức (methods) của đối tượng bằng hai cách chính:
 
 *   **Cú pháp dấu chấm (Dot notation)**
@@ -59,7 +59,7 @@ Bạn có thể truy cập các thuộc tính (properties) và phương thức (
     Ví dụ:
     ```javascript
     person.name;      // Truy cập thuộc tính 'name'
-    person.name;   // Truy cập phần tử đầu tiên của mảng 'name'
+    person.name[0];   // Truy cập phần tử đầu tiên của mảng 'name'
     person.age;       // Truy cập thuộc tính 'age'
     person.bio();     // Gọi phương thức 'bio'
     person.introduceSelf(); // Gọi phương thức 'introduceSelf'
@@ -84,7 +84,7 @@ Bạn có thể truy cập các thuộc tính (properties) và phương thức (
     person["age"];
     person["name"]["first"];
     ```
-    Điều này trông rất giống cách bạn truy cập các mục trong một mảng (array), và về cơ bản nó giống nhau — thay vì sử dụng một số chỉ mục (index number) để chọn một mục, bạn đang sử dụng tên (chuỗi) được liên kết với giá trị của mỗi thành viên. Đó là lý do tại sao các đối tượng đôi khi được gọi là **mảng liên kết** (associative arrays) – chúng ánh xạ chuỗi đến giá trị theo cùng một cách mà mảng ánh xạ số đến giá trị.
+    Điều này trông rất giống cách bạn truy cập các mục trong một mảng (array), và về cơ bản nó giống nhau — thay vì sử dụng một số chỉ mục (index number) để chọn một mục, bạn đang sử dụng tên (chuỗi) được liên kết với giá trị của mỗi thành viên. Đó là lý do tại sao các đối tượng đôi khi được gọi là **mảng liên kết** (**associative arrays**) – chúng ánh xạ chuỗi đến giá trị theo cùng một cách mà mảng ánh xạ số đến giá trị.
 
     Mặc dù cú pháp dấu chấm thường được ưu tiên vì nó ngắn gọn và dễ đọc hơn, nhưng có một số trường hợp bạn **phải sử dụng dấu ngoặc vuông**. Ví dụ, nếu tên thuộc tính của đối tượng được lưu trữ trong một biến, thì bạn không thể sử dụng cú pháp dấu chấm để truy cập giá trị, nhưng bạn có thể truy cập giá trị bằng cú pháp dấu ngoặc vuông.
     Ví dụ:
@@ -106,7 +106,7 @@ Bạn có thể truy cập các thuộc tính (properties) và phương thức (
     alert( bag.apple ); // 5 nếu fruit="apple"
     ```
 
-**4. Thiết lập / Cập nhật các thành viên của đối tượng (Setting Object Members)**
+## **4. Thiết lập / Cập nhật các thành viên của đối tượng (Setting Object Members)**
 Bạn không chỉ có thể truy xuất (getting) các thành viên của đối tượng, mà còn có thể **thiết lập** (set) hoặc **cập nhật** (update) giá trị của chúng bằng cách khai báo thành viên bạn muốn thiết lập (sử dụng cú pháp dấu chấm hoặc dấu ngoặc vuông).
 Ví dụ:
 ```javascript
@@ -124,6 +124,7 @@ person.farewell = function () { // Tạo phương thức mới 'farewell'
 Một khía cạnh hữu ích của cú pháp dấu ngoặc vuông là nó có thể được sử dụng để thiết lập không chỉ các giá trị của thành viên một cách động (dynamically), mà cả tên của thành viên nữa. Cú pháp dấu chấm không thể làm được điều này vì nó chỉ chấp nhận một tên thành viên cố định (literal member name), không phải một giá trị biến trỏ đến một tên.
 Ví dụ:
 ```javascript
+const person = {};
 const myDataName = "height";
 const myDataValue = "1.75m";
 person[myDataName] = myDataValue; // Tạo thuộc tính với tên từ biến 'myDataName'
