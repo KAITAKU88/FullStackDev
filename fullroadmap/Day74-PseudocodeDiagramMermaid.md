@@ -225,19 +225,21 @@ flowchart TD
     %% Connections 
         A-->B          
         A2-.->B2
+        C2<-->C
         A---C
         A2-.-C2
         B--text---C 
         B2-.text.-C2
         A-->|Text|D
         A2-.Text.->D2 
-        D==>C 
-        B==Text==>D
-        A2<==>A
-        A<-->C2
-        D2===A
 
 ```
+
+Ngoài ra, tham khảo thêm các liên kết sau, sử dụng `=` thay vì `-`, sẽ khiến nét đậm hơn.  
+> A==>B   
+> A==Text==>B  
+> A<==>B  
+> A===B  
 # 4. [Comments](https://mermaid.js.org/syntax/flowchart.html#a-node-default)
 
 Trong trường hợp chúng ta muốn ghi chú thích cho các Node, có thể sử dụng comment với 2 dấu phần trăm `%%`. Ví dụ:
