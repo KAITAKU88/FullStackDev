@@ -15,6 +15,13 @@
 
 ### Điều kiện cần thiết
 > Ngày 05: [Internet làm việc như thế nào?](./Day05-HowInternetWork.md)  
+> Ngày 06: [Web hoạt động như thế nào?](./Day06-HowWebWork.md)  
+> Ngày 07: [Tên miền ](./Day07-DomainName.md)  
+> Ngày 08: [Môi trường Linux, WSL](./Day08-LinuxAndWSL.md)  
+> Ngày 09: [Terminal , VSCode](./Day09-TerminalVSCode.md)  
+> Ngày 10: [Command Line Basic](./Day10-CommandLineBasic.md)  
+
+
 
 
 ### Nền tảng về HTML
@@ -23,4 +30,6 @@
 ### JavaScript cơ bản
 > Ngày 71: [Tạo Alias cho Git](./Day71-create-alias-git.md)  
 > Ngày 72: [DOM và Các sự kiện (Events)](./Day72-DOMandEvents.md)  
-> Ngày 73: [Git Branching và Mergin căn bản](./Day72-GitBranchingBasics.md)
+> Ngày 73: [Git Branching và Mergin căn bản](./Day72-GitBranchingBasics.md)  
+> Ngày 74: [Tạo pseudocode Diagram bằng Mermaid syntax](./Day74-PseudocodeDiagramMermaid.md)    
+> Ngày 75: [Cơ bản về Object trong JS](./Day75-ObjectBasics.md)  

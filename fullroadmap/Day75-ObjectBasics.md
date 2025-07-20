@@ -338,19 +338,26 @@ Ngoài những khác biệt về hình thức, còn có những khác biệt k�
 ## **9. Hạn chế tên thuộc tính (Property names limitations) và toán tử `in`**
 
 *   **Hạn chế tên thuộc tính**: Đối với một thuộc tính của đối tượng, **không có hạn chế nào về tên thuộc tính**. Chúng có thể là bất kỳ chuỗi (strings) hoặc ký hiệu (symbols) nào. Các kiểu khác sẽ tự động được chuyển đổi thành chuỗi.
-    Ví dụ:
+Ví dụ:
     ```javascript
     let obj = {
-      for: 1,      // Tên thuộc tính có thể là từ khóa dành riêng
-      "let": 2,    // Tên thuộc tính có thể là chuỗi
-      0: "test"    // Số 0 sẽ được chuyển đổi thành chuỗi "0" làm khóa
+        for: 1,            //Tên thuộc tính là từ khóa dành riêng 
+        "let": 2,          //Tên thuộc tính là chuỗi
+        0: "test"          //Số 0 được chuyển thành chuỗi "0" làm khóa 
     };
-    alert( obj.for + obj.let + obj["0"] ); // Kết quả: 1 + 2 + "test" (nối chuỗi) -> "3test"
-    alert( obj ); // Kết quả: "test" (truy cập bằng số 0, cũng được chuyển thành chuỗi "0")
-    ```
-    Có một trường hợp đặc biệt với thuộc tính có tên `__proto__`. Bạn không thể gán nó cho một giá trị không phải đối tượng.
 
-*   **Kiểm tra sự tồn tại của thuộc tính, toán tử "in" (Property existence test, "in" operator)**
+    console.log(obj.for);      //1
+    console.log(obj["for"]);   //1
+    console.log(obj["let"]);   //2
+    console.log(obj["0"]);     //test
+    console.log(obj);          //{ '0': 'test', for: 1, let: 2 }
+    ```
+
+  Có một trường hợp đặc biệt với thuộc tính có tên `__proto__`. Bạn không thể gán nó cho một giá trị không phải đối tượng.
+
+
+
+*   **Kiểm tra sự tồn tại của thuộc tính, toán tử "`in`" (Property existence test, "in" operator)**
     Trong JavaScript, khi đọc một thuộc tính không tồn tại, nó chỉ trả về `undefined` chứ không gây ra lỗi. Do đó, bạn có thể kiểm tra sự tồn tại của thuộc tính bằng cách so sánh với `undefined`:
     ```javascript
     let user = {};
@@ -360,20 +367,36 @@ Ngoài những khác biệt về hình thức, còn có những khác biệt k�
     Cú pháp là: `"key" in object`.
     Ví dụ:
     ```javascript
-    let user = { name: "John", age: 30 };
-    alert( "age" in user );      // Kết quả: true (user.age tồn tại)
-    alert( "blabla" in user );   // Kết quả: false (user.blabla không tồn tại)
+    let obj = {
+        for: 1,            //Tên thuộc tính là từ khóa dành riêng 
+        "let": 2,          //Tên thuộc tính là chuỗi
+        0: "test"          //Số 0 được chuyển thành chuỗi "0" làm khóa 
+    };
+
+    console.log("user" in obj);  //false
+    console.log("for" in obj);   //true
+    console.log("let" in obj);   //true
+    console.log("0" in obj);     //true 
     ```
     Lưu ý rằng bên trái của `in` phải là **tên thuộc tính** (property name), thường là một chuỗi được đặt trong dấu ngoặc kép.
     Toán tử `in` hữu ích hơn khi một thuộc tính thực sự tồn tại nhưng giá trị của nó là `undefined`.
     Ví dụ:
     ```javascript
-    let obj = { test: undefined };
-    alert( obj.test );       // Kết quả: undefined (có vẻ như không có thuộc tính này)
-    alert( "test" in obj );  // Kết quả: true (thuộc tính thực sự tồn tại!)
+    let obj = {
+        for: 1,            //Tên thuộc tính là từ khóa dành riêng 
+        "let": 2,          //Tên thuộc tính là chuỗi
+        0: "test",          //Số 0 được chuyển thành chuỗi "0" làm khóa 
+        ex: undefined
+    };
+
+    console.log(obj["ex"]); //undefined (có vẻ như không có thuộc tính này)
+    console.log("ex" in obj);  // true (thuộc tính thực sự tồn tại!)
     ```
 
-**10. Vòng lặp "for..in" (The "for..in" loop)**
+
+## **10. Vòng lặp "for..in" (The "for..in" loop)**
+Ta đã học vòng lặp này trong bài ngày 69/365 về Loops và Array.
+
 Để duyệt qua tất cả các khóa (keys) của một đối tượng, có một dạng vòng lặp đặc biệt: `for..in`.
 Cú pháp:
 ```javascript
@@ -395,26 +418,44 @@ for (let key in user) {
 Các đối tượng có được sắp xếp không? Khi chúng ta lặp qua một đối tượng, liệu chúng ta có nhận được tất cả các thuộc tính theo cùng thứ tự mà chúng được thêm vào không? Câu trả lời ngắn gọn là: "được sắp xếp theo một cách đặc biệt": **các thuộc tính số nguyên (integer properties) được sắp xếp, các thuộc tính khác xuất hiện theo thứ tự tạo**.
 
 *   **Thuộc tính số nguyên (Integer properties)**: Là một chuỗi có thể được chuyển đổi thành số nguyên và ngược lại mà không thay đổi. Các thuộc tính này sẽ được sắp xếp theo thứ tự tăng dần.
-    Ví dụ:
-    ```javascript
-    let codes = {
-      "49": "Germany",
-      "41": "Switzerland",
-      "44": "Great Britain",
-      "1": "USA"
-    };
-    for (let code in codes) {
-      alert(code); // Kết quả: 1, 41, 44, 49 (được sắp xếp theo số nguyên)
-    }
-    ```
 *   **Thuộc tính không phải số nguyên (Non-integer properties)**: Nếu các khóa không phải là số nguyên, chúng sẽ được liệt kê theo thứ tự tạo.
     Ví dụ:
     ```javascript
-    let user = { name: "John", surname: "Smith" };
-    user.age = 25; // Thêm một thuộc tính mới
-    for (let prop in user) {
-      alert( prop ); // Kết quả: name, surname, age (theo thứ tự tạo)
+    let codes = {
+        name: "John",
+        3: "Ha Noi",
+        "1": "Vietnam",
+        calculateSalary() {
+            //do sth here
+        },
+        age: 39,
+        father: "Marry"
+
     }
+
+    console.log(codes);
+    /* Kết quả: 
+    {
+      '1': 'Vietnam',
+      '3': 'Ha Noi',
+      name: 'John',
+      calculateSalary: [Function: calculateSalary],
+      age: 39,
+      father: 'Marry'
+    }
+    */
+
+    for (let key in codes) {
+        console.log(key);
+    }
+    /* Kết quả
+    1
+    3
+    name
+    calculateSalary
+    age
+    father
+    */  
     ```
 
 **11. Tóm tắt (Summary)**
@@ -428,7 +469,25 @@ Chúng lưu trữ các thuộc tính (cặp khóa-giá trị), trong đó:
 *   **Cú pháp dấu ngoặc vuông (Square brackets notation)**: `obj["property"]`. Dấu ngoặc vuông cho phép lấy khóa từ một biến, như `obj[varWithKey]`.
 
 Các toán tử bổ sung:
-*   Để xóa một thuộc tính: `delete obj.prop`.
+*   Để xóa một thuộc tính (kể cả phương thức) được khai báo: `delete obj.prop`. Ví dụ:
+```javascript
+let codes = {
+    name: "John",
+    3: "Ha Noi",
+    "1": "Vietnam",
+    calculateSalary() {
+        //do sth here
+    },
+    age: 39,
+    father: "Marry"
+
+}
+delete codes["3"]; 
+delete codes.calculateSalary;
+console.log(codes); 
+//{ '1': 'Vietnam', name: 'John', age: 39, father: 'Marry' }
+
+```
 *   Để kiểm tra xem một thuộc tính với khóa đã cho có tồn tại không: `"key" in obj`.
 *   Để lặp qua một đối tượng: vòng lặp `for (let key in obj)`.
 
