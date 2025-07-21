@@ -19,7 +19,11 @@
 > Ngày 07: [Tên miền ](./Day07-DomainName.md)  
 > Ngày 08: [Môi trường Linux, WSL](./Day08-LinuxAndWSL.md)  
 > Ngày 09: [Terminal , VSCode](./Day09-TerminalVSCode.md)  
-> Ngày 10: [Command Line Basic](./Day10-CommandLineBasic.md)  
+> Ngày 09: [Text Editor](./Day09-TextEditorVSCode.md)  
+> Ngày 10: [Command Line Basic](./Day10-CommandLineBasic.md)    
+> Ngày 10: [Shell vs Bash](./Day10-ShellVsBash.md)    
+> Ngày 10: [Unix Shell](./Day10-UnixShell.md)  
+> Ngày 11: []()  
 
 
 
