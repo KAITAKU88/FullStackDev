@@ -402,5 +402,293 @@ $ rm -r thesis
 Do không có cách nào để khôi phục các tệp đã xóa bằng shell, nên `rm -r` phải được sử dụng hết sức thận trọng (*bạn có thể cân nhắc thêm tùy chọn tương tác `rm -r -i` hoặc viết ngắn là `rm -ri`* ).
 
 # 7. Thao tác với nhiều tệp và thư mục cùng 1 lúc 
+Thông thường, người ta cần sao chép hoặc di chuyển nhiều tệp cùng lúc. Có thể thực hiện việc này bằng cách cung cấp danh sách các tên tệp riêng lẻ hoặc chỉ định mẫu đặt tên (`naming pattern`) bằng ký tự đại diện. Ký tự đại diện (`Wildcards` ) là các ký tự đặc biệt có thể được sử dụng để biểu diễn các ký tự hoặc tập hợp ký tự không xác định khi điều hướng hệ thống tệp Unix.
+## 7.1 Sao chép nhiều file cùng lúc
+Đối với bài tập này, bạn có thể kiểm tra các lệnh trong thư mục `shell-lesson-data/exercise-data`.
+
+Trong ví dụ dưới đây, `cp` thực hiện những gì khi được cung cấp nhiều tên tệp và một tên thư mục?
+```
+$ mkdir backup
+$ cp creatures/minotaur.dat creatures/unicorn.dat backup/
+```
+Vì được cung cấp nhiều hơn một tên tệp theo sau là tên thư mục (tức là thư mục phải là đối số cuối cùng), `cp` sẽ sao chép các tệp vào thư mục đó.
+
+Trong ví dụ dưới đây, `cp` sẽ làm gì khi được cung cấp ba hoặc nhiều tên tệp?
+```
+$ cd creatures
+$ ls -F
+
+//OUTPUT
+basilisk.dat  minotaur.dat  unicorn.dat
+BASH
+$ cp minotaur.dat unicorn.dat basilisk.dat
+```
+
+Vì được cung cấp ba tên tệp, `cp` sẽ đưa ra lỗi như lỗi bên dưới, vì nó đang mong đợi tên thư mục là đối số cuối cùng.
+```
+ERROR
+cp: target 'basilisk.dat' is not a directory
+```
+## 7.2 Using wildcards for accessing multiple files at once
+***(Sử dụng các ký tự đại diện để truy cập nhiều file cùng một lúc)***
+
+
+### 7.2.1 Wildcards (Các ký tự đại diện)
+>`Ký tự đại diện *`
+- Ký tự này biểu diễn cho `không` hoặc `nhiều ký tự khác`. Hãy xem xét thư mục `shell-lesson-data/exercise-data/alkanes`: `*.pdb` biểu diễn cho mọi tệp kết thúc bằng ‘`.pdb`’.
+
+- Mặt khác, `p*.pdb` chỉ biểu diễn cho `pentane.pdb` và `propane.pdb`, vì ‘`p`’ ở phía trước chỉ có thể biểu diễn cho tên tệp bắt đầu bằng chữ ‘`p`’. Nếu thư mục làm việc hiện tại là `alkanes` thì việc chạy lệnh sau:
+```
+$ ls *.pdb
+```
+Output
+```
+cubane.pdb  ethane.pdb  methane.pdb  octane.pdb  pentane.pdb  propane.pdb
+```
+>`Ký tự đại diện ?`
+- `?` cũng là ký tự đại diện, nhưng nó biểu diễn chính xác một ký tự. Vì vậy, `?ethane.pdb` có thể biểu diễn `methane.pdb` trong khi `*ethane.pdb` biểu diễn cả `ethane.pdb` và `methane.pdb`.
+
+>`Ký tự đại diện có thể được sử dụng kết hợp với nhau.`  
+
+Ví dụ,
+
+`???ane.pdb` biểu thị `cubane.pdb` `ethane.pdb` `octane.pdb`  
+
+Khi bạn gõ một lệnh có chứa `wildcard` (ví dụ: `*.txt`), shell sẽ tự động tìm tất cả tên file phù hợp với mẫu `wildcard` đó và thay thế `wildcard` bằng danh sách các file tương ứng trước khi lệnh được thực thi.(***`Tức là shell tự động mở rộng wildcard trước khi thực thi`***)
+
+✅ Ví dụ:
+
+- Trong thư mục có 3 file: `a.txt,` `b.txt`,` c.csv`,
+
+- Khi bạn chạy `ls *.txt`, shell sẽ mở rộng thành `ls a.txt b.txt`,
+
+- Nếu không có file nào phù hợp với `wildcard`, shell sẽ không mở rộng wildcard mà truyền nguyên biểu thức `wildcard` làm đối số cho lệnh.
+
+✅ Ví dụ:
+
+- Trong thư mục `alkanes` chỉ có các file `.pdb` (ví dụ: `methane.pdb`, `ethane.pdb`),
+
+- Khi bạn gõ `ls *.pdf`, shell không tìm thấy file `.pdf` nào,
+
+- Nó sẽ truyền nguyên chuỗi `*.pdf` vào lệnh `ls`,
+
+- `ls` cố gắng tìm file tên đúng là `*.pdf` (không phải `wildcard`) và báo lỗi:
+```
+ls: cannot access '*.pdf': No such file or directory
+```
+**Lưu ý rằng, Các lệnh như `ls, wc, cat` không nhìn thấy `wildcard` mà chỉ nhận danh sách file đã được shell mở rộng. Chính `shell` (Bash, Zsh, ...) làm nhiệm vụ mở rộng `wildcard`, không phải các chương trình khác.**
+
+✅ Ví dụ:
+
+- Khi chạy `wc -l *.txt`, shell mở rộng `*.txt` thành `a.txt b.txt` (nếu có 2 file),
+
+- Lệnh `wc -l` sẽ nhận đúng 2 đối số là `a.txt và b.txt`,
+
+- Nó không hề biết bạn đã dùng `wildcard *`.
+
+
+
+### 7.2.2 List filenames matching a pattern
+***Danh sách tệp output nào phù hợp với mỗi lệnh.***  
+Trong thư mục `alkanes` gồm các file: `cubane.pdb` `ethane.pdb methane.pdb` `octane.pdb pentane.pdb propane.pdb`. Ở trong thư mục `alkanes`, chạy lệnh `ls` với các ký tự đại diện được kết hợp khác nhau:  
+`ls *t*ane.pdb`
+
+- Output: ethane.pdb methane.pdb octane.pdb pentane.pdb
+
+`ls *t?ne.*`
+
+- Output: octane.pdb pentane.pdb
+
+`ls *t??ne.pdb`
+
+- Output: ethane.pdb methane.pdb
+
+`ls ethane.*`
+
+- Output: ethane.pdb
+
+### 7.2.3 More on Wildcards
+Sam có một thư mục chứa dữ liệu hiệu chuẩn (calibration data), tập dữ liệu (datasets) và mô tả của tập dữ liệu
+```
+├── 2015-10-23-calibration.txt
+├── 2015-10-23-dataset1.txt
+├── 2015-10-23-dataset2.txt
+├── 2015-10-23-dataset_overview.txt
+├── 2015-10-26-calibration.txt
+├── 2015-10-26-dataset1.txt
+├── 2015-10-26-dataset2.txt
+├── 2015-10-26-dataset_overview.txt
+├── 2015-11-23-calibration.txt
+├── 2015-11-23-dataset1.txt
+├── 2015-11-23-dataset2.txt
+├── 2015-11-23-dataset_overview.txt
+├── backup
+│   ├── calibration
+│   └── datasets
+└── send_to_bob
+    ├── all_datasets_created_on_a_23rd
+    └── all_november_files
+```
+Trước khi đi thực địa lần nữa, cô ấy muốn sao lưu dữ liệu và gửi một số tập dữ liệu cho đồng nghiệp Bob. Sam sử dụng các lệnh sau để hoàn thành công việc:
+```
+$ cp *dataset* backup/datasets
+$ cp ____calibration____ backup/calibration
+$ cp 2015-____-____ send_to_bob/all_november_files/
+$ cp ____ send_to_bob/all_datasets_created_on_a_23rd/
+```
+Giúp Sam bằng cách điền vào chỗ trống ở trên.
+
+Cấu trúc thư mục kết quả sẽ trông như thế này:
+```
+├── 2015-10-23-calibration.txt
+├── 2015-10-23-dataset1.txt
+├── 2015-10-23-dataset2.txt
+├── 2015-10-23-dataset_overview.txt
+├── 2015-10-26-calibration.txt
+├── 2015-10-26-dataset1.txt
+├── 2015-10-26-dataset2.txt
+├── 2015-10-26-dataset_overview.txt
+├── 2015-11-23-calibration.txt
+├── 2015-11-23-dataset1.txt
+├── 2015-11-23-dataset2.txt
+├── 2015-11-23-dataset_overview.txt
+├── backup
+│   ├── calibration
+│   │   ├── 2015-10-23-calibration.txt
+│   │   ├── 2015-10-26-calibration.txt
+│   │   └── 2015-11-23-calibration.txt
+│   └── datasets
+│       ├── 2015-10-23-dataset1.txt
+│       ├── 2015-10-23-dataset2.txt
+│       ├── 2015-10-23-dataset_overview.txt
+│       ├── 2015-10-26-dataset1.txt
+│       ├── 2015-10-26-dataset2.txt
+│       ├── 2015-10-26-dataset_overview.txt
+│       ├── 2015-11-23-dataset1.txt
+│       ├── 2015-11-23-dataset2.txt
+│       └── 2015-11-23-dataset_overview.txt
+└── send_to_bob
+    ├── all_datasets_created_on_a_23rd
+    │   ├── 2015-10-23-dataset1.txt
+    │   ├── 2015-10-23-dataset2.txt
+    │   ├── 2015-10-23-dataset_overview.txt
+    │   ├── 2015-11-23-dataset1.txt
+    │   ├── 2015-11-23-dataset2.txt
+    │   └── 2015-11-23-dataset_overview.txt
+    └── all_november_files
+        ├── 2015-11-23-calibration.txt
+        ├── 2015-11-23-dataset1.txt
+        ├── 2015-11-23-dataset2.txt
+        └── 2015-11-23-dataset_overview.txt
+```
+Giải đáp:
+```
+$ cp *calibration.txt backup/calibration
+$ cp 2015-11-* send_to_bob/all_november_files/
+$ cp *-23-dataset* send_to_bob/all_datasets_created_on_a_23rd/
+```
+
 
 # 8. Organizing Directories and Files (Tổ chức thư mục và tập tin)
+Jamie đang làm một dự án và cô ấy thấy rằng các tập tin của mình không được sắp xếp hợp lý:
+```
+$ ls -F
+```
+OUTPUT
+```
+analyzed/  fructose.dat    raw/   sucrose.dat
+```
+Các tệp `fructose.dat` và `sucrose.dat` chứa kết quả đầu ra từ phân tích dữ liệu của cô ấy. Cô ấy cần chạy lệnh nào được đề cập trong bài học này để các lệnh bên dưới tạo ra kết quả đầu ra như hiển thị dưới đây: 
+
+```
+$ ls -F
+```
+OUTPUT
+```
+analyzed/   raw/
+```
+```
+$ ls analyzed
+```
+OUTPUT
+```
+fructose.dat    sucrose.dat
+```
+Giải đáp:
+```
+$ mv *.dat analyzed
+```
+Jamie cần di chuyển các tệp `fructose.dat` và `sucrose.dat` của cô ấy đến thư mục `analyzed` . Shell sẽ mở rộng `*.dat` để khớp với tất cả các tệp .dat trong thư mục hiện tại. Sau đó, lệnh `mv` di chuyển danh sách các tệp `.dat` đến thư mục `‘analyzed’`.
+# 9. Reproduce a folder structure (Tái tạo cấu trúc thư mục)
+Bạn đang bắt đầu một thử nghiệm mới và muốn sao chép cấu trúc thư mục từ thử nghiệm trước đó để có thể thêm dữ liệu mới.
+
+Giả sử thử nghiệm trước đó nằm trong một thư mục có tên là `2016-05-18`, chứa một thư mục `data` , thư mục này lại chứa các thư mục có tên là `raw` và `processed` chứa các tệp dữ liệu. Mục tiêu là sao chép cấu trúc thư mục của thư mục `2016-05-18` vào một thư mục có tên là `2016-05-20` để cấu trúc thư mục cuối cùng của bạn trông như thế này:
+```
+2016-05-20/
+└── data
+   ├── processed
+   └── raw
+```
+Lệnh nào sau đây sẽ đạt được mục tiêu này? Các lệnh khác sẽ làm gì?
+
+BASH 1
+```
+$ mkdir 2016-05-20
+$ mkdir 2016-05-20/data
+$ mkdir 2016-05-20/data/processed
+$ mkdir 2016-05-20/data/raw
+```
+BASH 2
+```
+$ mkdir 2016-05-20
+$ cd 2016-05-20
+$ mkdir data
+$ cd data
+$ mkdir raw processed
+```
+BASH 3
+```
+$ mkdir 2016-05-20/data/raw
+$ mkdir 2016-05-20/data/processed
+```
+BASH 4
+```
+$ mkdir -p 2016-05-20/data/raw
+$ mkdir -p 2016-05-20/data/processed
+```
+BASH 5
+```
+$ mkdir 2016-05-20
+$ cd 2016-05-20
+$ mkdir data
+$ mkdir raw processed
+```
+**Giải đáp**:
+
+- Hai bộ lệnh đầu tiên đạt được mục tiêu này. Bộ lệnh đầu tiên sử dụng đường dẫn tương đối để tạo thư mục cấp cao nhất trước các thư mục con.
+
+- Bộ lệnh thứ ba sẽ đưa ra lỗi vì hành vi mặc định của `mkdir` sẽ không tạo thư mục con của một thư mục không tồn tại: các thư mục cấp trung gian phải được tạo trước.
+
+- Bộ lệnh thứ tư đạt được mục tiêu này. Hãy nhớ rằng, tùy chọn `-p`, theo sau là đường dẫn của một hoặc nhiều thư mục, sẽ khiến `mkdir` tạo bất kỳ thư mục con trung gian nào khi cần. (`p` là viết tắt của `parent` vì vậy nó cho phép `mkdir` tạo đồng thời cả thư mục cha và con trong 1 lệnh)
+
+- Bộ lệnh thứ 5 cùng tạo ra các thư mục '`raw`' và '`processed`' ở cùng cấp với thư mục 'data'. Nên không đạt yêu cầu.
+
+# 10. Bonus
+Trong Terminal của VSCode.
+Thay vì sử dụng 2 lệnh sau:
+- Lệnh đầu tiên tạo 1 file là `new_file.txt`
+- Lệnh thứ 2 là mở file đó trong cửa sổ VSCode.
+```
+$ touch new_file.txt
+$ code new_file.txt
+```
+Ta có thể chạy 1 lệnh là:
+```
+code new_file.txt
+```
+Khi đó sẽ có 1 cửa sổ với tên file `new_file.txt` hiện lên, nhưng file chưa tạo. Bây giờ khi bạn nhập nội dung vào rồi save file thì sẽ thấy tên file xuất hiện bên `left sidebar`.
+
+---
+> ⭐ **Theo dõi [kênh Threads](https://www.threads.com/@kaitaku.88) để đọc bài mới mỗi ngày!** ⭐  
+
+**[<== Bài Trước  ](link)          |[  Trang Chủ  ](./README.md)|           [  Bài Sau ==>](link)**
