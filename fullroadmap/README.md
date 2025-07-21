@@ -23,12 +23,15 @@
 > Ngày 10: [Command Line Basic](./Day10-CommandLineBasic.md)    
 > Ngày 10: [Shell vs Bash](./Day10-ShellVsBash.md)    
 > Ngày 10: [Unix Shell](./Day10-UnixShell.md)  
-> Ngày 11: []()  
-
-
-
+> Ngày 11: [Điều hướng file và thư mục](./Day11-NagigateFileDirectory.md)    
+> Ngày 12: [Làm việc với File và Thư mục](./Day12-WorkingWithFileDirectory.md)  
+> Ngày 13: [Cài đặt Git](./Day13-Git-Install.md)  
+> Ngày 14: [SSH Key Pairs](./Day14-SSHKeyPair.md)  
+> Ngày 15: [Hệ thống Git và Lệnh thường dùng](./Day15-GitSystem.md)  
 
 ### Nền tảng về HTML
+> Ngày 16: []() 
+
 ### Nền tảng về CSS
 ### Flexbox
 ### JavaScript cơ bản
