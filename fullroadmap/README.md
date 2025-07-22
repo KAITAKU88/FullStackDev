@@ -1,4 +1,65 @@
-# LỘ TRÌNH HỌC FULL STACK JS 
+# LỘ TRÌNH HỌC FULL STACK 
+
+```mermaid
+---
+title: Lộ trình Full Stack Dev
+---
+    flowchart TD
+    %% Nodes
+    
+    A1[Foundation 0.5月]
+    A2(HTML Basic 0.5月)
+    A3(CSS Basic 0.5月)
+    A4(JavaScript Basic 1月)
+    A5(HTML & CSS Intermediate 1月)
+    A6(JavaScript Intermediate 1月)
+    A7(HTML & CSS Advance 1月)
+    A8(JavaScript Advance 1月)
+    A9(React Library 1月)
+    A10(TypeSript 0.5月)
+    A11(Tailwind CSS 0.5月)
+    A12(Node.js & Express 1月)
+    A13(Database MongoDB, PostgreSQL 1月)
+    A14(Lynx Framework 1月)
+    A15(Rust lang 1月)
+    A16(Axum 1月)
+
+    %% Connections
+
+    subgraph Foundation
+    A1-->A2-->A3-->A4
+    end
+
+    Foundation==>Intermediate&Advance
+    
+    subgraph Intermediate&Advance
+    direction TB
+    A5-->A6-->A7-->A8
+    end
+    
+    Intermediate&Advance==>Tools-Frontend
+
+    subgraph Tools-Frontend
+    direction TB
+    A9-->A10-->A11
+    A14
+    end
+
+    Tools-Frontend==>Backend
+
+    subgraph Backend
+    direction TB
+    A12-->A13
+    A15-->A16
+    end
+
+    A13-.->A14
+    A14-.->A15
+ 
+
+
+```
+
 ## A. Khóa nền tảng
 
 ### Mở đầu
