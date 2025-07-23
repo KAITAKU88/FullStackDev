@@ -60,7 +60,7 @@ title: Lộ trình Full Stack Dev
 
 ```
 
-## A. Khóa nền tảng
+## A. **Khóa nền tảng**
 
 ### Mở đầu
 > Ngày 01: [Nhật ký tự học Full Stack](./Day01-Diary.md)  
@@ -104,10 +104,27 @@ title: Lộ trình Full Stack Dev
 > Ngày 76-77-78 : [Dự án Calculator]  
 
 ## B. Intermediate HTML and CSS
-### Intermediate HTML Concepts
+### Intermediate HTML Concepts (1 day)
 > Ngày 79: [Introduction](./Day79-IntroductionHTML-CSSIntermediate.md)  
 > Ngày 79: [Introduction với ví dụ kèm theo](./Day79-Introduction-with-example.md)
 
-### Intermediate CSS Concepts
-### Forms
-### Grid
+### Intermediate CSS Concepts (3 day)
+### Forms (1 day)
+### Grid (2 day)
+
+
+## C. **JAVASCRIPT**
+## D. **Advanced HTML and CSS**
+## E. **React**
+## F. **TypeScript**
+## G. **Tailwind CSS**
+## H. **Node.js + Express**
+## I. **Database (MongoDB, PostgreSQL)**
+## J. **Lynx framework (cross-platform frontend)**
+## K. **Rust lang**
+## L. **Axum framework (backend)**
+## M. **Bổ sung freeCodeCamp.com**
+## N. **Bổ sung fullstackopen.com** 
+## O. **Kênh Video Youtube freeCodeCamp**
+## P. **Khóa Full Stack trên Udemy**
+## Q. **BỔ sung theo lộ trình roadmap.sh**
