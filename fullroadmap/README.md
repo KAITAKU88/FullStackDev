@@ -101,3 +101,13 @@ title: Lộ trình Full Stack Dev
 > Ngày 73: [Git Branching và Mergin căn bản](./Day72-GitBranchingBasics.md)  
 > Ngày 74: [Tạo pseudocode Diagram bằng Mermaid syntax](./Day74-PseudocodeDiagramMermaid.md)    
 > Ngày 75: [Cơ bản về Object trong JS](./Day75-ObjectBasics.md)  
+> Ngày 76-77-78 : [Dự án Calculator]  
+
+## B. Intermediate HTML and CSS
+### Intermediate HTML Concepts
+> Ngày 79: [Introduction](./Day79-IntroductionHTML-CSSIntermediate.md)  
+> Ngày 79: [Introduction với ví dụ kèm theo](./Day79-Introduction-with-example.md)
+
+### Intermediate CSS Concepts
+### Forms
+### Grid
