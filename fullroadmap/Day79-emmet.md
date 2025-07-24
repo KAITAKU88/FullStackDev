@@ -24,7 +24,7 @@ Emmet thường được tích hợp sẵn trong VS Code, cho phép bạn sử d
 *   Nhấp vào dấu cộng để thêm phím tắt bạn muốn cho hành động đó.
 
 **Một số phím tắt Emmet thực tế (Practical Keybindings) (khi đã cài đặt Emmet Keybindings của Andrés Gutiérrez):**
-*   **Cân bằng (Balance) (Outward/Inward):**
+#### 2.1 **Cân bằng (Balance) (Outward/Inward):**
     *   Mac: `Cmd + M Cmd + O` / `Cmd + M Cmd + I`
     *   Windows/Linux: ``Ctrl + M` `Ctrl + O`` / ``Ctrl + M` `Ctrl + I``  
     Tình huống: Chọn nhanh các phần tử HTML theo cấp độ. Code ban đầu:
@@ -50,8 +50,8 @@ Emmet thường được tích hợp sẵn trong VS Code, cho phép bạn sử d
 - Lần 4: Chọn `<nav>...</nav>`
 - Nhấn `Ctrl + M` `Ctrl + I` (Balance Inward): Thu hẹp lại từng cấp  
 > - Balance rất hữu ích khi làm việc với HTML phức tạp
-*   **Đánh giá biểu thức toán học (Evaluate Math Expression):**
-    *   Mac: `Cmd + M Cmd + =`
+#### 2.2  **Đánh giá biểu thức toán học (Evaluate Math Expression)**
+- Mac: `Cmd + M Cmd + =`
     *   Windows/Linux: `Ctrl + M Ctrl + =`
     Tình huống: Tính toán trực tiếp trong CSS. Code ban đầu:
     ```css
@@ -78,8 +78,9 @@ Emmet thường được tích hợp sẵn trong VS Code, cho phép bạn sử d
 
     Chọn `(100%-20*2)/3` → Nhấn `Ctrl + M Ctrl + =` → Kết quả: 20
     > - Math Expression tiết kiệm thời gian tính toán trong CSS
-*   **Đi đến cặp thẻ tương ứng (Go to Matching Pair):**
-    *   Mac: `Cmd + M Cmd + M`
+#### 2.3   **Đi đến cặp thẻ tương ứng (Go to Matching Pair):**
+
+ - Mac: `Cmd + M Cmd + M`
     *   Windows/Linux: `Ctrl + M Ctrl + M`
     Tình huống: Di chuyển nhanh giữa thẻ mở và đóng. Code ban đầu:
     ```html
@@ -100,8 +101,8 @@ Emmet thường được tích hợp sẵn trong VS Code, cho phép bạn sử d
     - Nhấn `Ctrl + M Ctrl + M`
     - Con trỏ sẽ nhảy đến thẻ mở gần nhất , khi nhấn `Ctrl + M Ctrl + M` tiếp thì con trỏ lại nhảy đến thẻ đóng tương ứng.
     >- Matching Pair giúp navigate nhanh trong file lớn
-*   **Xóa thẻ (Remove Tag):**
-    *   Mac: `Cmd + M Cmd + Backspace`
+#### 2.4   **Xóa thẻ (Remove Tag):**
+ - Mac: `Cmd + M Cmd + Backspace`
     *   Windows/Linux: `Ctrl + M Ctrl + Backspace`
     Tình huống: Loại bỏ thẻ wrapper không cần thiết.  
     Code ban đầu:
@@ -122,9 +123,11 @@ Emmet thường được tích hợp sẵn trong VS Code, cho phép bạn sử d
     <p>Important content that should stay</p>
     ```
     >- Remove Tag thường dùng khi refactor code
-*   **Chuyển đổi chú thích (Toggle Comment):**
-    *   Mac: `Cmd + M Cmd + /`
+#### 2.5   **Chuyển đổi chú thích (Toggle Comment):**
+
+  - Mac: `Cmd + M Cmd + /`
     *   Windows/Linux: `Ctrl + M Ctrl + /`
+
     Tình huống: Comment/Uncomment code HTML nhanh  
 **Code ban đầu:**
     ```html
@@ -151,11 +154,15 @@ Emmet thường được tích hợp sẵn trong VS Code, cho phép bạn sử d
     ```
     > Nếu chỉ sử dụng `Ctr /` thì chỉ có tác dụng trên 1 dòng 
     >- Toggle Comment nhanh hơn comment thông thường
-*   **Bao bọc bằng viết tắt (Wrap with Abbreviation):**
-    *   Mac: `Cmd + M Cmd + W`
-    *   Windows/Linux: `Ctrl + M Ctrl + W`
+
+#### 2.6   **Bao bọc bằng viết tắt (Wrap with Abbreviation):**
+- Mac: `Cmd + M Cmd + W`
+
+    Windows/Linux: `Ctrl + M Ctrl + W`  
     Tình huống: Chuyển danh sách text thành HTML list  
+
     **Code ban đầu:**  
+
     ```html 
     Home
     About
@@ -168,6 +175,7 @@ Emmet thường được tích hợp sẵn trong VS Code, cho phép bạn sử d
     - Chọn tất cả 5 dòng text  
     - Nhấn `Ctrl + M Ctrl + W`  
     - Nhập viết tắt: `ul>li*`  
+    - Ký tự `*` có nghĩa là chọn tất cả các phần tử 
     - Nhấn `Enter`  
 
     **Kết quả:**
@@ -180,8 +188,9 @@ Emmet thường được tích hợp sẵn trong VS Code, cho phép bạn sử d
         <li>Portfolio</li>
     </ul>
     ```
-    **Tình huống 2: Thêm container wrapper cho content có sẵn**b  
+    **Tình huống 2: Thêm container wrapper cho content có sẵn**    
     Code ban đầu:  
+
     ```html
     <h1>Page Title</h1>
     <p>Some content here</p>
@@ -195,6 +204,7 @@ Emmet thường được tích hợp sẵn trong VS Code, cho phép bạn sử d
     - Nhấn `Enter`
 
     **Kết quả:**
+
     ```html
     <div class="container">
         <div class="content">
@@ -206,6 +216,52 @@ Emmet thường được tích hợp sẵn trong VS Code, cho phép bạn sử d
     ```
 >- Wrap with Abbreviation tuyệt vời cho việc convert data, và hữu ích khi thêm structure 
     
+#### 2.7   **Xóa ký hiệu danh sách (Removing list markers):** 
+Khi sao chép văn bản có ký hiệu danh sách (ví dụ: `* Unordered item` hoặc `1. Ordered item`), bạn có thể thêm bộ lọc `|t` (pipe-t) vào cuối viết tắt (ví dụ: `ul.nav>li.nav-item$*>a|t`) để tự động loại bỏ các ký hiệu này khỏi nội dung được bao bọc.
+- Ví dụ:  
+```html
+//code ban đầu, khi paste vào có dấu *, 1. ở đầu dòng 
+* dòng 1
+1. Dòng 2
+* Dòng 3 
+```
+Nhấn Ctrl M Ctrl W rồi nhập: `ul.nav>li.nav-items$*|t` thì sẽ được:
+```html
+<ul class="nav">
+    <li class="nav-items1">dòng 1</li>
+    <li class="nav-items2">Dòng 2</li>
+    <li class="nav-items3">Dòng 3</li>
+</ul>
+```
+
+
+#### 2.8   **Kiểm soát vị trí đầu ra (Controlling output position):** 
+Mặc định, Emmet đặt nội dung gốc vào phần tử cuối cùng. Bạn có thể kiểm soát vị trí đầu ra bằng cách sử dụng trình giữ chỗ `$#` bên trong giá trị thuộc tính hoặc nút văn bản.
+
+- Ví dụ code ban đầu:
+```
+dong 1
+dong 2
+dong 3
+```
+- Ta nhấn `Ctrl M Ctrl W` rồi nhập: `ul>li[title=$#]*>{$#}+img[alt=$#]` rồi `Enter`. Kết quả sẽ như sau:
+```html
+<ul>
+    <li title="dong 1">
+        dong 1
+        <img src="" alt="dong 1">
+    </li>
+    <li title="dong 2">
+        dong 2
+        <img src="" alt="dong 2">
+    </li>
+    <li title="dong 3">
+        dong 3
+        <img src="" alt="dong 3">
+    </li>
+</ul>
+```
+
 
 ### 3. Các khái niệm cốt lõi về viết tắt (Abbreviation) trong Emmet
 
@@ -396,29 +452,8 @@ Emmet không chỉ hữu ích cho HTML mà còn cho CSS. Bạn có thể gõ cá
         *   Gõ `w10%` -> `width: 10%;`
 *   Có hàng trăm, thậm chí hàng nghìn bộ chọn CSS mà Emmet hỗ trợ. Intellisense trong VS Code thường hiển thị các gợi ý viết tắt của Emmet khi bạn gõ.
 
-### 5. Các hành động (Actions) và công cụ (Tools) hữu ích của Emmet
 
-#### 5.1. Bao bọc bằng viết tắt (Wrap with Abbreviation)
-Đây là một công cụ rất mạnh mẽ của Emmet.
-*   Nó nhận một viết tắt, mở rộng nó và đặt nội dung hiện được chọn vào phần tử cuối cùng của đoạn mã được tạo.
-*   Nếu không có lựa chọn nào, hành động sẽ tự động gọi "Match Tag Pair" để bao bọc phần tử ngữ cảnh.
-*   **Ví dụ:** Nếu bạn có `<p>Hello world</p>` và con trỏ ở bên trong thẻ `<p>`, sau đó chạy hành động "Wrap with Abbreviation" và nhập `.wrapper>h1{Title}+.content`, bạn sẽ nhận được cấu trúc mới bao bọc nội dung `Hello world`.
-*   **Bao bọc các dòng riêng lẻ (Wrapping individual lines):** Rất hữu ích khi bạn cần bao bọc nhiều dòng văn bản bằng các thẻ HTML (ví dụ: mỗi đoạn văn bản bằng thẻ `<p>` hoặc danh sách các mục menu bằng cấu trúc `<ul>/<li>`).
-    *   Bạn sử dụng toán tử `*` **mà không cần số** (ví dụ: `li*`) để Emmet hiểu rằng phần tử được đánh dấu sẽ lặp lại theo số lượng dòng được bao bọc.
-    *   **Ví dụ:** Chọn các dòng văn bản và nhập `nav>ul.nav>li.nav-item$*>a`.
-*   **Xóa ký hiệu danh sách (Removing list markers):** Khi sao chép văn bản có ký hiệu danh sách (ví dụ: `* Unordered item` hoặc `1. Ordered item`), bạn có thể thêm bộ lọc `|t` (pipe-t) vào cuối viết tắt (ví dụ: `ul.nav>li.nav-item$*>a|t`) để tự động loại bỏ các ký hiệu này khỏi nội dung được bao bọc.
-*   **Kiểm soát vị trí đầu ra (Controlling output position):** Mặc định, Emmet đặt nội dung gốc vào phần tử cuối cùng. Bạn có thể kiểm soát vị trí đầu ra bằng cách sử dụng trình giữ chỗ `$#` bên trong giá trị thuộc tính hoặc nút văn bản.
-    *   **Ví dụ:** `ul>li[title=$#]*>{$#}+img[alt=$#]`.
 
-#### 5.2. Xóa thẻ (Remove Tag)
-Hành động này nhanh chóng xóa một thẻ được tìm thấy bởi hành động "Balance" từ vị trí con trỏ hiện tại và điều chỉnh thụt lề.
-*   **Ví dụ:** Nếu con trỏ ở trong một thẻ `div` bao bọc nhiều nội dung, "Remove Tag" sẽ xóa thẻ `div` đó.
-*   Nó sử dụng "HTML Matcher" nội bộ, nên có thể hoạt động trong cả các cú pháp không phải HTML.
-
-#### 5.3. Các công cụ khác của Emmet
-*   **Emmet LiveStyle:** Công cụ chỉnh sửa hai chiều thời gian thực cho CSS, LESS và SCSS.
-*   **Emmet Re:view:** Cách nhanh chóng và dễ dàng để kiểm tra thiết kế đáp ứng (responsive design) song song.
-*   **Emmet Live (tiện ích mở rộng của Yurii Semeniuk):** Mở rộng các viết tắt Emmet của bạn một cách linh hoạt trong khi bạn gõ. Nó có thể liên tục tạo cấu trúc HTML tương ứng khi bạn chỉnh sửa các viết tắt của Emmet.
 
 Tham khảo thêm "cheat sheet" của Emmet để làm quen với nhiều cách sử dụng khác nhau.
 
@@ -426,6 +461,7 @@ Tham khảo thêm "cheat sheet" của Emmet để làm quen với nhiều cách 
 
 ## Tài liệu phải đọc khi ĐÓNG CỌC LẦN 2
 - https://www.theodinproject.com/lessons/node-path-intermediate-html-and-css-emmet  
+-**[Tham khảo bài này](./Day79-emmet-thamKhao.md)**
 - https://docs.emmet.io/actions/wrap-with-abbreviation/  
 - https://docs.emmet.io/actions/remove-tag/  
 - https://www.youtube.com/watch?v=V8vizNQKtx0  

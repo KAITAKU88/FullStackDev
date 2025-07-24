@@ -199,10 +199,4 @@ v-for="item in items" :key="item.id"
 ### 13. Tài nguyên học tập
 
 - **Emmet Cheat Sheet:** https://docs.emmet.io/cheat-sheet/
-- **Interactive Emmet:** Các tool online để practice
-- **VS Code Emmet Documentation:** Tài liệu chính thức
-- **Community snippets:** Các snippet do cộng đồng chia sẻ
 
-## Kết luận
-
-Tài liệu gốc đã rất tốt và toàn diện. Những bổ sung này sẽ giúp người dùng có cái nhìn hoàn chỉnh hơn về Emmet và tận dụng tối đa sức mạnh của công cụ này trong việc phát triển web.
