@@ -106,7 +106,8 @@ title: Lộ trình Full Stack Dev
 ## B. Intermediate HTML and CSS
 ### Intermediate HTML Concepts (1 day)
 > Ngày 79: [Introduction](./Day79-IntroductionHTML-CSSIntermediate.md)  
-> Ngày 79: [Introduction với ví dụ kèm theo](./Day79-Introduction-with-example.md)
+> Ngày 79: [Introduction với ví dụ kèm theo](./Day79-Introduction-with-example.md)  
+> Ngày 79: [Emmet ](./Day79-emmet.md)   
 
 ### Intermediate CSS Concepts (3 day)
 ### Forms (1 day)
