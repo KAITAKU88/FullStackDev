@@ -2,17 +2,6 @@
 > Chỉ cần xem qua cho quen mắt để biết xem là chúng ta sẽ cần học những gì. KHông yêu cầu phải ghi nhớ điều gì ở bài này, vì sẽ học trong các bài sau.
 
 ---
-Chào bạn, dưới đây là tài liệu tổng hợp và giải thích chi tiết về HTML và CSS, được biên soạn dựa trên các nguồn bạn đã cung cấp, với mục tiêu giúp bạn hiểu rõ hơn về các khái niệm và cách sử dụng chúng. Các thuật ngữ chuyên ngành sẽ được giữ nguyên bằng tiếng Anh trong dấu ngoặc đơn `()` để bạn tiện tra cứu.
-
----
-
-## Tổng quan về HTML và CSS: Nền tảng xây dựng trang web
-
-Tài liệu này sẽ đi sâu vào hai ngôn ngữ nền tảng của phát triển web: HTML và CSS. **HTML** (`HyperText Markup Language`) là ngôn ngữ dùng để **cấu trúc nội dung** trên web, xác định các phần tử như đoạn văn, tiêu đề, hình ảnh, liên kết, v.v.. Trong khi đó, **CSS** (`Cascading Style Sheets`) là ngôn ngữ được sử dụng để **mô tả kiểu dáng** của tài liệu, kiểm soát cách các phần tử HTML hiển thị trên màn hình, như màu sắc, font chữ, bố cục và hiệu ứng.
-
-Việc nắm vững cả HTML và CSS là cực kỳ quan trọng để bạn có thể tái tạo bất kỳ thiết kế web nào và làm cho các sản phẩm của mình trở nên nổi bật.
-
----
 
 ## I. HTML: Cấu trúc nội dung web
 
@@ -168,7 +157,7 @@ Các phần tử phân đoạn nội dung (`content sectioning elements`) cho ph
 
 ### 3. Cách sử dụng HTML
 
-Bạn có thể tham khảo tài liệu về các phần tử HTML để có cái nhìn tổng quan về những phần tử có sẵn. Bạn không cần phải ghi nhớ tất cả, nhưng việc lướt qua sẽ giúp bạn làm quen và hiểu rõ hơn về chúng khi học sâu hơn.
+Bạn có thể tham khảo về các phần tử HTML ở trên để có cái nhìn tổng quan về những phần tử có sẵn. Bạn không cần phải ghi nhớ tất cả, nhưng việc lướt qua sẽ giúp bạn làm quen và hiểu rõ hơn về chúng khi học sâu hơn.
 
 ---
 
