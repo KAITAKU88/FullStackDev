@@ -15,7 +15,8 @@ Emmet thường được tích hợp sẵn trong VS Code, cho phép bạn sử d
 
 **Cài đặt Emmet Keybindings:**
 *   Mở **VS Code Quick Open** (Ctrl+P trên Windows/Linux).
-*   Dán lệnh sau và nhấn Enter: `ext install gutierrezandres.emmet-keybindings`.
+*   Dán lệnh sau và nhấn Enter: `ext install agutierrezr.emmet-keybindings`.
+> ![](../fullroadmap/images/emmet-Keybinding.png)
 
 **Thiết lập phím tắt tùy chỉnh trong VS Code:**
 *   Mở cửa sổ phím tắt (keyboard shortcuts) bằng cách nhấn **Cmd + K** sau đó **Cmd + S** trên Mac, hoặc **Ctrl + K** sau đó **Ctrl + S** trên Windows/Linux.
@@ -25,29 +26,186 @@ Emmet thường được tích hợp sẵn trong VS Code, cho phép bạn sử d
 **Một số phím tắt Emmet thực tế (Practical Keybindings) (khi đã cài đặt Emmet Keybindings của Andrés Gutiérrez):**
 *   **Cân bằng (Balance) (Outward/Inward):**
     *   Mac: `Cmd + M Cmd + O` / `Cmd + M Cmd + I`
-    *   Windows/Linux: `Ctrl + M Ctrl + O` / `Ctrl + M Ctrl + I`
+    *   Windows/Linux: ``Ctrl + M` `Ctrl + O`` / ``Ctrl + M` `Ctrl + I``  
+    Tình huống: Chọn nhanh các phần tử HTML theo cấp độ. Code ban đầu:
+    ```html
+    <div class="container">
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>  
+    ```
+    Sử dụng:
+
+- Đặt con trỏ tại từ "Home"
+- Nhấn Ctrl + M Ctrl + O (Balance Outward) lần lượt:
+- Lần 1: Chọn `<a href="#">Home</a>`
+- Lần 2: Chọn `<li><a href="#">Home</a></li>`
+- Lần 3: Chọn toàn bộ `<ul>...</ul>`
+- Lần 4: Chọn `<nav>...</nav>`
+- Nhấn `Ctrl + M` `Ctrl + I` (Balance Inward): Thu hẹp lại từng cấp  
+> - Balance rất hữu ích khi làm việc với HTML phức tạp
 *   **Đánh giá biểu thức toán học (Evaluate Math Expression):**
-    *   Mac: `Cmd + M Cmd + E`
-    *   Windows/Linux: `Ctrl + M Ctrl + E`
+    *   Mac: `Cmd + M Cmd + =`
+    *   Windows/Linux: `Ctrl + M Ctrl + =`
+    Tình huống: Tính toán trực tiếp trong CSS. Code ban đầu:
+    ```css
+    .container {
+        width: 1200px;
+        padding: 20px;
+        /* Muốn tính content width = 1200 - (20*2) */
+        max-width: 1200-20*2px;
+    }
+    ```
+    Sử dụng:
+
+    Chọn biểu thức `1200-20*2`
+    Nhấn `Ctrl + M Ctrl + =` 
+    Kết quả: `1160`
+
+    Ví dụ khác:
+    ```css
+    .grid-item {
+        /* Tính width cho 3 cột với gap 20px */
+        width: (100%-20*2)/3%;
+    }
+    ```
+
+    Chọn `(100%-20*2)/3` → Nhấn `Ctrl + M Ctrl + =` → Kết quả: 20
+    > - Math Expression tiết kiệm thời gian tính toán trong CSS
 *   **Đi đến cặp thẻ tương ứng (Go to Matching Pair):**
     *   Mac: `Cmd + M Cmd + M`
     *   Windows/Linux: `Ctrl + M Ctrl + M`
+    Tình huống: Di chuyển nhanh giữa thẻ mở và đóng. Code ban đầu:
+    ```html
+    <div class="wrapper">
+        <section class="content">
+            <article>
+                <h1>Title</h1>
+                <p>Long content here...</p>
+                <!-- 50 dòng code ở giữa -->
+                <footer>Footer content</footer>
+            </article>
+        </section>
+    </div>
+    ```
+    Sử dụng:
+
+    - Đặt con trỏ tại 1 nơi nào đó trong đoạn code 
+    - Nhấn `Ctrl + M Ctrl + M`
+    - Con trỏ sẽ nhảy đến thẻ mở gần nhất , khi nhấn `Ctrl + M Ctrl + M` tiếp thì con trỏ lại nhảy đến thẻ đóng tương ứng.
+    >- Matching Pair giúp navigate nhanh trong file lớn
 *   **Xóa thẻ (Remove Tag):**
     *   Mac: `Cmd + M Cmd + Backspace`
     *   Windows/Linux: `Ctrl + M Ctrl + Backspace`
+    Tình huống: Loại bỏ thẻ wrapper không cần thiết.  
+    Code ban đầu:
+    ```html
+    <div class="unnecessary-wrapper">
+        <h1>Important Title</h1>
+        <p>Important content that should stay</p>
+    </div>
+    ```
+    Sử dụng:
+
+    - Đặt con trỏ bên trong thẻ div  
+    - Nhấn Ctrl + M Ctrl + Backspace
+
+    Kết quả:  
+    ```html
+    <h1>Important Title</h1>
+    <p>Important content that should stay</p>
+    ```
+    >- Remove Tag thường dùng khi refactor code
 *   **Chuyển đổi chú thích (Toggle Comment):**
     *   Mac: `Cmd + M Cmd + /`
     *   Windows/Linux: `Ctrl + M Ctrl + /`
-*   **Bao bọc các dòng riêng lẻ bằng viết tắt (Wrap Individual Lines with Abbreviation):**
-    *   Mac: `Cmd + M Cmd + L`
-    *   Windows/Linux: `Ctrl + M Ctrl + L`
+    Tình huống: Comment/Uncomment code HTML nhanh  
+**Code ban đầu:**
+    ```html
+    <nav class="main-navigation">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+        </ul>
+    </nav>
+    ```
+    **Sử dụng:**
+
+    - Đặt con trỏ trong thẻ `<nav>`  
+    - Nhấn `Ctrl + M Ctrl + /`   
+
+    **Kết quả:**
+    ```html
+    <!-- <nav class="main-navigation">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+        </ul>
+    </nav> -->
+    ```
+    > Nếu chỉ sử dụng `Ctr /` thì chỉ có tác dụng trên 1 dòng 
+    >- Toggle Comment nhanh hơn comment thông thường
 *   **Bao bọc bằng viết tắt (Wrap with Abbreviation):**
-    *   Mac: `Cmd + M Ctrl + W`
+    *   Mac: `Cmd + M Cmd + W`
     *   Windows/Linux: `Ctrl + M Ctrl + W`
-*   **Tăng/giảm giá trị (Increment/Decrement):**
-    *   `+0.1`: `Alt + Cmd + M Alt + Cmd + ↑/↓` (Mac), `Ctrl + Alt + M Ctrl + Alt + ↑/↓` (Win/Linux)
-    *   `+1`: `Cmd + M Cmd + ↑/↓` (Mac), `Ctrl + M Ctrl + ↑/↓` (Win/Linux)
-    *   `+10`: `Shift + Cmd + M Shift + Cmd + ↑/↓` (Mac), `Ctrl + Shift + M Ctrl + Shift + ↑/↓` (Win/Linux)
+    Tình huống: Chuyển danh sách text thành HTML list  
+    **Code ban đầu:**  
+    ```html 
+    Home
+    About
+    Services
+    Contact
+    Portfolio
+    ```
+    **Sử dụng:**
+
+    - Chọn tất cả 5 dòng text  
+    - Nhấn `Ctrl + M Ctrl + W`  
+    - Nhập viết tắt: `ul>li*`  
+    - Nhấn `Enter`  
+
+    **Kết quả:**
+    ```html
+    <ul>
+        <li>Home</li>
+        <li>About</li>
+        <li>Services</li>
+        <li>Contact</li>
+        <li>Portfolio</li>
+    </ul>
+    ```
+    **Tình huống 2: Thêm container wrapper cho content có sẵn**b  
+    Code ban đầu:  
+    ```html
+    <h1>Page Title</h1>
+    <p>Some content here</p>
+    <button>Click me</button>
+    ```
+    ***Sử dụng:***
+
+    - Chọn tất cả 3 dòng code
+    - Nhấn `Ctrl + M Ctrl + W`
+    - Nhập viết tắt: `div.container>div.content`
+    - Nhấn `Enter`
+
+    **Kết quả:**
+    ```html
+    <div class="container">
+        <div class="content">
+            <h1>Page Title</h1>
+            <p>Some content here</p>
+            <button>Click me</button>
+        </div>
+    </div>
+    ```
+>- Wrap with Abbreviation tuyệt vời cho việc convert data, và hữu ích khi thêm structure 
+    
 
 ### 3. Các khái niệm cốt lõi về viết tắt (Abbreviation) trong Emmet
 
@@ -191,7 +349,7 @@ Sử dụng dấu cộng (`+`) để tạo các phần tử ngang hàng (ở cù
 
 #### 3.10. Ví dụ phức tạp
 *   **Cấu trúc tài liệu hoàn chỉnh:**
-    *   Gõ `header>h2{Heading}+nav>ul>li*5>a{Link $}+main+footer`
+    *   Gõ `(header>h2{Heading}+nav>ul>li*5>a[href=""]{Link $})+main+footer`
     *   Kết quả:
         ```html
         <header>
@@ -210,7 +368,7 @@ Sử dụng dấu cộng (`+`) để tạo các phần tử ngang hàng (ở cù
         <footer></footer>
         ```
 *   **Tạo biểu mẫu (Form):**
-    *   Gõ `form[method=post]>div.group>(label+input:text)+(label+input:number)`
+    *   Gõ `form[method=post]>div.group*2>(label[for=]+input[type=text name id])`
     *   Kết quả:
         ```html
         <form method="post">

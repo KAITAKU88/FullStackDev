@@ -1,0 +1,13 @@
+    .box {
+        width: 199px;
+        height: 150px;
+        margin: 10px;
+        font-size: 16px;
+        opacity: 0.8;
+        position: relative;
+        background: #000;
+        background-color: #fff;
+        width: 10px;
+        height: 10em;
+        width: 10%;
+    }
