@@ -1,4 +1,4 @@
-# Hiểu thêm về SSH Key Pairs
+# Day 14 - Hiểu thêm về SSH Key Pairs
 > Mã hóa bất đối xứng, Cặp khóa SSH 
 
 > [!Xem video](https://www.youtube.com/watch?v=AQDCe585Lnc) 

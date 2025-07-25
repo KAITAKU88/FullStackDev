@@ -1,4 +1,4 @@
-# LÀM VIỆC VỚI FILE VÀ THƯ MỤC 
+# Day 12- LÀM VIỆC VỚI FILE VÀ THƯ MỤC 
 > **Bài rất dài, nhưng rất hay**
 >>- Tạo thư mục
 >>- Tạo file

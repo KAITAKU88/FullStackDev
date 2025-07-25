@@ -1,4 +1,4 @@
-# **Cài đặt Git** Hệ thống quản lý phiên bản (version control system)
+# **Day 13 - Cài đặt Git** Hệ thống quản lý phiên bản (version control system)
 
 > **Git** là một hệ thống kiểm soát phiên bản (**version control system**) rất phổ biến. Bạn sẽ trở nên rất quen thuộc với phần mềm này trong suốt quá trình học, vì vậy đừng quá lo lắng về việc hiểu nó tại thời điểm này. Có nhiều bài học tập trung vào Git sau này trong chương trình.
 
