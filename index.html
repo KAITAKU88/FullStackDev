@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Responsive SVG</title>
+  <style>
+    .responsive-svg {
+      width: 100%;
+      height: auto;
+      max-width: 500px;
+    }
+
+    /* Maintain aspect ratio */
+    .svg-container {
+      position: relative;
+      width: 100%;
+      height: 0;
+      padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    }
+
+    .svg-container svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: #f0f0f0;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="svg-container responsive-svg">
+    <svg viewBox="0 0 160 90" xmlns="http://www.w3.org/2000/svg">
+      <rect width="160" height="90" fill="#3498db" />
+      <circle cx="80" cy="45" r="30" fill="#e74c3c" />
+      <text x="80" y="50" font-size="12" text-anchor="middle" fill="white">Responsive SVG</text>
+    </svg>
+  </div>
+
+</body>
+</html>

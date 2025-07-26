@@ -109,6 +109,8 @@ title: Lộ trình Full Stack Dev
 > Ngày 79: [Introduction](./Day79-IntroductionHTML-CSSIntermediate.md)  
 > Ngày 79: [Introduction với ví dụ kèm theo](./Day79-Introduction-with-example.md)  
 > Ngày 79: [Emmet](./Day79-emmet.md)   
+> Ngày 80: [SVGs](./Day80-SVG.md)  
+> Ngày 81: [Table](./Day81-Table.md)  
 
 ### Intermediate CSS Concepts (3 day)
 ### Forms (1 day)

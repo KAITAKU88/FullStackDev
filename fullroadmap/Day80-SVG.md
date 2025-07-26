@@ -1,4 +1,5 @@
 # Tài liệu tổng hợp về SVG (Scalable Vector Graphics)
+> Chỉ cần đọc để hiểu.
 
 ## **`A. Tổng quan về SVG (Scalable Vector Graphics)`**
 
@@ -464,6 +465,7 @@ Mã SVG được rút gọn sẽ là:
 ```
 
 **Ví dụ nâng cao hơn - Morphing từ heart sang star:**
+- Vẫn sử dụng mã SVG ở trên, thêm class `morph-path` vào phần tử `<path>`.
 ```css
 .morph-path {
   d: path("M12,21.35l-1.45-1.32C5.4,15.36,2,12.28,2,8.5 C2,5.42,4.42,3,7.5,3c1.74,0,3.41,0.81,4.5,2.09C13.09,3.81,14.76,3,16.5,3 C19.58,3,22,5.42,22,8.5c0,3.78-3.4,6.86-8.55,11.54L12,21.35z");
@@ -542,9 +544,64 @@ Thêm `animation-delay` cho mỗi hình tròn (trừ hình đầu tiên) để t
 .shape:nth-child(5) { animation-delay: 400ms; }
 ```
 
+- Mã nguồn sẽ như thế này:
+```html
+<svg width="350" height="250">
+  <circle class="shape" />
+  <circle class="shape" />
+  <circle class="shape" />
+  <circle class="shape" />
+  <circle class="shape" />
+</svg>
+```
+
+```css
+.shape {
+  cy: 50; /* Tọa độ y của tâm */
+  r: 20;  /* Bán kính */
+}
+
+:root {
+  --color-1: #6e40aa;
+  --color-2: #4c6edb;
+  --color-3: #24aad8;
+  --color-4: #1ac7c2;
+  --color-5: #1ddea3;
+}
+
+.shape:nth-child(1) { cx: 60; fill: var(--color-1); }
+.shape:nth-child(2) { cx: 120; fill: var(--color-2); }
+.shape:nth-child(3) { cx: 180; fill: var(--color-3); }
+.shape:nth-child(4) { cx: 240; fill: var(--color-4); }
+.shape:nth-child(5) { cx: 300; fill: var(--color-5); }
+
+
+@keyframes moveCircle {
+  50% { 
+    cy: 150; 
+    r: 13; 
+  }
+}
+
+.shape {
+  /* ...các thuộc tính khác */
+  animation: moveCircle 1250ms ease-in-out both infinite;
+}
+
+.shape:nth-child(2) { animation-delay: 100ms; }
+.shape:nth-child(3) { animation-delay: 200ms; }
+.shape:nth-child(4) { animation-delay: 300ms; }
+.shape:nth-child(5) { animation-delay: 400ms; }
+```
+
 ### 3. Các ví dụ hoạt ảnh SVG khác
 
 #### Hoạt ảnh xoay (Rotation Animation)
+```html
+<svg class="rotating-element" height="220" width="300">
+  <path d="M150 10 L40 200 L260 200Z" />
+</svg>
+```
 ```css
 .rotating-element {
   transform-origin: center;
@@ -558,11 +615,21 @@ Thêm `animation-delay` cho mỗi hình tròn (trừ hình đầu tiên) để t
 ```
 
 #### Hoạt ảnh stroke-dasharray (Vẽ đường)
+```html
+  <svg width="200" height="200" viewBox="0 0 200 200">
+    <line x1="10" y1="100" x2="190" y2="100" class="draw-line" />
+    <path d="M10,100 C60,10 140,190 190,100" class="draw-line" /> 
+  </svg>
+```
+
 ```css
 .draw-line {
-  stroke-dasharray: 100;
+  stroke: #3498db;
+  stroke-width: 2;
+  fill: none;
+  stroke-dasharray: 10;
   stroke-dashoffset: 100;
-  animation: draw 2s ease-in-out forwards;
+  animation: draw 5s ease-in-out forwards;
 }
 
 @keyframes draw {
@@ -573,24 +640,44 @@ Thêm `animation-delay` cho mỗi hình tròn (trừ hình đầu tiên) để t
 ```
 
 #### Hoạt ảnh scale (Thu phóng)
+```html
+<svg width="100" height="100" viewBox="0 0 100 100">
+  <circle class="pulse-animation" cx="50" cy="50" r="30" fill="#e74c3c" />
+</svg>
+```
+
 ```css
 .pulse-animation {
-  animation: pulse 1.5s ease-in-out infinite;
+    animation: pulse 1.5s ease-in-out infinite;
+    transform-origin: center center;
 }
 
 @keyframes pulse {
-  0%, 100% { 
-    transform: scale(1); 
-    opacity: 1; 
-  }
-  50% { 
-    transform: scale(1.2); 
-    opacity: 0.7; 
-  }
+    0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+    }
+    50% {
+    transform: scale(1.2);
+    opacity: 0.7;
+    }
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #f0f0f0;
 }
 ```
 
 #### Hoạt ảnh màu sắc gradient
+```html
+<svg width="100" height="100" viewBox="0 0 100 100">
+  <circle class="color-changing" cx="50" cy="50" r="30" fill="#e74c3c" />
+</svg>
+```
 ```css
 .color-changing {
   animation: colorShift 3s ease-in-out infinite;
@@ -650,6 +737,15 @@ Thêm `animation-delay` cho mỗi hình tròn (trừ hình đầu tiên) để t
 ```
 
 ### 4. Responsive SVG
+```html
+  <div class="svg-container responsive-svg">
+    <svg viewBox="0 0 160 90" xmlns="http://www.w3.org/2000/svg">
+      <rect width="160" height="90" fill="#3498db" />
+      <circle cx="80" cy="45" r="30" fill="#e74c3c" />
+      <text x="80" y="50" font-size="12" text-anchor="middle" fill="white">Responsive SVG</text>
+    </svg>
+  </div>
+```
 ```css
 .responsive-svg {
   width: 100%;
@@ -705,4 +801,17 @@ Thêm `animation-delay` cho mỗi hình tròn (trừ hình đầu tiên) để t
 **Kết luận**
 
 SVG là một công nghệ mạnh mẽ cho việc tạo đồ họa vector có thể mở rộng và tương tác. Với khả năng kết hợp với CSS và JavaScript, SVG mở ra nhiều khả năng sáng tạo cho web developers. Hiểu rõ các khái niệm cơ bản và kỹ thuật nâng cao sẽ giúp bạn tận dụng tối đa tiềm năng của SVG trong các dự án web của mình.
+
+
+## Tài liệu phải đọc khi ĐÓNG CỌC LẦN 2
+1. https://www.theodinproject.com/lessons/node-path-intermediate-html-and-css-svg 
+
+## Công cụ:
+1. [Thư viên icon SVG 1](https://feathericons.com/)  
+2. [Thư viện icon SVG 2](https://fonts.google.com/icons)
+3. [Công cụ tạo SVGs](https://yqnn.github.io/svg-path-editor/)
+
+> ⭐ **Theo dõi [kênh Threads](https://www.threads.com/@kaitaku.88) để đọc bài mới mỗi ngày!** ⭐  
+
+**[<== Bài Trước  ](link)          |[  Trang Chủ  ](./README.md)|           [  Bài Sau ==>](link)**
 
