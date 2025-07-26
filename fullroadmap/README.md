@@ -91,7 +91,8 @@ title: Lộ trình Full Stack Dev
 > Ngày 15: [Hệ thống Git và Lệnh thường dùng](./Day15-GitSystem.md)  
 
 ### Nền tảng về HTML
-> Ngày 16: []() 
+> Ngày 16: [Giới thiệu về HTML](./Day16-HTMLIntroduce.md)   
+> Ngày 16: [HTML Element, Tag, Boilerplate](./Day16-HTML-tag-element-boilerplate.md)  
 
 ### Nền tảng về CSS
 ### Flexbox

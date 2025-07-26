@@ -1,6 +1,6 @@
 # Tài liệu tổng hợp về SVG (Scalable Vector Graphics)
 
-## Tổng quan về SVG (Scalable Vector Graphics)
+## **`A. Tổng quan về SVG (Scalable Vector Graphics)`**
 
 ### 1. SVG là gì?
 
@@ -43,9 +43,9 @@ Mặc dù SVG rất tuyệt vời, nhưng chúng không phải là giải pháp 
 - ✅ **Phù hợp với SVG**: Logo, biểu tượng, biểu đồ đơn giản, hình học
 - ❌ **Không phù hợp với SVG**: Ảnh chụp, hình ảnh có nhiều chi tiết phức tạp, texture
 
-## Giải phẫu một SVG (Anatomy of an SVG)
+## **`B. Giải phẫu một SVG (Anatomy of an SVG)`**
 
-Thông thường, bạn sẽ không tự tạo SVG từ đầu trong mã của mình. Thay vào đó, bạn sẽ tải xuống tệp hoặc sao chép mã từ một trang web hoặc từ một trình chỉnh sửa hình ảnh (như Adobe Illustrator và Figma). Tuy nhiên, việc hiểu các thành phần của SVG rất hữu ích khi bạn muốn chỉnh sửa chúng.
+Thông thường, **`bạn sẽ không tự tạo SVG`** từ đầu trong mã của mình. Thay vào đó, bạn sẽ tải xuống tệp hoặc sao chép mã từ một trang web hoặc từ một trình chỉnh sửa hình ảnh (như Adobe Illustrator và Figma). Tuy nhiên, việc hiểu các thành phần của SVG rất hữu ích khi bạn muốn chỉnh sửa chúng.
 
 Một số thuộc tính và phần tử chính của SVG bao gồm:
 
@@ -82,7 +82,7 @@ Một số thuộc tính và phần tử chính của SVG bao gồm:
 </svg>
 ```
 
-## Nhúng SVG (Embedding SVGs)
+## **`C. Nhúng SVG (Embedding SVGs)`**
 
 Có hai cách tiếp cận chính để đặt SVG vào tài liệu HTML của bạn: **liên kết** (linked) và **nội tuyến** (inline).
 
@@ -158,7 +158,7 @@ Có hai cách tiếp cận chính để đặt SVG vào tài liệu HTML của b
 
 *Lưu ý: Một số nhược điểm của việc nội tuyến mã SVG có thể được khắc phục khi bạn học các thư viện JavaScript phía máy khách (front-end JavaScript library) như React hoặc các công cụ xây dựng (build-tool) như webpack.*
 
-## Thuộc tính SVG trong CSS (SVG Properties in CSS)
+## **`D. Thuộc tính SVG trong CSS (SVG Properties in CSS)`**
 
 SVG có bộ phần tử, thuộc tính và thuộc tính riêng, đến mức mã SVG nội tuyến có thể trở nên dài và phức tạp. Bằng cách tận dụng CSS và một số tính năng sắp tới của đặc tả SVG 2, chúng ta có thể giảm bớt mã đó để có đánh dấu (markup) sạch hơn.
 
@@ -422,7 +422,7 @@ Các thuộc tính trình bày có thể được sử dụng làm thuộc tính
 #### Phần tử không phân loại (Uncategorized elements)
 `<clipPath>`, `<filter>`, `<foreignObject>`, `<script>`, `<style>`, `<view>`
 
-## Hoạt ảnh và Biến đổi hình dạng SVG (Animating SVG Properties & Shape Morphing)
+## **`E. Hoạt ảnh và Biến đổi hình dạng SVG (Animating SVG Properties & Shape Morphing)`**
 
 SVG cho phép tạo hoạt ảnh (animations) và biến đổi hình dạng (shape morphing) bằng CSS, sử dụng các thuộc tính và pseudo-class.
 
@@ -605,7 +605,7 @@ Thêm `animation-delay` cho mỗi hình tròn (trừ hình đầu tiên) để t
 }
 ```
 
-## Các kỹ thuật nâng cao với SVG
+## **`F. Các kỹ thuật nâng cao với SVG`**
 
 ### 1. Sử dụng Gradients
 ```html
@@ -674,7 +674,7 @@ Thêm `animation-delay` cho mỗi hình tròn (trừ hình đầu tiên) để t
 }
 ```
 
-## Best Practices và Tips
+## **`G. Best Practices và Tips`**
 
 ### 1. Tối ưu hóa SVG
 - Sử dụng các công cụ như SVGO để giảm kích thước file
