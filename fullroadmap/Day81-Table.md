@@ -1,6 +1,6 @@
 # Hướng dẫn toàn diện về Bảng HTML (HTML Tables)
 
-## Giới thiệu về Bảng HTML (Introduction to HTML Tables)
+## **`1. Giới thiệu về Bảng HTML (Introduction to HTML Tables)`**
 
 Bảng (table) là một tập hợp dữ liệu có cấu trúc được tạo thành từ các hàng (rows) và cột (columns), còn được gọi là **dữ liệu dạng bảng** (tabular data). Mục đích của bảng là cho phép bạn nhanh chóng và dễ dàng tra cứu các giá trị thể hiện mối liên hệ giữa các loại dữ liệu khác nhau, ví dụ như một người và tuổi của họ, hoặc lịch trình cho một hồ bơi địa phương. Bạn có thể hình dung bảng như một cách để mô tả và hiển thị dữ liệu có ý nghĩa trong một phần mềm bảng tính (spreadsheet software).
 
@@ -12,9 +12,9 @@ Bảng (table) là một tập hợp dữ liệu có cấu trúc được tạo 
 
 Một bảng được triển khai đúng cách sẽ được các công cụ hỗ trợ tiếp cận (accessibility tools) như trình đọc màn hình (screen readers) xử lý tốt, giúp cải thiện trải nghiệm cho cả người dùng có thị lực bình thường và người khiếm thị.
 
-**Điều quan trọng cần nhớ**: Bảng HTML được thiết kế và chỉ nên được sử dụng cho **dữ liệu dạng bảng**.
+> **`Điều quan trọng cần nhớ: Bảng HTML được thiết kế và chỉ nên được sử dụng cho **dữ liệu dạng bảng.`**
 
-## Cấu trúc cơ bản của Bảng HTML (Basic HTML Table Structure)
+## **`2. Cấu trúc cơ bản của Bảng HTML (Basic HTML Table Structure)`**
 
 Mọi nội dung của bảng đều được đặt trong các thẻ `<table></table>`. Bên trong thẻ `<table>`, bạn sẽ định nghĩa các hàng và ô.
 
@@ -76,7 +76,7 @@ Mọi nội dung của bảng đều được đặt trong các thẻ `<table></
 </table>
 ```
 
-## Thẻ và thuộc tính nâng cao để Cấu trúc và Tăng cường Khả năng tiếp cận
+## **`3. Thẻ và thuộc tính nâng cao để Cấu trúc và Tăng cường Khả năng tiếp cận`**
 
 ### 1. Thẻ `<caption>`
 
@@ -294,6 +294,17 @@ Thuộc tính `scope` có thể được thêm vào thẻ `<th>` để cho trìn
 - **`headers`**: Thuộc tính `headers` được sử dụng trên thẻ `<td>` hoặc `<th>` để liên kết nó với một hoặc nhiều ô tiêu đề bằng cách liệt kê các `id` của các thẻ `<th>` liên quan, cách nhau bằng dấu cách
 
 **Ví dụ về `id` và `headers`:**
+
+Trong HTML, các thuộc tính id và headers trong bảng (<table>) được dùng để cải thiện truy cập và hiểu dữ liệu cho các công cụ hỗ trợ, đặc biệt là trình đọc màn hình dành cho người khiếm thị.
+
+> **`id`**
+- Gán một định danh duy nhất cho các ô `<th>` (tiêu đề hàng hoặc cột).
+- Mục đích: Để các ô `<td>` có thể tham chiếu đến các ô tiêu đề liên quan thông qua thuộc tính headers.
+
+> **`headers`**
+- Dùng trong các ô `<td>` (ô dữ liệu) để liệt kê danh sách id của các ô `<th>` mô tả ý nghĩa của ô đó.
+- Giúp trình đọc màn hình biết được: “ô này thuộc về học sinh nào, môn nào, khối nào”. 
+
 ```html
 <table>
   <caption>Bảng điểm chi tiết học kỳ I</caption>
@@ -331,6 +342,25 @@ Thuộc tính `scope` có thể được thêm vào thẻ `<th>` để cho trìn
   </tbody>
 </table>
 ```
+Ví dụ:
+```html
+<td headers="an toan-ly-hoa toan">9.0</td>
+```
+
+Ô này chứa điểm môn Toán của học sinh Nguyễn Văn An, thuộc Khối tự nhiên.
+
+- `headers="an toan-ly-hoa toan"` nghĩa là:
+
+- `an → tên học sinh (hàng)`
+
+- `toan-ly-hoa → tiêu đề nhóm môn học (cột cha)`
+
+- `toan → tiêu đề môn cụ thể (cột con)`  
+
+Trình đọc màn hình khi đọc đến ô này sẽ thông báo:
+
+- `“Nguyễn Văn An, Khối tự nhiên, Toán, 9.0 điểm.”`
+
 
 ### 6. Thẻ `<col>` và `<colgroup>`
 
@@ -372,8 +402,9 @@ Thuộc tính `scope` có thể được thêm vào thẻ `<th>` để cho trìn
   </tbody>
 </table>
 ```
+> Chỉ có `<col>` và `<colgroup>`, không có `<row>` và `<rowgroup>` vì bản thân trong HTML đã có `<tr>` và có thể dùng `<thead>` `<tbody>` `<tfoot>` để nhóm các hàng lại. 
 
-## Tạo kiểu cho Bảng (Styling Tables)
+## **`4. Tạo kiểu cho Bảng (Styling Tables)`**
 
 Để các bảng HTML trở nên hiệu quả trên web, bạn cần cung cấp thông tin kiểu dáng bằng CSS, bên cạnh cấu trúc HTML vững chắc.
 
@@ -477,7 +508,7 @@ td, th {
 </table>
 ```
 
-## Khi nào nên và không nên sử dụng Bảng HTML
+## **`5. Khi nào nên và không nên sử dụng Bảng HTML`**
 
 ### ✅ Nên sử dụng bảng khi:
 Dữ liệu có tính chất **dạng bảng (tabular data)**, tức là thông tin được tổ chức một cách hợp lý theo hàng và cột.
@@ -594,7 +625,7 @@ Dữ liệu có tính chất **dạng bảng (tabular data)**, tức là thông 
 <footer>Footer</footer>
 ```
 
-## Các khái niệm khác về Bảng
+## **`6. Các khái niệm khác về Bảng`**
 
 ### 1. Bảng responsive (Responsive Tables)
 
@@ -1210,7 +1241,7 @@ function sortAdvancedTable(columnIndex) {
 </html>
 ```
 
-## Kết luận
+## **`7. Kết luận`**
 
 Việc hiểu rõ các phần tử HTML liên quan đến bảng và các thuộc tính của chúng, cùng với việc nắm vững cách sử dụng CSS để tạo kiểu và kiến thức về khả năng tiếp cận, sẽ giúp bạn xây dựng các bảng hiệu quả và thân thiện với người dùng trên web.
 
@@ -1225,7 +1256,7 @@ Việc hiểu rõ các phần tử HTML liên quan đến bảng và các thuộ
 
 Bảng HTML khi được sử dụng đúng cách sẽ mang lại trải nghiệm tuyệt vời cho người dùng và hỗ trợ tốt cho accessibility.
 
-## Tài liệu phải đọc khi ĐÓNG CỌC LẦN 2
+# **`Tài liệu phải đọc khi ĐÓNG CỌC LẦN 2`**
 1. https://www.theodinproject.com/lessons/node-path-intermediate-html-and-css-tables
 1. https://developer.mozilla.org/en-US/docs/Learn/HTML/Tables/Basics
 1. https://developer.mozilla.org/en-US/docs/Learn/HTML/Tables/Advanced

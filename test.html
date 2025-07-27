@@ -3,22 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-/* This will work with SVG 2 */
-        rect {
-            x : 0;
-            y: 30;
-            width: 100px;
-            height: 150px;
-            fill: #6e40aa;
-        }
-    </style>
+    <title>Table</title>
 </head>
 <body>
-    <svg width="170" height="170">
-        <rect />
-    </svg>
-
+<table>
+  <caption>Bảng báo cáo tài chính</caption>
+  <colgroup>
+    <col >
+    <col style="background: red " span="3">
+</colgroup>
+  <thead>
+    <tr>
+      <th>Mục</th>
+      <th>Quý 1</th>
+      <th>Quý 2</th>
+      <th>Tổng</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Doanh thu</td>
+      <td>1,000,000</td>
+      <td>1,200,000</td>
+      <td>2,200,000</td>
+    </tr>
+    <tr>
+      <td>Chi phí</td>
+      <td>800,000</td>
+      <td>900,000</td>
+      <td>1,700,000</td>
+    </tr>
+  </tbody>
+</table>
 </body>
 </html>
