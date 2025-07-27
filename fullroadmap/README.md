@@ -115,7 +115,8 @@ title: Lộ trình Full Stack Dev
 
 ### Intermediate CSS Concepts 
 > Ngày 81: [Default Style](./Day81-CSS-Default-Styles.md)
-> 
+> Ngày 82: [CSS Units](./Day82-CSS-Units.md)
+
 ### Forms (1 day)
 ### Grid (2 day)
 
