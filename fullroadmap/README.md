@@ -93,6 +93,7 @@ title: Lộ trình Full Stack Dev
 ### Nền tảng về HTML
 > Ngày 16: [Giới thiệu về HTML](./Day16-HTMLIntroduce.md)   
 > Ngày 16: [HTML Element, Tag, Boilerplate](./Day16-HTML-tag-element-boilerplate.md)  
+> Ngày 17: [Các phần tử HTML](./Day17-HtmlElements.md)
 
 ### Nền tảng về CSS
 ### Flexbox
@@ -105,14 +106,16 @@ title: Lộ trình Full Stack Dev
 > Ngày 76-77-78 : [Dự án Calculator]  
 
 ## B. Intermediate HTML and CSS
-### Intermediate HTML Concepts (1 day)
+### Intermediate HTML Concepts 
 > Ngày 79: [Introduction](./Day79-IntroductionHTML-CSSIntermediate.md)  
 > Ngày 79: [Introduction với ví dụ kèm theo](./Day79-Introduction-with-example.md)  
 > Ngày 79: [Emmet](./Day79-emmet.md)   
 > Ngày 80: [SVGs](./Day80-SVG.md)  
 > Ngày 81: [Table](./Day81-Table.md)  
 
-### Intermediate CSS Concepts (3 day)
+### Intermediate CSS Concepts 
+> Ngày 81: [Default Style](./Day81-CSS-Default-Styles.md)
+> 
 ### Forms (1 day)
 ### Grid (2 day)
 
