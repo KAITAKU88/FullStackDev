@@ -1,0 +1,25 @@
+table {
+  display: table;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-header {
+  display: table-header-group;
+  background-color: #dab1b1;
+  font-weight: bold;
+}
+
+.table-row {
+  display: table-row;
+}
+
+.table-row:nth-child(even) {
+  background-color: #787070;
+}
+
+.table-cell {
+  display: table-cell;
+  padding: 10px;
+  border: 1px solid #ddd;
+}

@@ -757,69 +757,76 @@ table>tr*3>td.item-${Item $}*4
   </tbody>
 </table>
 ```
+> **`Mình thường viết toàn bộ nội dung trước, sau đó sử dụng Emmet để tạo nhanh bảng.`**
 
 ### 3. Tạo bảng bằng JavaScript
 
-JavaScript cung cấp API `HTMLTableElement` để xử lý bảng một cách chuyên biệt.
+JavaScript cung cấp API `HTMLTableElement` để xử lý bảng một cách chuyên biệt.  
+
+> Có thể thực hành bài này nhiều lần để nắm các phương thức   
+
 
 **Ví dụ tạo bảng động:**
 ```html
-<div id="table-container"></div>
-
-<script>
-// Dữ liệu mẫu
+<!--Mã html-->
+<div class="table-container"></div>
+```
+```javascript
+//mã javascript 
+//Dữ liệu mẫu 
 const employees = [
-  { name: "Nguyễn Văn A", department: "IT", salary: 15000000 },
-  { name: "Trần Thị B", department: "HR", salary: 12000000 },
-  { name: "Lê Văn C", department: "Marketing", salary: 13000000 }
+    {name: "Nguyen van A", department: "IT", salary: 15000000},
+    {name: "Tran Thi B", department: "HR", salary: 12000000},
+    {name: "Le Van C", department: "MKT", salary: 13000000}
 ];
 
-// Tạo bảng
+//Tạo bảng 
 function createEmployeeTable(data) {
-  // Tạo phần tử table
-  const table = document.createElement('table');
-  table.className = 'employee-table';
-  
-  // Tạo caption
-  const caption = table.createCaption();
-  caption.textContent = 'Danh sách nhân viên';
-  
-  // Tạo header
-  const thead = table.createTHead();
-  const headerRow = thead.insertRow();
-  
-  const headers = ['Tên', 'Phòng ban', 'Lương (VNĐ)'];
-  headers.forEach(headerText => {
-    const th = document.createElement('th');
-    th.textContent = headerText;
-    headerRow.appendChild(th);
-  });
-  
-  // Tạo body
-  const tbody = table.createTBody();
-  
-  data.forEach(employee => {
-    const row = tbody.insertRow();
     
-    // Thêm dữ liệu vào từng ô
-    const nameCell = row.insertCell();
-    nameCell.textContent = employee.name;
-    
-    const deptCell = row.insertCell();
-    deptCell.textContent = employee.department;
-    
-    const salaryCell = row.insertCell();
-    salaryCell.textContent = employee.salary.toLocaleString('vi-VN');
-  });
-  
-  return table;
+    //Tạo phần tử table
+    const table = document.createElement('table');
+    table.className = 'employee-table';
+
+    //tạo caption
+    const caption = table.createCaption();
+    caption.textContent = 'Danh sách nhân viên';
+
+    //Tạo header
+    const thead = table.createTHead();
+    const headerrow = thead.insertRow();
+
+    const headers = ['Tên', 'Phòng ban', 'Lương VND'];
+    headers.forEach(headerText => {
+        const th = document.createElement('th');
+        th.textContent = headerText;
+        headerrow.appendChild(th);
+        
+    });
+
+    //Tạo body
+    const tbody = table.createTBody();
+    data.forEach(employee => {
+        const row = tbody.insertRow();
+
+        //Thêm dữ liệu vào từng ô 
+        const nameCell = row.insertCell();
+        nameCell.textContent = employee.name;
+        
+        const deptCell = row.insertCell();
+        deptCell.textContent = employee.department;
+
+        const salaryCell = row.insertCell();
+        salaryCell.textContent = employee.salary.toLocaleString('vi-VN');
+        
+    })
+
+    return table;
 }
 
-// Chèn bảng vào DOM
-const container = document.getElementById('table-container');
+//Chèn bảng vào DOM 
 const table = createEmployeeTable(employees);
+const container = document.querySelector(".table-container"); 
 container.appendChild(table);
-</script>
 ```
 
 ### 4. Sắp xếp và Tìm kiếm Bảng
@@ -828,7 +835,8 @@ Mặc dù HTML có thuộc tính `sortable` nhưng đã bị loại bỏ. Chức
 
 **Ví dụ tìm kiếm bảng đơn giản:**
 ```html
-<input type="text" id="searchInput" placeholder="Tìm kiếm..." onkeyup="searchTable()">
+<!-- mã html -->
+<input type="text" id="searchInput" placeholder="Tìm kiếm...">
 
 <table id="searchableTable">
   <thead>
@@ -856,35 +864,35 @@ Mặc dù HTML có thuộc tính `sortable` nhưng đã bị loại bỏ. Chức
     </tr>
   </tbody>
 </table>
+```
 
-<script>
-function searchTable() {
+```javascript
+//mã javascript
+document.addEventListener("DOMContentLoaded", function () {
   const input = document.getElementById("searchInput");
-  const filter = input.value.toUpperCase();
   const table = document.getElementById("searchableTable");
-  const tr = table.getElementsByTagName("tr");
-  
-  // Lặp qua tất cả các hàng (trừ header)
-  for (let i = 1; i < tr.length; i++) {
-    let txtValue = tr[i].textContent || tr[i].innerText;
-    if (txtValue.toUpperCase().indexOf(filter) > -1) {
-      tr[i].style.display = "";
-    } else {
-      tr[i].style.display = "none";
+
+  input.addEventListener("keyup", function () {
+    const filter = input.value.toUpperCase();
+    const tr = table.getElementsByTagName("tr");
+
+    for (let i = 1; i < tr.length; i++) {
+      const rowText = tr[i].textContent || tr[i].innerText;
+      tr[i].style.display = rowText.toUpperCase().includes(filter) ? "" : "none";
     }
-  }
-}
-</script>
+  });
+});
 ```
 
 **Ví dụ sắp xếp bảng:**
 ```html
+<!--mã html-->
 <table id="sortableTable">
   <thead>
     <tr>
-      <th onclick="sortTable(0)">Tên ↕</th>
-      <th onclick="sortTable(1)">Tuổi ↕</th>
-      <th onclick="sortTable(2)">Điểm ↕</th>
+      <th data-col="0">Tên ↕</th>
+      <th data-col="1">Tuổi ↕</th>
+      <th data-col="2">Điểm ↕</th>
     </tr>
   </thead>
   <tbody>
@@ -893,31 +901,39 @@ function searchTable() {
     <tr><td>Cường</td><td>28</td><td>7.8</td></tr>
   </tbody>
 </table>
+```
 
-<script>
-function sortTable(columnIndex) {
+```javascript
+//mã js 
+document.addEventListener("DOMContentLoaded", function () {
   const table = document.getElementById("sortableTable");
-  const tbody = table.querySelector('tbody');
-  const rows = Array.from(tbody.querySelectorAll('tr'));
-  
-  // Sắp xếp các hàng
-  rows.sort((a, b) => {
-    const aVal = a.cells[columnIndex].textContent.trim();
-    const bVal = b.cells[columnIndex].textContent.trim();
-    
-    // Kiểm tra nếu là số
-    if (!isNaN(aVal) && !isNaN(bVal)) {
-      return parseFloat(aVal) - parseFloat(bVal);
-    }
-    
-    // Sắp xếp theo chuỗi
-    return aVal.localeCompare(bVal);
+  const headers = table.querySelectorAll("th");
+
+  headers.forEach(th => {
+    th.addEventListener("click", function () {
+      const columnIndex = parseInt(th.dataset.col);
+      sortTable(columnIndex);
+    });
   });
-  
-  // Thêm lại các hàng đã sắp xếp
-  rows.forEach(row => tbody.appendChild(row));
-}
-</script>
+
+  function sortTable(columnIndex) {
+    const tbody = table.querySelector('tbody');
+    const rows = Array.from(tbody.querySelectorAll('tr'));
+
+    rows.sort((a, b) => {
+      const aVal = a.cells[columnIndex].textContent.trim();
+      const bVal = b.cells[columnIndex].textContent.trim();
+
+      if (!isNaN(aVal) && !isNaN(bVal)) {
+        return parseFloat(aVal) - parseFloat(bVal);
+      }
+
+      return aVal.localeCompare(bVal);
+    });
+
+    rows.forEach(row => tbody.appendChild(row));
+  }
+});
 ```
 
 ### 5. Khiến các phần tử ngữ nghĩa hoạt động như bảng
