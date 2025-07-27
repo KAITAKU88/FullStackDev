@@ -1,25 +1,11 @@
-table {
-  display: table;
-  width: 100%;
-  border-collapse: collapse;
+/* CÓ isolation trên root */
+#root {
+  isolation: isolate; /* Tạo root stacking context */
 }
 
-.table-header {
-  display: table-header-group;
-  background-color: #dab1b1;
-  font-weight: bold;
-}
+/* Bây giờ mọi z-index đều tương đối so với #root */
+.dropdown-menu { z-index: 1; }    /* Thấp nhất */
+.floating-ad { z-index: 2; }      /* Trung bình */
+.modal { z-index: 3; }            /* Cao nhất */
 
-.table-row {
-  display: table-row;
-}
-
-.table-row:nth-child(even) {
-  background-color: #787070;
-}
-
-.table-cell {
-  display: table-cell;
-  padding: 10px;
-  border: 1px solid #ddd;
-}
+/* Dễ quản lý và dự đoán hơn! */

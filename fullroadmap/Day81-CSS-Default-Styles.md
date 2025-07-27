@@ -1,4 +1,6 @@
-# CSS Reset Hiện Đại: Giải Thích Chi Tiết
+# CSS Reset Hiện Đại
+
+> ***`Trong bài học này sẽ có nhiều những kiến thức CSS nâng cao mà cho đến thời điểm hiện tại chúng ta chưa học đến. Tinh thần chung khi học 1 kiến thức là theo phương pháp Đóng cọc, tức là sẽ không phải chỉ học bài này 1 lần mà sẽ quay lại học làm nhiều lần nữa. Khi học lần tiếp theo là lúc chúng ta đã được trang bị nhiều kiến thức CSS hơn, ta lại bài này nhiều hơn.`***
 
 ## 1. Giới thiệu về CSS Reset
 
@@ -319,8 +321,17 @@ Kết quả: Có khoảng trống không cần thiết ở đầu và cuối car
 }
 ```
 
-**Ví dụ accordion trước đây (cần JavaScript phức tạp):**
+- Ví dụ ta có mã HTML như sau:
 ```html
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="test.css">
+ </head>
+ <body>
 <div class="accordion">
   <button class="accordion-trigger">Mở rộng</button>
   <div class="accordion-content">
@@ -329,8 +340,20 @@ Kết quả: Có khoảng trống không cần thiết ở đầu và cuối car
     <p>Chiều cao không xác định trước!</p>
   </div>
 </div>
+
+<script>
+  document.querySelectorAll('.accordion-trigger').forEach(button => {
+  button.addEventListener('click', () => {
+    const accordion = button.closest('.accordion');
+    accordion.classList.toggle('open');
+  });
+});
+</script>
+ </body>
+ </html>
 ```
 
+**Ví dụ accordion trước đây (cần JavaScript phức tạp):**
 ```css
 /* TRƯỚC interpolate-size - KHÔNG hoạt động */
 .accordion-content {
@@ -361,20 +384,27 @@ function toggleAccordion(accordion) {
 
 **Với interpolate-size - chỉ cần CSS:**
 ```css
-html { interpolate-size: allow-keywords; }
+/* Cho phép animate các giá trị như `height: auto` */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
 
+/* Accordion mặc định đóng */
 .accordion-content {
   height: 0;
   overflow: hidden;
   transition: height 0.3s ease;
 }
 
+/* Khi mở */
 .accordion.open .accordion-content {
-  height: auto; /* ✅ Hoạt động mượt mà! */
+  height: auto; /* ✅ Bây giờ có thể animate mượt */
 }
 ```
 
-**Ví dụ khác - Dropdown menu:**
+**Ví dụ khác animate chiều rộng của dropdown menu từ 0 đến max-content:**
 ```html
 <div class="dropdown">
   <button>Menu</button>
@@ -1282,3 +1312,16 @@ Bằng cách loại bỏ các vấn đề phổ biến từ `browser defaults` v
 6. ✅ **Keep evolving** - Cập nhật reset khi học được tricks mới
 
 CSS Reset không phải là "magic bullet" nhưng là một foundation tool quan trọng giúp developer có starting point tốt hơn để build modern web interfaces.
+
+
+## Tài liệu phải đọc khi ĐÓNG CỌC LẦN 2
+1. https://www.theodinproject.com/lessons/node-path-intermediate-html-and-css-default-styles
+2. https://css-tricks.com/reboot-resets-reasoning/
+3. https://mattbrictson.com/blog/css-normalize-and-reset
+4. https://www.joshwcomeau.com/css/custom-css-reset/
+5. https://browserdefaultstyles.com/
+6. https://fabulousgk.github.io/fabulous-styleboard/ 
+
+> ⭐ **Theo dõi [kênh Threads](https://www.threads.com/@kaitaku.88) để đọc bài mới mỗi ngày!** ⭐  
+
+**[<== Bài Trước  ](link)          |[  Trang Chủ  ](./README.md)|           [  Bài Sau ==>](link)**

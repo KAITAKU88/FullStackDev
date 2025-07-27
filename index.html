@@ -1,49 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
   <meta charset="UTF-8">
-  <title>Responsive SVG</title>
-  <style>
-    .responsive-svg {
-      width: 100%;
-      height: auto;
-      max-width: 500px;
-    }
-
-    /* Maintain aspect ratio */
-    .svg-container {
-      position: relative;
-      width: 100%;
-      height: 0;
-      padding-bottom: 56.25%; /* 16:9 aspect ratio */
-    }
-
-    .svg-container svg {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
-
-    body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      background: #f0f0f0;
-    }
-  </style>
-</head>
-<body>
-
-  <div class="svg-container responsive-svg">
-    <svg viewBox="0 0 160 90" xmlns="http://www.w3.org/2000/svg">
-      <rect width="160" height="90" fill="#3498db" />
-      <circle cx="80" cy="45" r="30" fill="#e74c3c" />
-      <text x="80" y="50" font-size="12" text-anchor="middle" fill="white">Responsive SVG</text>
-    </svg>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="test.css">
+ </head>
+ <body>
+<div id="root">
+  <div class="main-content">
+    <div class="sidebar">
+      <div class="dropdown">
+        <button>Menu</button>
+        <ul class="dropdown-menu">
+          <li>Item 1</li>
+          <li>Item 2</li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="article">
+      <div class="floating-ad" style="z-index: 999;">
+        Quảng cáo floating
+      </div>
+    </div>
   </div>
-
-</body>
-</html>
+  
+  <div class="modal" style="z-index: 1000;">
+    Modal quan trọng
+  </div>
+</div>
+</div>
+ </body>
+ </html>
