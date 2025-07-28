@@ -26,12 +26,13 @@ Việc lựa chọn đơn vị CSS phù hợp phụ thuộc vào ngữ cảnh c�
   padding: 0.625rem;   /* Tự động điều chỉnh theo tỷ lệ */
 }
 ```
-
+- Trong phần Setting của trình duyệt, vào Tab Appearance, đến phần Font size và thay đổi kích thước font để thấy sự khác biệt. 
 ## 1. Đơn vị Tuyệt đối (Absolute Units)
 
 Đơn vị tuyệt đối là những đơn vị có kích thước cố định, không thay đổi dựa trên bất kỳ yếu tố nào khác trên trang. Chúng cung cấp một kích thước chính xác và cố định cho các phần tử mà chúng được áp dụng.
 
-Các đơn vị tuyệt đối bao gồm: `cm` (centimeters), `mm` (millimeters), `Q` (quarter-millimeters), `in` (inches), `pc` (picas), `pt` (points), và `px` (pixels). Trong số này, **chỉ đơn vị `px` (pixel) nên được sử dụng trong thiết kế và phát triển web**. Các đơn vị còn lại phù hợp hơn cho việc in ấn.
+Các đơn vị tuyệt đối bao gồm: `cm` (centimeters), `mm` (millimeters), `Q` (quarter-millimeters), `in` (inches), `pc` (picas), `pt` (points), và `px` (pixels). 
+> **Trong số này, chỉ đơn vị `px` (pixel) nên được sử dụng trong thiết kế và phát triển web. Các đơn vị còn lại phù hợp hơn cho việc in ấn.**
 
 **Ví dụ so sánh các đơn vị tuyệt đối:**
 
@@ -72,6 +73,7 @@ Mặc dù `px` có vẻ dễ hiểu nhất, nhưng thực tế nó lại là m�
 /* Trên màn hình retina (2x), hộp này thực tế sẽ hiển thị bằng 200x200 pixel vật lý */
 /* Trên màn hình thường (1x), hộp này sẽ hiển thị bằng 100x100 pixel vật lý */
 ```
+- Mở công cụ Device Toolbar trong DevTools, chọn các thiết bị khác nhau thì sẽ thấy kích thước vật lý khác nhau.   
 
 *   Lý do cho sự khác biệt này là **các đơn vị tuyệt đối của CSS không nhất thiết giống với các đơn vị tương ứng trong thế giới thực**. Thay vào đó, chúng phụ thuộc vào **đơn vị neo (Anchor Unit)**.
     *   Nếu đầu ra dành cho in ấn hoặc độ phân giải tương tự như in ấn, **đơn vị vật lý** (`physical unit`) sẽ là đơn vị neo, nghĩa là CSS sẽ xuất ra các số đo bằng với thế giới thực (ví dụ: 1 CSS inch sẽ tương đương 1 inch khi đo bằng thước trên giấy in).
@@ -385,6 +387,7 @@ Các đơn vị `vh` và `vw` liên quan đến kích thước của **khung nh�
 ```
 
 *   **`vh` (Viewport Height):** `1vh` bằng **1% chiều cao của khung nhìn**.
+ - Tương tự như trên nếu height = 50% thì tức là chiều cao bằng 1 nửa so với phần tử cha. Còn height = 50vh thì có nghĩa là chiều cao bằng 1 nửa so với chiều cao viewport.
 
 **Ví dụ về vh:**
 
@@ -531,9 +534,9 @@ Các đơn vị `vh` và `vw` liên quan đến kích thước của **khung nh�
 
 ```html
 <div class="comparison">
-  <p class="px-width">Đoạn này giới hạn bằng px (400px)</p>
-  <p class="rem-width">Đoạn này giới hạn bằng rem (25rem)</p>
-  <p class="ch-width">Đoạn này giới hạn bằng ch (60ch)</p>
+  <p class="px-width">Đoạn này giới hạn bằng px (400px). Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam deleniti dolorum est iste saepe ipsam rem at magni cum itaque. Enim nam delectus eaque quisquam doloribus dignissimos consequatur, ipsa deleniti.</p>
+  <p class="rem-width">Đoạn này giới hạn bằng rem (25rem). Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam deleniti dolorum est iste saepe ipsam rem at magni cum itaque. Enim nam delectus eaque quisquam doloribus dignissimos consequatur, ipsa deleniti.</p>
+  <p class="ch-width">Đoạn này giới hạn bằng ch (60ch). Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam deleniti dolorum est iste saepe ipsam rem at magni cum itaque. Enim nam delectus eaque quisquam doloribus dignissimos consequatur, ipsa deleniti.</p>
 </div>
 ```
 
@@ -724,6 +727,7 @@ Ngoài các đơn vị độ dài, CSS còn có nhiều loại giá trị khác 
 ```
 
 ### 4.4. Vị trí (Position)
+> Xem trong bài position sau này.  
 
 ```css
 .position-examples {
@@ -773,6 +777,8 @@ Ngoài các đơn vị độ dài, CSS còn có nhiều loại giá trị khác 
 ```
 
 ### 4.6. Hàm (Functions)
+
+> Xem cụ thể bài hàm sau này   
 
 #### Hàm biến đổi (Transform functions)
 
@@ -833,6 +839,10 @@ Ngoài các đơn vị độ dài, CSS còn có nhiều loại giá trị khác 
   padding: min(5vw, 3rem);
 }
 ```
+
+- Ví dụ trên: Câu lệnh `width: min(800px, 80%)` có nghĩa là: chiều rộng của phần tử sẽ là giá trị nhỏ hơn trong hai lựa chọn: `800px` hoặc `80%` của phần tử cha. Giả sử phần tử cha có chiều rộng:
+    - `900px → 80% là 720px`, nhỏ hơn `800px` → chiều rộng sẽ là `720px` 
+    - `1200px → 80% là 960px`, lớn hơn `800px` → chiều rộng sẽ là `800px`
 
 **`max()` - Chọn giá trị lớn nhất:**
 
