@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bộ Chọn CSS Nâng Cao</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: #34495e;
+            border-left: 5px solid #3498db;
+            padding-left: 15px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+
+        h3 {
+            color: #2980b9;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+        }
+
+        h4 {
+            color: #8e44ad;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .intro {
+            background: linear-gradient(135deg, #74b9ff, #0984e3);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+
+        .example-container {
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .example-title {
+            background: #495057;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 5px;
+            display: inline-block;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .code-block {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            margin: 10px 0;
+            overflow-x: auto;
+            position: relative;
+        }
+
+        .html-demo {
+            border: 2px dashed #3498db;
+            padding: 15px;
+            margin: 10px 0;
+            background: white;
+            border-radius: 5px;
+        }
+
+        /* Combinator Examples */
+        .demo-main {
+            background: #e8f4f8;
+            padding: 15px;
+            border-radius: 5px;
+        }
+
+        .demo-main div {
+            background: #ffeaa7;
+            margin: 5px;
+            padding: 10px;
+            border: 2px solid #fdcb6e;
+        }
+
+        .demo-main > div {
+            background: #fd79a8;
+            border-color: #e84393;
+        }
+
+        .demo-main .group1 + div {
+            background: #a29bfe;
+            border-color: #6c5ce7;
+        }
+
+        .demo-main .group1 ~ div {
+            background: #55efc4;
+            border-color: #00b894;
+        }
+
+        /* Pseudo-class Examples */
+        .demo-links a:link { color: blue; }
+        .demo-links a:visited { color: purple; }
+        .demo-links a:hover { 
+            color: hotpink; 
+            background: #f0f0f0;
+            padding: 5px;
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+        .demo-links a:active { color: red; }
+
+        .demo-list li:first-child {
+            background: #74b9ff;
+            color: white;
+            font-weight: bold;
+        }
+
+        .demo-list li:last-child {
+            background: #fd79a8;
+            color: white;
+            font-weight: bold;
+        }
+
+        .demo-list li:nth-child(even) {
+            background: #ddd;
+        }
+
+        .demo-list li:nth-child(3n) {
+            border-left: 5px solid #00b894;
+        }
+
+        .demo-list li:not(.special) {
+            opacity: 0.7;
+        }
+
+        .demo-list li.special {
+            background: #ffeaa7;
+            border: 2px solid #fdcb6e;
+        }
+
+        /* Pseudo-element Examples */
+        .demo-pseudo::before {
+            content: '🎯 ';
+            color: #e17055;
+        }
+
+        .demo-pseudo::after {
+            content: ' ✨';
+            color: #fdcb6e;
+        }
+
+        .demo-pseudo::first-letter {
+            font-size: 2em;
+            color: #6c5ce7;
+            font-weight: bold;
+        }
+
+        .demo-pseudo::first-line {
+            font-weight: bold;
+            color: #0984e3;
+        }
+
+        .demo-selection::selection {
+            background: #ff7675;
+            color: white;
+        }
+
+        /* Attribute Selector Examples */
+        .demo-attributes input[type="text"] {
+            border: 2px solid #74b9ff;
+            padding: 8px;
+            border-radius: 4px;
+        }
+
+        .demo-attributes input[type="email"] {
+            border: 2px solid #fd79a8;
+            padding: 8px;
+            border-radius: 4px;
+        }
+
+        .demo-attributes a[href^="https://"] {
+            color: #00b894;
+            font-weight: bold;
+        }
+
+        .demo-attributes a[href$=".pdf"] {
+            color: #e17055;
+        }
+
+        .demo-attributes a[href*="example"] {
+            background: #ffeaa7;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+
+        .demo-attributes [class^="btn"] {
+            padding: 8px 16px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .demo-attributes .btn-primary {
+            background: #0984e3;
+            color: white;
+        }
+
+        .demo-attributes .btn-secondary {
+            background: #636e72;
+            color: white;
+        }
+
+        .specificity-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        .specificity-table th,
+        .specificity-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        .specificity-table th {
+            background: #3498db;
+            color: white;
+        }
+
+        .specificity-table tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        .highlight {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 15px 0;
+        }
+
+        .warning {
+            background: #f8d7da;
+            border-left: 4px solid #dc3545;
+            padding: 15px;
+            margin: 15px 0;
+        }
+
+        .tip {
+            background: #d1ecf1;
+            border-left: 4px solid #17a2b8;
+            padding: 15px;
+            margin: 15px 0;
+        }
+
+        .interactive-demo {
+            background: #f8f9fa;
+            border: 2px solid #dee2e6;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .demo-button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .demo-button:hover {
+            background: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        .demo-form {
+            margin: 20px 0;
+        }
+
+        .demo-form input, .demo-form select {
+            margin: 5px;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .target-demo:target {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            padding: 15px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎯 Bộ Chọn CSS Nâng Cao (Advanced Selectors)</h1>
+        
+        <div class="intro">
+            <p><strong>Chào bạn!</strong> Khi bạn đã quen thuộc với các bộ chọn CSS cơ bản như theo loại (type), lớp (class), hoặc ID, để trở thành một "chuyên gia phẫu thuật CSS" thực thụ, bạn cần những công cụ chuyên biệt hơn. Các bộ chọn nâng cao cho phép bạn nhắm mục tiêu các phần tử một cách <strong>cụ thể và chi tiết hơn</strong>.</p>
+        </div>
+
+        <h2>I. 🔗 Các Bộ Kết Hợp (Combinators)</h2>
+        <p>Các bộ kết hợp được sử dụng để kết hợp các bộ chọn khác, cho phép chúng ta chọn các phần tử dựa trên vị trí của chúng trong Cây DOM so với các phần tử khác.</p>
+
+        <h3>1. Bộ Kết Hợp Hậu Duệ (Descendant Combinator)</h3>
+        <div class="example-container">
+            <div class="example-title">Ký hiệu: Khoảng trắng ( )</div>
+            <p><strong>Mô tả:</strong> Chọn tất cả các phần tử hậu duệ (con, cháu, chắt...) của phần tử tổ tiên.</p>
+            
+            <div class="code-block">
+.demo-main div {
+    background: #ffeaa7;
+    border: 2px solid #fdcb6e;
+    margin: 5px;
+    padding: 10px;
+}</div>
+
+            <div class="html-demo">
+                <div class="demo-main">
+                    <p>Tôi là thẻ p (không bị ảnh hưởng)</p>
+                    <div>Tôi là div con trực tiếp ✅</div>
+                    <div>
+                        Tôi cũng là div con ✅
+                        <div>Tôi là div cháu ✅</div>
+                        <span>
+                            <div>Tôi là div chắt ✅</div>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h3>2. Bộ Kết Hợp Con Trực Tiếp (Child Combinator)</h3>
+        <div class="example-container">
+            <div class="example-title">Ký hiệu: Dấu lớn hơn ( > )</div>
+            <p><strong>Mô tả:</strong> Chỉ chọn các phần tử là con trực tiếp, không bao gồm cháu, chắt...</p>
+            
+            <div class="code-block">
+.demo-main > div {
+    background: #fd79a8;
+    border-color: #e84393;
+}</div>
+
+            <div class="html-demo">
+                <div class="demo-main">
+                    <div>Tôi là con trực tiếp ✅</div>
+                    <div>
+                        Tôi cũng là con trực tiếp ✅
+                        <div>Tôi là cháu (không được chọn) ❌</div>
+                    </div>
+                    <p>Tôi là thẻ p con trực tiếp (không phải div) ❌</p>
+                </div>
+            </div>
+        </div>
+
+        <h3>3. Bộ Kết Hợp Anh Em Liền Kề (Adjacent Sibling)</h3>
+        <div class="example-container">
+            <div class="example-title">Ký hiệu: Dấu cộng ( + )</div>
+            <p><strong>Mô tả:</strong> Chọn phần tử ngay lập tức theo sau phần tử được chỉ định.</p>
+            
+            <div class="code-block">
+.group1 + div {
+    background: #a29bfe;
+    border-color: #6c5ce7;
+}</div>
+
+            <div class="html-demo">
+                <div class="demo-main">
+                    <div class="group1">Tôi là .group1</div>
+                    <div>Tôi ngay sau .group1 ✅</div>
+                    <div>Tôi không liền kề ❌</div>
+                </div>
+            </div>
+        </div>
+
+        <h3>4. Bộ Kết Hợp Anh Em Tổng Quát (General Sibling)</h3>
+        <div class="example-container">
+            <div class="example-title">Ký hiệu: Dấu ngã ( ~ )</div>
+            <p><strong>Mô tả:</strong> Chọn tất cả các phần tử anh em theo sau phần tử được chỉ định.</p>
+            
+            <div class="code-block">
+.group1 ~ div {
+    background: #55efc4;
+    border-color: #00b894;
+}</div>
+
+            <div class="html-demo">
+                <div class="demo-main">
+                    <div class="group1">Tôi là .group1</div>
+                    <p>Tôi là thẻ p (không phải div) ❌</p>
+                    <div>Tôi là div sau .group1 ✅</div>
+                    <div>Tôi cũng là div sau .group1 ✅</div>
+                </div>
+            </div>
+        </div>
+
+        <h2>II. 🎭 Giả Lớp (Pseudo-classes) và Giả Phần Tử (Pseudo-elements)</h2>
+
+        <div class="highlight">
+            <strong>🔍 Phân biệt:</strong>
+            <ul>
+                <li><strong>Giả lớp (:):</strong> Nhắm mục tiêu các phần tử đã tồn tại dựa trên trạng thái hoặc vị trí</li>
+                <li><strong>Giả phần tử (::):</strong> Tạo và nhắm mục tiêu các phần tử không tồn tại trong HTML</li>
+            </ul>
+        </div>
+
+        <h3>1. Giả Lớp Tương Tác Người Dùng</h3>
+        <div class="example-container">
+            <div class="example-title">Ví dụ tương tác với liên kết</div>
+            
+            <div class="code-block">
+a:link { color: blue; }
+a:visited { color: purple; }
+a:hover { color: hotpink; background: #f0f0f0; }
+a:active { color: red; }</div>
+
+            <div class="html-demo demo-links">
+                <p>Thử các tương tác sau:</p>
+                <a href="#test1">Liên kết chưa truy cập</a> |
+                <a href="https://google.com" target="_blank">Liên kết ngoài (hover để thấy hiệu ứng)</a> |
+                <a href="#visited">Liên kết đã truy cập</a>
+            </div>
+        </div>
+
+        <h3>2. Giả Lớp Cấu Trúc</h3>
+        <div class="example-container">
+            <div class="example-title">Ví dụ với :first-child, :last-child, :nth-child</div>
+            
+            <div class="code-block">
+li:first-child { background: #74b9ff; color: white; }
+li:last-child { background: #fd79a8; color: white; }
+li:nth-child(even) { background: #ddd; }
+li:nth-child(3n) { border-left: 5px solid #00b894; }</div>
+
+            <div class="html-demo">
+                <ul class="demo-list">
+                    <li>Item 1 (first-child + 3n)</li>
+                    <li>Item 2 (even)</li>
+                    <li>Item 3 (3n)</li>
+                    <li>Item 4 (even)</li>
+                    <li>Item 5</li>
+                    <li>Item 6 (even + 3n)</li>
+                    <li>Item 7 (last-child)</li>
+                </ul>
+            </div>
+        </div>
+
+        <h3>3. Giả Lớp :not()</h3>
+        <div class="example-container">
+            <div class="example-title">Ví dụ với :not() - Phủ định</div>
+            
+            <div class="code-block">
+li:not(.special) { opacity: 0.7; }
+li.special { background: #ffeaa7; border: 2px solid #fdcb6e; }</div>
+
+            <div class="html-demo">
+                <ul class="demo-list">
+                    <li>Item bình thường (bị mờ)</li>
+                    <li class="special">Item đặc biệt (không bị mờ)</li>
+                    <li>Item bình thường khác (bị mờ)</li>
+                </ul>
+            </div>
+        </div>
+
+        <h3>4. Giả Phần Tử ::before và ::after</h3>
+        <div class="example-container">
+            <div class="example-title">Tạo nội dung bằng CSS</div>
+            
+            <div class="code-block">
+.demo-pseudo::before { content: '🎯 '; color: #e17055; }
+.demo-pseudo::after { content: ' ✨'; color: #fdcb6e; }</div>
+
+            <div class="html-demo">
+                <p class="demo-pseudo">Nội dung này được bọc bởi biểu tượng</p>
+            </div>
+        </div>
+
+        <h3>5. Giả Phần Tử ::first-letter và ::first-line</h3>
+        <div class="example-container">
+            <div class="example-title">Tạo kiểu cho chữ và dòng đầu</div>
+            
+            <div class="code-block">
+.demo-pseudo::first-letter { font-size: 2em; color: #6c5ce7; font-weight: bold; }
+.demo-pseudo::first-line { font-weight: bold; color: #0984e3; }</div>
+
+            <div class="html-demo">
+                <p class="demo-pseudo">Đây là một đoạn văn dài để minh họa cách ::first-letter làm cho chữ cái đầu tiên trở nên to hơn và ::first-line làm cho dòng đầu tiên trở nên đậm hơn. Những dòng tiếp theo sẽ có định dạng bình thường.</p>
+            </div>
+        </div>
+
+        <h3>6. Giả Phần Tử ::selection</h3>
+        <div class="example-container">
+            <div class="example-title">Tùy chỉnh màu khi chọn văn bản</div>
+            
+            <div class="code-block">
+.demo-selection::selection { background: #ff7675; color: white; }</div>
+
+            <div class="html-demo">
+                <p class="demo-selection">Hãy thử chọn (bôi đen) đoạn văn bản này để thấy màu nền đỏ!</p>
+            </div>
+        </div>
+
+        <h2>III. 🎯 Bộ Chọn Thuộc Tính (Attribute Selectors)</h2>
+
+        <h3>1. Các loại bộ chọn thuộc tính cơ bản</h3>
+        <div class="example-container">
+            <div class="example-title">Ví dụ với các input khác nhau</div>
+            
+            <div class="code-block">
+input[type="text"] { border: 2px solid #74b9ff; }
+input[type="email"] { border: 2px solid #fd79a8; }</div>
+
+            <div class="html-demo demo-attributes">
+                <div class="demo-form">
+                    <input type="text" placeholder="Text input (viền xanh)"><br>
+                    <input type="email" placeholder="Email input (viền hồng)"><br>
+                    <input type="password" placeholder="Password input (mặc định)">
+                </div>
+            </div>
+        </div>
+
+        <h3>2. Bộ chọn thuộc tính nâng cao</h3>
+        <div class="example-container">
+            <div class="example-title">Ví dụ với ^=, $=, *=</div>
+            
+            <div class="code-block">
+a[href^="https://"] { color: #00b894; font-weight: bold; }
+a[href$=".pdf"] { color: #e17055; }
+a[href*="example"] { background: #ffeaa7; padding: 2px 5px; }</div>
+
+            <div class="html-demo demo-attributes">
+                <p>
+                    <a href="https://secure-site.com">Liên kết HTTPS (xanh, đậm)</a><br>
+                    <a href="document.pdf">File PDF (đỏ)</a><br>
+                    <a href="https://example.com">Example.com (nền vàng)</a><br>
+                    <a href="http://normal-site.com">HTTP thường (mặc định)</a>
+                </p>
+            </div>
+        </div>
+
+        <h3>3. Bộ chọn class với ^=</h3>
+        <div class="example-container">
+            <div class="example-title">Chọn theo tiền tố class</div>
+            
+            <div class="code-block">
+[class^="btn"] { padding: 8px 16px; margin: 5px; border: none; border-radius: 5px; }
+.btn-primary { background: #0984e3; color: white; }
+.btn-secondary { background: #636e72; color: white; }</div>
+
+            <div class="html-demo demo-attributes">
+                <button class="btn-primary">Button Primary</button>
+                <button class="btn-secondary">Button Secondary</button>
+                <button class="normal-button">Button thường (không có style)</button>
+            </div>
+        </div>
+
+        <h2>IV. ⚖️ Độ Đặc Hiệu (Specificity)</h2>
+
+        <div class="tip">
+            <strong>💡 Công thức tính:</strong> Độ đặc hiệu được tính theo format (a,b,c,d) với:
+            <ul>
+                <li><strong>a:</strong> Inline styles (1000 điểm)</li>
+                <li><strong>b:</strong> IDs (100 điểm mỗi cái)</li>
+                <li><strong>c:</strong> Classes, pseudo-classes, attributes (10 điểm mỗi cái)</li>
+                <li><strong>d:</strong> Elements và pseudo-elements (1 điểm mỗi cái)</li>
+            </ul>
+        </div>
+
+        <div class="example-container">
+            <div class="example-title">Bảng so sánh độ đặc hiệu</div>
+            <table class="specificity-table">
+                <thead>
+                    <tr>
+                        <th>Bộ chọn</th>
+                        <th>Giá trị đặc hiệu</th>
+                        <th>Điểm số</th>
+                        <th>Ghi chú</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>*</td>
+                        <td>0,0,0,0</td>
+                        <td>0</td>
+                        <td>Universal selector</td>
+                    </tr>
+                    <tr>
+                        <td>h1</td>
+                        <td>0,0,0,1</td>
+                        <td>1</td>
+                        <td>Element selector</td>
+                    </tr>
+                    <tr>
+                        <td>.class</td>
+                        <td>0,0,1,0</td>
+                        <td>10</td>
+                        <td>Class selector</td>
+                    </tr>
+                    <tr>
+                        <td>h1.class</td>
+                        <td>0,0,1,1</td>
+                        <td>11</td>
+                        <td>Element + Class</td>
+                    </tr>
+                    <tr>
+                        <td>#id</td>
+                        <td>0,1,0,0</td>
+                        <td>100</td>
+                        <td>ID selector</td>
+                    </tr>
+                    <tr>
+                        <td>#id h1.class</td>
+                        <td>0,1,1,1</td>
+                        <td>111</td>
+                        <td>ID + Class + Element</td>
+                    </tr>
+                    <tr>
+                        <td>style=""</td>
+                        <td>1,0,0,0</td>
+                        <td>1000</td>
+                        <td>Inline style</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2>V. 🎮 Ví Dụ Tương Tác</h2>
+
+        <div class="interactive-demo">
+            <h3>Demo :target pseudo-class</h3>
+            <p>Click vào các liên kết bên dưới để thấy hiệu ứng :target</p>
+            
+            <div class="code-block">
+.target-demo:target {
+    background: #fff3cd;
+    border: 2px solid #ffc107;
+    padding: 15px;
+}</div>
+
+            <p>
+                <a href="#section1">Đi đến Section 1</a> |
+                <a href="#section2">Đi đến Section 2</a> |
+                <a href="#section3">Đi đến Section 3</a>
+            </p>
+
+            <div id="section1" class="target-demo">
+                <h4>Section 1</h4>
+                <p>Đây là section 1. Khi được target, tôi sẽ có nền vàng!</p>
+            </div>
+
+            <div id="section2" class="target-demo">
+                <h4>Section 2</h4>
+                <p>Đây là section 2. Tôi cũng có hiệu ứng :target tương tự!</p>
+            </div>
+
+            <div id="section3" class="target-demo">
+                <h4>Section 3</h4>
+                <p>Và đây là section 3. Hiệu ứng :target rất hữu ích cho navigation!</p>
+            </div>
+        </div>
+
+        <div class="interactive-demo">
+            <h3>Demo Form Pseudo-classes</h3>
+            
+            <div class="code-block">
+input:focus { border-color: #007bff; box-shadow: 0 0 5px rgba(0,123,255,0.5); }
+input:invalid { border-color: #dc3545; }
+input:valid { border-color: #28a745; }</div>
+
+            <div class="demo-form">
+                <input type="email" placeholder="Email (thử nhập email không hợp lệ)" required style="margin: 5px; padding: 8px; border: 2px solid #ddd; border-radius: 4px;"><br>
+                <input type="url" placeholder="URL (thử nhập URL không hợp lệ)" required style="margin: 5px; padding: 8px; border: 2px solid #ddd; border-radius: 4px;"><br>
+                <input type="text" placeholder="Text field (focus để thấy hiệu ứng)" style="margin: 5px; padding: 8px; border: 2px solid #ddd; border-radius: 4px;">
+            </div>
+        </div>
+
+        <h2>VI. 📚 Các Ví Dụ Thực Tế</h2>
+
+        <h3>1. Tạo Menu Navigation với CSS</h3>
+        <div class="example-container">
+            <div class="example-title">Sử dụng các bộ chọn để tạo menu đẹp</div>
+            
+            <div class="code-block">
+/* Menu navigation */
+.nav-menu {
+    list-style: none;
+    display: flex;
+    background: #2c3e50;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.nav-menu li:first-child a {
+    border-left: none;
+}
+
+.nav-menu a {
+    display: block;
+    padding: 15px 20px;
+    color: white;
+    text-decoration: none;
+    border-left: 1px solid #34495e;
+    transition: background 0.3s ease;
+}
+
+.nav-menu a:hover {
+    background: #3498db;
+}
+
+.nav-menu a:active {
+    background: #2980b9;
+}</div>
+
+            <div class="html-demo">
+                <ul class="nav-menu" style="list-style: none; display: flex; background: #2c3e50; border-radius: 8px; overflow: hidden; margin: 0; padding: 0;">
+                    <li><a href="#" style="display: block; padding: 15px 20px; color: white; text-decoration: none; transition: background 0.3s ease;" onmouseover="this.style.background='#3498db'" onmouseout="this.style.background='transparent'">Trang Chủ</a></li>
+                    <li><a href="#" style="display: block; padding: 15px 20px; color: white; text-decoration: none; border-left: 1px solid #34495e; transition: background 0.3s ease;" onmouseover="this.style.background='#3498db'" onmouseout="this.style.background='transparent'">Sản Phẩm</a></li>
+                    <li><a href="#" style="display: block; padding: 15px 20px; color: white; text-decoration: none; border-left: 1px solid #34495e; transition: background 0.3s ease;" onmouseover="this.style.background='#3498db'" onmouseout="this.style.background='transparent'">Dịch Vụ</a></li>
+                    <li><a href="#" style="display: block; padding: 15px 20px; color: white; text-decoration: none; border-left: 1px solid #34495e; transition: background 0.3s ease;" onmouseover="this.style.background='#3498db'" onmouseout="this.style.background='transparent'">Liên Hệ</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <h3>2. Card Layout với Hover Effects</h3>
+        <div class="example-container">
+            <div class="example-title">Tạo cards với hiệu ứng hover</div>
+            
+            <div class="code-block">
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.card:first-child {
+    border-top: 4px solid #e74c3c;
+}
+
+.card:nth-child(2) {
+    border-top: 4px solid #3498db;
+}
+
+.card:last-child {
+    border-top: 4px solid #2ecc71;
+}</div>
+
+            <div class="html-demo">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
+                    <div class="hover-card" style="background: white; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); overflow: hidden; transition: transform 0.3s ease, box-shadow 0.3s ease; border-top: 4px solid #e74c3c;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 25px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 6px rgba(0,0,0,0.1)'">
+                        <div style="padding: 20px;">
+                            <h4>Card 1</h4>
+                            <p>Hover để thấy hiệu ứng!</p>
+                        </div>
+                    </div>
+                    <div class="hover-card" style="background: white; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); overflow: hidden; transition: transform 0.3s ease, box-shadow 0.3s ease; border-top: 4px solid #3498db;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 25px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 6px rgba(0,0,0,0.1)'">
+                        <div style="padding: 20px;">
+                            <h4>Card 2</h4>
+                            <p>Card thứ hai với viền xanh!</p>
+                        </div>
+                    </div>
+                    <div class="hover-card" style="background: white; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); overflow: hidden; transition: transform 0.3s ease, box-shadow 0.3s ease; border-top: 4px solid #2ecc71;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 25px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 6px rgba(0,0,0,0.1)'">
+                        <div style="padding: 20px;">
+                            <h4>Card 3</h4>
+                            <p>Card cuối cùng với viền xanh lá!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h3>3. Form Styling với Validation</h3>
+        <div class="example-container">
+            <div class="example-title">Form với validation styling</div>
+            
+            <div class="code-block">
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+.form-group input:valid {
+    border-color: #27ae60;
+}
+
+.form-group input:invalid:not(:placeholder-shown) {
+    border-color: #e74c3c;
+}
+
+.form-group input:invalid:not(:placeholder-shown) + .error-message {
+    display: block;
+    color: #e74c3c;
+    font-size: 0.8em;
+    margin-top: 5px;
+}</div>
+
+            <div class="html-demo">
+                <form style="max-width: 400px;">
+                    <div class="form-group" style="margin-bottom: 20px;">
+                        <label>Email:</label>
+                        <input type="email" placeholder="Nhập email của bạn" required style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 6px; transition: border-color 0.3s ease;" onfocus="this.style.borderColor='#3498db'; this.style.boxShadow='0 0 0 3px rgba(52, 152, 219, 0.1)'" onblur="this.style.boxShadow='none'">
+                        <div class="error-message" style="display: none; color: #e74c3c; font-size: 0.8em; margin-top: 5px;">Email không hợp lệ!</div>
+                    </div>
+                    <div class="form-group" style="margin-bottom: 20px;">
+                        <label>Số điện thoại:</label>
+                        <input type="tel" pattern="[0-9]{10}" placeholder="0123456789" required style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 6px; transition: border-color 0.3s ease;" onfocus="this.style.borderColor='#3498db'; this.style.boxShadow='0 0 0 3px rgba(52, 152, 219, 0.1)'" onblur="this.style.boxShadow='none'">
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <h2>VII. 🚀 Các Bộ Chọn CSS Hiện Đại</h2>
+
+        <h3>1. :has() - The Parent Selector</h3>
+        <div class="example-container">
+            <div class="example-title">Chọn phần tử cha dựa trên phần tử con (CSS 4)</div>
+            
+            <div class="code-block">
+/* Chọn div có chứa thẻ img */
+div:has(img) {
+    border: 3px solid #3498db;
+    padding: 10px;
+}
+
+/* Chọn form có input không hợp lệ */
+form:has(input:invalid) {
+    border-left: 5px solid #e74c3c;
+}</div>
+
+            <div class="warning">
+                <strong>⚠️ Lưu ý:</strong> Bộ chọn :has() chỉ được hỗ trợ trên các trình duyệt hiện đại (Chrome 105+, Firefox 121+, Safari 15.4+).
+            </div>
+        </div>
+
+        <h3>2. :is() và :where()</h3>
+        <div class="example-container">
+            <div class="example-title">Simplify complex selectors</div>
+            
+            <div class="code-block">
+/* Thay vì viết */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Arial', sans-serif;
+}
+
+/* Có thể viết */
+:is(h1, h2, h3, h4, h5, h6) {
+    font-family: 'Arial', sans-serif;
+}
+
+/* :where() tương tự :is() nhưng có specificity = 0 */
+:where(h1, h2, h3) {
+    margin-top: 0;
+}</div>
+        </div>
+
+        <h2>VIII. 💡 Lời Khuyên và Best Practices</h2>
+
+        <div class="tip">
+            <h3>🎯 Các lời khuyên quan trọng:</h3>
+            <ul>
+                <li><strong>Giữ cho selectors đơn giản:</strong> Tránh làm cho selectors quá phức tạp và khó đọc</li>
+                <li><strong>Sử dụng classes thay vì IDs:</strong> Classes linh hoạt hơn và có thể tái sử dụng</li>
+                <li><strong>Tránh lạm dụng !important:</strong> Chỉ sử dụng khi thực sự cần thiết</li>
+                <li><strong>Hiểu rõ về specificity:</strong> Điều này giúp tránh các xung đột CSS không mong muốn</li>
+                <li><strong>Test trên nhiều trình duyệt:</strong> Đặc biệt với các selectors mới</li>
+            </ul>
+        </div>
+
+        <div class="highlight">
+            <h3>🔧 Công cụ hữu ích:</h3>
+            <ul>
+                <li><strong>CSS Diner:</strong> Game học CSS selectors tương tác</li>
+                <li><strong>Specificity Calculator:</strong> Tính toán độ đặc hiệu của selectors</li>
+                <li><strong>Browser DevTools:</strong> Inspect và test selectors trực tiếp</li>
+                <li><strong>Can I Use:</strong> Kiểm tra tính tương thích trình duyệt</li>
+            </ul>
+        </div>
+
+        <h2>IX. 🎓 Bài Tập Thực Hành</h2>
+
+        <div class="interactive-demo">
+            <h3>Thử thách CSS Selector</h3>
+            <p>Hãy thử viết CSS selectors cho các yêu cầu sau:</p>
+            
+            <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 10px 0;">
+                <h4>HTML mẫu:</h4>
+                <div class="code-block">
+&lt;div class="container"&gt;
+    &lt;h1 id="title"&gt;Tiêu đề chính&lt;/h1&gt;
+    &lt;article&gt;
+        &lt;h2&gt;Bài viết 1&lt;/h2&gt;
+        &lt;p class="intro"&gt;Đoạn mở đầu&lt;/p&gt;
+        &lt;p&gt;Đoạn văn bình thường&lt;/p&gt;
+        &lt;a href="https://example.com"&gt;Liên kết HTTPS&lt;/a&gt;
+        &lt;a href="document.pdf"&gt;Tải PDF&lt;/a&gt;
+    &lt;/article&gt;
+    &lt;ul class="menu"&gt;
+        &lt;li&gt;Item 1&lt;/li&gt;
+        &lt;li class="active"&gt;Item 2&lt;/li&gt;
+        &lt;li&gt;Item 3&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;</div>
+            </div>
+
+            <div style="background: #fff3cd; padding: 15px; border-radius: 8px; margin: 10px 0;">
+                <h4>🎯 Các thử thách:</h4>
+                <ol>
+                    <li>Chọn tất cả thẻ p trong article</li>
+                    <li>Chọn li đầu tiên trong menu</li>
+                    <li>Chọn li cuối cùng trong menu</li>
+                    <li>Chọn tất cả li không có class "active"</li>
+                    <li>Chọn liên kết HTTPS</li>
+                    <li>Chọn liên kết PDF</li>
+                    <li>Chọn h2 ngay sau h1#title</li>
+                    <li>Chọn p đầu tiên trong article</li>
+                </ol>
+            </div>
+
+            <div style="background: #d1ecf1; padding: 15px; border-radius: 8px; margin: 10px 0;">
+                <h4>💡 Đáp án gợi ý:</h4>
+                <div class="code-block" style="font-size: 0.9em;">
+1. article p { }
+2. .menu li:first-child { }
+3. .menu li:last-child { }
+4. .menu li:not(.active) { }
+5. a[href^="https://"] { }
+6. a[href$=".pdf"] { }
+7. #title + article h2 { }
+8. article p:first-child { }</div>
+            </div>
+        </div>
+
+        <div class="tip">
+            <h3>🎉 Kết luận</h3>
+            <p>Việc nắm vững các bộ chọn CSS nâng cao sẽ giúp bạn:</p>
+            <ul>
+                <li>Viết CSS hiệu quả và ít dòng code hơn</li>
+                <li>Tránh làm "bẩn" HTML với quá nhiều classes</li>
+                <li>Tạo ra những hiệu ứng và interactions phức tạp</li>
+                <li>Xây dựng các component linh hoạt và có thể tái sử dụng</li>
+                <li>Trở thành một "CSS Ninja" thực thụ! 🥷</li>
+            </ul>
+        </div>
+
+        <footer style="text-align: center; margin-top: 50px; padding: 30px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border-radius: 10px;">
+            <h3>🚀 Chúc bạn học CSS vui vẻ!</h3>
+            <p>Hãy thực hành thường xuyên để trở thành chuyên gia CSS selector!</p>
+        </footer>
+    </div>
+
+    <style>
+        /* Additional interactive styles */
+        input:focus {
+            border-color: #007bff !important;
+            box-shadow: 0 0 0 3px rgba(0,123,255,0.25) !important;
+            outline: none;
+        }
+
+        input:valid {
+            border-color: #28a745 !important;
+        }
+
+        input:invalid:not(:placeholder-shown) {
+            border-color: #dc3545 !important;
+        }
+
+        .code-block {
+            position: relative;
+        }
+
+        .code-block::before {
+            content: "CSS";
+            position: absolute;
+            top: -10px;
+            right: 10px;
+            background: #4a5568;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 3px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        /* Smooth scroll for anchor links */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+                padding: 15px;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+            
+            .nav-menu {
+                flex-direction: column;
+            }
+            
+            .specificity-table {
+                font-size: 14px;
+            }
+        }
+    </style>
+</body>
+</html>
