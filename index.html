@@ -1,29 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="vi">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="./test.css">
+  <title>Typography System Demo</title>
 </head>
-
 <body>
-
-<div class="wrapper">
-  <div class="boxPercent">
-    I am 200px wide
-      <div class="box2Percent">I am 40% wide</div>
-  </div>
-</div>
-
-<div class="wrapper">
-  <div class="boxEm">
-    I am 200px wide
-      <div class="box2Em">I am 40% wide</div>
-  </div>
-</div>
-
+  <main>
+    <article>
+      <header>
+        <h1 class="heading-1">Tiêu đề chính của bài viết</h1>
+        <p class="caption">Xuất bản ngày 28/07/2025 • 5 phút đọc</p>
+      </header>
+      
+      <section>
+        <h2 class="heading-2">Phần giới thiệu</h2>
+        <p class="body-text">
+          Đây là đoạn văn bản chính sử dụng typography system. Tất cả các 
+          thông số đều được định nghĩa thông qua CSS custom properties để 
+          dễ dàng maintain và scale.
+        </p>
+        
+        <p class="body-text">
+          Code example: <code class="code-text">font-size: var(--text-base)</code>
+          sẽ tự động responsive theo viewport.
+        </p>
+      </section>
+      
+      <section>
+        <h2 class="heading-2">Danh sách best practices</h2>
+        <ul class="body-text">
+          <li>Sử dụng semantic HTML elements</li>
+          <li>Định nghĩa consistent spacing scale</li>
+          <li>Test với screen readers</li>
+          <li>Đảm bảo sufficient color contrast</li>
+        </ul>
+      </section>
+    </article>
+  </main>
 </body>
-
 </html>

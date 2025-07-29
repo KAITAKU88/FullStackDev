@@ -2,11 +2,13 @@
 
 Đây là các khái niệm và kỹ thuật liên quan đến văn bản và phông chữ trong phát triển web.
 
+> **`Tất cả các bài học này đều phải học nhiều lần, không phải đọc 1 lần là xong.`**
+
 ---
 
 ## Tổng quan về Văn bản và Phông chữ trên Web
 
-Khi không có kiểu dáng cụ thể nào được áp dụng cho văn bản, trình duyệt sẽ tự động áp dụng các kiểu mặc định của riêng chúng, gọi là **tập tin kiểu trình duyệt (User Agent stylesheets)**, và những kiểu này có thể khác nhau giữa các trình duyệt. Người dùng cũng có thể tự cài đặt các tùy chọn hiển thị văn bản của riêng họ. Mặc dù văn bản trên web tự động thích ứng với kích thước màn hình (responsive) bằng cách tự xuống dòng khi chạm mép màn hình, việc trình bày văn bản sao cho thoải mái khi đọc là một yếu tố quan trọng của typography tốt.
+Khi không có kiểu dáng cụ thể nào được áp dụng cho văn bản, trình duyệt sẽ tự động áp dụng các kiểu mặc định của riêng chúng, gọi là **User Agent stylesheets**, và những kiểu này có thể khác nhau giữa các trình duyệt. Người dùng cũng có thể tự cài đặt các tùy chọn hiển thị văn bản của riêng họ. Mặc dù văn bản trên web tự động thích ứng với kích thước màn hình (responsive) bằng cách tự xuống dòng khi chạm mép màn hình, việc trình bày văn bản sao cho thoải mái khi đọc là một yếu tố quan trọng của typography tốt.
 
 **Typography (Kiểu chữ)** trên web không chỉ là việc chọn font phù hợp, mà còn phải cân nhắc sở thích của người dùng, kích thước văn bản, độ dài dòng và khoảng cách giữa các dòng văn bản.
 
@@ -286,10 +288,11 @@ Thay đổi trường hợp của văn bản đã cho.
 ```
 
 ```html
-<p>Bình thường: 0123456789abcdefghijklmnopqrstuvwxyz!"#$%&()*+,-./:;<=>?@{|}~</p>
-<p class="full-width-demo">Full-width: ０１２３４５６７８９ａｂｃｄｅｆｇｈｉｊｋｌｍｎｏｐｑｒｓｔｕｖｗｘｙｚ！"＃＄％＆（）＊＋，－．／：；＜＝＞？＠｛｜｝～</p>
+<p>今日は土曜日なので</p>
+<p class="full">今日は土曜日なので</p>
 ```
 
+`Không thấy full-width có tác dụng`.  
 ### `text-shadow` (Bóng văn bản)
 
 Thuộc tính CSS này thêm bóng cho văn bản.
@@ -1094,6 +1097,7 @@ function example() {
 ```
 
 ### Căn chỉnh và Hyphenation (Gạch nối)
+- `hyphens` dùng để ngắt từ bằng dấu gạch nối (-) khi từ quá dài và cần xuống dòng. Điều này giúp văn bản hiển thị đẹp và cân đối hơn, đặc biệt trong đoạn văn hẹp như trên thiết bị di động.
 
 #### Ví dụ hyphenation theo ngôn ngữ:
 
@@ -1915,8 +1919,6 @@ Việc tạo ra một trải nghiệm văn bản tốt trên web đòi hỏi s�
 - ✅ Minimize font variants
 - ✅ Use system fonts when appropriate
 - ✅ Monitor Core Web Vitals
-
-Hy vọng tài liệu này với các ví dụ chi tiết giúp bạn có cái nhìn toàn diện và thực tế về việc làm việc với typography trên web!
 
 
 
