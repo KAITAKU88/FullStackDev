@@ -1,8 +1,4 @@
-# Hướng dẫn HTML Forms cơ bản - Tài liệu hoàn chỉnh
-
-Chào bạn,
-
-Dựa trên các nguồn tài liệu được cung cấp, dưới đây là tổng hợp chi tiết và dễ hiểu về cơ bản của biểu mẫu (forms) trong HTML, kèm theo các ví dụ và giải thích các thuật ngữ chuyên ngành.
+# Hướng dẫn HTML Forms cơ bản 
 
 ---
 

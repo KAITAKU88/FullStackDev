@@ -1,6 +1,5 @@
 # Hướng dẫn toàn diện về CSS Functions
-
-Dựa trên các nguồn tài liệu được cung cấp, dưới đây là tổng hợp chi tiết về các hàm CSS (`CSS Functions`), tập trung vào các hàm toán học (`Math Functions`) và cách chúng được sử dụng để tạo ra các thiết kế web linh hoạt và đáp ứng (`responsive design`).
+Đây là chi tiết về các hàm CSS (`CSS Functions`), tập trung vào các hàm toán học (`Math Functions`) và cách chúng được sử dụng để tạo ra các thiết kế web linh hoạt và đáp ứng (`responsive design`).
 
 ---
 

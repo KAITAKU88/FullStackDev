@@ -1693,6 +1693,9 @@ Ba bộ tiền xử lý lớn – Sass, LESS và Stylus, tiếp tục thống tr
 
 Cuối cùng, lựa chọn bộ tiền xử lý CSS sẽ phụ thuộc phần lớn vào sở thích của nhà phát triển, yêu cầu dự án, và khả năng của team. Điều quan trọng là hiểu rõ ưu nhược điểm của từng công cụ để đưa ra quyết định phù hợp nhất cho dự án của bạn.
 
+---
+---
+
 
 
 ## Tài liệu phải đọc khi ĐÓNG CỌC LẦN 2

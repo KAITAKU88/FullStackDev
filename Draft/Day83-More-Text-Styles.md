@@ -1,6 +1,6 @@
 # Hướng dẫn toàn diện về Văn bản và Phông chữ trên Web
 
-Chào bạn, dưới đây là tổng hợp chi tiết về các khái niệm và kỹ thuật liên quan đến văn bản và phông chữ trong phát triển web, được tổng hợp từ các nguồn tài liệu bạn cung cấp.
+Đây là các khái niệm và kỹ thuật liên quan đến văn bản và phông chữ trong phát triển web.
 
 ---
 
