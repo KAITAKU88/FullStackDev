@@ -94,6 +94,9 @@ title: Lộ trình Full Stack Dev
 > Ngày 16: [Giới thiệu về HTML](./Day16-HTMLIntroduce.md)   
 > Ngày 16: [HTML Element, Tag, Boilerplate](./Day16-HTML-tag-element-boilerplate.md)  
 > Ngày 17: [Các phần tử HTML](./Day17-HtmlElements.md)
+> Ngày 18: [Links and Image](./Day18-LinksAndImages.md)  
+> Day 19: [Git commit message](./Day19-Git-commit.md)  
+> Day 19: [Project: Food recipe](./Day19-food-recipe.md)  
 
 ### Nền tảng về CSS
 ### Flexbox
