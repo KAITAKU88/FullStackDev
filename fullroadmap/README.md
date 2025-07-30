@@ -62,7 +62,6 @@ title: Lộ trình Full Stack Dev
 
 ## A. **Khóa nền tảng**
 
-### Mở đầu
 > Ngày 01: [Nhật ký tự học Full Stack](./Day01-Diary.md)  
 > Ngày 01: [Tại sao tự học lập trình rất khó](./Day01-WhyDifficultToLearn.md)  
 > Ngày 01: [Tại sao tôi tự học lập trình](./Day01-WhyILearnProgramming.md)  
@@ -74,7 +73,6 @@ title: Lộ trình Full Stack Dev
 > Ngày 04: [Cách giúp đỡ người khác](./Day04-HowTOHelp.md)   
 > Ngày 04: [Vấn đề XY là gì?](./Day04-XYProblems.md)  
 
-### Điều kiện cần thiết
 > Ngày 05: [Internet làm việc như thế nào?](./Day05-HowInternetWork.md)  
 > Ngày 06: [Web hoạt động như thế nào?](./Day06-HowWebWork.md)  
 > Ngày 07: [Tên miền ](./Day07-DomainName.md)  
@@ -90,16 +88,16 @@ title: Lộ trình Full Stack Dev
 > Ngày 14: [SSH Key Pairs](./Day14-SSHKeyPair.md)  
 > Ngày 15: [Hệ thống Git và Lệnh thường dùng](./Day15-GitSystem.md)  
 
-### Nền tảng về HTML
 > Ngày 16: [Giới thiệu về HTML](./Day16-HTMLIntroduce.md)   
 > Ngày 16: [HTML Element, Tag, Boilerplate](./Day16-HTML-tag-element-boilerplate.md)  
 > Ngày 17: [Các phần tử HTML](./Day17-HtmlElements.md)
 > Ngày 18: [Links and Image](./Day18-LinksAndImages.md)  
 > Day 19: [Git commit message](./Day19-Git-commit.md)  
 > Day 19: [Project: Food recipe](./Day19-food-recipe.md)  
+> Day 19: [CSS Selector](./Day19-CSS-Selector.md)  
+> Day 19: [CSS Properties and HTML](./Day19-CSS-properties-HTML.md)  
+> 
 
-### Nền tảng về CSS
-### Flexbox
 ### JavaScript cơ bản
 > Ngày 71: [Tạo Alias cho Git](./Day71-create-alias-git.md)  
 > Ngày 72: [DOM và Các sự kiện (Events)](./Day72-DOMandEvents.md)  
@@ -109,21 +107,16 @@ title: Lộ trình Full Stack Dev
 > Ngày 76-77-78 : [Dự án Calculator]  
 
 ## B. Intermediate HTML and CSS
-### Intermediate HTML Concepts 
 > Ngày 79: [Introduction](./Day79-IntroductionHTML-CSSIntermediate.md)  
 > Ngày 79: [Introduction với ví dụ kèm theo](./Day79-Introduction-with-example.md)  
 > Ngày 79: [Emmet](./Day79-emmet.md)   
 > Ngày 80: [SVGs](./Day80-SVG.md)  
-> Ngày 81: [Table](./Day81-Table.md)  
-
-### Intermediate CSS Concepts 
-> Ngày 81: [Default Style](./Day81-CSS-Default-Styles.md)  
+> Ngày 81: [Table](./Day81-Table.md)    
+> Ngày 81: [Default Style](./Day81-CSS-Default-Styles.md)    
 > Ngày 82: [CSS Units](./Day82-CSS-Units.md)  
 > Ngày 82: [More CSS Styes](./Day82-More-CSS-Styles.md)  
 > Ngày 83: [More text styles](./Day83-More-Text-Styles.md)  
 
-### Forms (1 day)
-### Grid (2 day)
 
 
 ## C. **JAVASCRIPT**
