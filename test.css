@@ -1,33 +1,15 @@
-/* Font settings thân thiện với dyslexia */
-.dyslexia-friendly {
-  font-family: 'OpenDyslexic', 'Comic Sans MS', sans-serif;
-  font-size: 1.2em;
-  line-height: 1.5;
-  letter-spacing: 0.12em;
-  word-spacing: 0.16em;
-  text-align: left; /* Không justify */
+/* Bóng nhẹ cho card */
+.one {
+    box-shadow: 0 2px 4px rgba(217, 2, 2, 0.1);
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 10px;
 }
 
-/* Cải thiện contrast */
-.high-readability {
-  background: #fdfdf8; /* Slightly warm white */
-  color: #1a1a1a; /* Near black */
-  padding: 1.5rem;
-  border-radius: 8px;
-}
-
-/* Giảm motion cho người nhạy cảm */
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-}
-
-/* Focus indicators rõ ràng */
-.accessible-link:focus {
-  outline: 3px solid #4A90E2;
-  outline-offset: 2px;
-  background: rgba(153, 13, 95, 0.1);
+/* Bóng rõ hơn */
+.two {
+    box-shadow: 0 4px 12px rgba(163, 25, 25, 0.15);
+    background: rgb(255, 255, 255);
+    padding: 20px;
 }

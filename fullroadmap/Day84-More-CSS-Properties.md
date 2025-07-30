@@ -1,8 +1,8 @@
-# Tài liệu CSS Properties với Ví dụ Chi tiết
+# More CSS Properties 
 
 ## **Các Thuộc Tính CSS Phổ Biến**
 
-CSS có rất nhiều thuộc tính, nhưng chỉ một số lượng nhỏ trong số đó được sử dụng thường xuyên hàng ngày. Bài học này sẽ bao gồm hầu hết các mục mà bạn sẽ sử dụng thường xuyên để thêm điểm nhấn cho các dự án của mình. Bạn không cần phải ghi nhớ tất cả cú pháp chính xác của từng thuộc tính, chỉ cần biết chúng tồn tại và có ý tưởng chung về chức năng của chúng.
+CSS có rất nhiều thuộc tính, nhưng chỉ một số lượng nhỏ trong số đó được sử dụng thường xuyên hàng ngày. Bài học này sẽ bao gồm hầu hết các mục mà bạn sẽ sử dụng thường xuyên để thêm điểm nhấn cho các dự án của mình. Bạn không cần phải ghi nhớ tất cả cú pháp chính xác của từng thuộc tính,` chỉ cần biết chúng tồn tại và có ý tưởng chung về chức năng của chúng.  `
 
 ### 1. **Thuộc tính `background` (Nền)**
 
@@ -106,6 +106,8 @@ Thuộc tính `border` cũng là một thuộc tính viết tắt, được sử
 #### **`Borders` (Viền) so với `Outlines` (Đường bao ngoài):**
 - `Outlines` không chiếm không gian trên trang, chúng được vẽ bên ngoài hộp nội dung của phần tử.
 - Theo đặc tả (spec), `outlines` không nhất thiết phải là hình chữ nhật, mặc dù chúng thường là vậy.
+
+>![](./images/bordervsoutline.PNG)
 
 #### **Ví dụ:**
 
