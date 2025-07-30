@@ -97,7 +97,8 @@ title: Lộ trình Full Stack Dev
 > Day 19: [CSS Selector](./Day19-CSS-Selector.md)  
 > Day 19: [CSS Properties and HTML](./Day19-CSS-properties-HTML.md)  
 > Day 20: [CSS Cascading in CSS](./Day20-CSS-Cascading.md)  
-> Day 21: []()  
+> Day 21: [Kiểm tra và gỡ lỗi HTML, CSS với Chrome DevTools](./Day21-Debug-HTMLCSS-chromeDev.md)    
+> Day 21: [DOM vs HTML, CSS](./Day21-DOM-HTML.md)  
 
 ### JavaScript cơ bản
 > Ngày 71: [Tạo Alias cho Git](./Day71-create-alias-git.md)  
