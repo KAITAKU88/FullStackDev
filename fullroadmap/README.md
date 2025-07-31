@@ -101,6 +101,13 @@ title: Lộ trình Full Stack Dev
 > Day 21: [DOM vs HTML, CSS](./Day21-DOM-HTML.md)  
 > Day 22: [View and Change DOM](./Day22-DOM-Epxlain-changeDOM.md)  
 > Day 22: [Change CSS with DevTools](./Day22-Change-CSS-DevTools.md)   
+> Day 24: [Introduce Box Mode](./Day24-Box-Models-Introduce.md)  
+> Day 25: [Inline Box and Block Box](./Day25-InlineBox-BlockBox.md)  
+> Day 26: [Normal Flow Layout](./Day26-Normal-FlowLayOut.md)   
+> Day 27: [Margin Padding Border](./Day27-Margin-Padding-Border.md)  
+> Day 28: [Box Model Practice](./Day28-BoxMode-Practice.md)  
+> Day 29: [CSS Fonts](./Day29-CSS-Font.md)  
+> Day30-33: [Programming Thinking](./Day30-33-ProgrammingThinking.md)  
 
 
 
