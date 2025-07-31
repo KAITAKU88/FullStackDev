@@ -99,6 +99,10 @@ title: Lộ trình Full Stack Dev
 > Day 20: [CSS Cascading in CSS](./Day20-CSS-Cascading.md)  
 > Day 21: [Kiểm tra và gỡ lỗi HTML, CSS với Chrome DevTools](./Day21-Debug-HTMLCSS-chromeDev.md)    
 > Day 21: [DOM vs HTML, CSS](./Day21-DOM-HTML.md)  
+> Day 22: [View and Change DOM](./Day22-DOM-Epxlain-changeDOM.md)  
+> Day 22: [Change CSS with DevTools](./Day22-Change-CSS-DevTools.md)   
+
+
 
 ### JavaScript cơ bản
 > Ngày 71: [Tạo Alias cho Git](./Day71-create-alias-git.md)  
