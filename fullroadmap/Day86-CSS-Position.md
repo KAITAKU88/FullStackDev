@@ -1,4 +1,4 @@
-# Hướng dẫn Chi tiết về CSS Position
+# Day 86: Hướng dẫn Chi tiết về CSS Position
 
 ## Giới thiệu về thuộc tính `position` trong CSS
 
@@ -288,7 +288,7 @@ Vị trí của phần tử `absolute` sẽ được xác định **tương đ�
 }
 ```
 
-#### Ví dụ về sizing với absolute
+#### Ví dụ về sizing với absolute (Rất hay)
 
 ```html
 <div class="sizing-demo">
@@ -619,7 +619,7 @@ Một phần tử `sticky` sẽ hoạt động giống như một phần tử `s
 
 `sticky` rất hữu ích cho những thứ như **tiêu đề phần** (section-headings). Ví dụ, bạn có thể thấy tiêu đề danh mục vẫn hiển thị khi cuộn qua một danh sách sản phẩm trong cửa hàng trực tuyến, đây chính là cách nó được thực hiện. Bạn cũng có thể tạo một thanh điều hướng cố định vào tiêu đề với `sticky`.
 
-#### Ví dụ cơ bản về position: sticky
+#### Ví dụ cơ bản về position: sticky (QUÁ HAY )
 
 ```html
 <div class="container-sticky">
@@ -706,7 +706,6 @@ Một phần tử `sticky` sẽ hoạt động giống như một phần tử `s
   margin: 0 auto;
   background: white;
   border-radius: 8px;
-  overflow: hidden;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
@@ -851,7 +850,6 @@ Một phần tử `sticky` sẽ hoạt động giống như một phần tử `s
 
 .sidebar {
   width: 300px;
-  height: fit-content;
 }
 
 .sticky-sidebar {
@@ -1021,7 +1019,7 @@ Thuộc tính này kiểm soát thứ tự xếp chồng của các phần tử 
 }
 ```
 
-#### Ví dụ về Stacking Context
+#### Ví dụ về Stacking Context (Hay )
 
 ```html
 <div class="stacking-demo">
@@ -1109,10 +1107,10 @@ Hiểu biết về cách các phần tử được biểu diễn dưới dạng 
 .element {
   position: relative;
   top: 20px;
-  left: 30px;
+  left: 30px; 
+  z-index: 1;
   
   /* Box model properties */
-  content: "";
   width: 200px;
   height: 100px;
   padding: 20px;
@@ -1135,7 +1133,7 @@ Hiểu biết về cách các phần tử được biểu diễn dưới dạng 
   bottom: -20px;
   border: 1px dashed #ff6b6b;
   background: rgba(255, 107, 107, 0.1);
-  z-index: -1;
+  z-index: 0;
 }
 ```
 

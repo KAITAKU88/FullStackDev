@@ -56,7 +56,7 @@ Nếu bạn thêm một div nữa vào bên trong .flex-container, tất cả c�
 Nếu ta thay đổi kích thước trình duyệt, khiến viewport nhỏ lại, các hộp cũng sẽ tự động co giãn để vừa nằm trên cùng 1 hàng.
 >![](./images/flexbox4.webp)  
 
-# 3. Flex containers và flex items
+# **`3. Flex containers và flex items`**
 Một flex container là bất kỳ phần tử nào có display: flex trên đó. Một flex item là bất kỳ phần tử nào nằm trực tiếp bên trong một flex container.
 
 Như bạn đã thấy, flexbox không chỉ là 1 thuộc tính CSS đơn lẻ mà là một hộp công cụ các thuộc tính mà bạn có thể dùng để đặt mọi thứ vào nơi mà bạn muốn. Trong số những thuộc tính này, sẽ có những thuộc tính thuộc về flex container, và có những thuộc tính khác thuộc về flex items.
