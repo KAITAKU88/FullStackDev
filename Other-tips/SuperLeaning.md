@@ -126,3 +126,22 @@ Một khi đã nắm được tinh thần cốt lõi của vấn đề và hoàn
 - Áp dụng các kỹ thuật học trên, tạo nhiều thẻ flashcard trong anki, mỗi thẻ là link đến 1 bài nghe trên Youtube, nghe đến khi 1 bài nào đó mà bạn hoàn toàn hiểu được thì ok. 
 
 - Luyện đọc cũng tương tự.
+
+## 5. Cách học lập trình trong kỷ nguyên của AI 
+- Xu hướng nghề nghiệp của lập trình viên là chuyển từ gõ code sang review, đọc code do AI viết. Chúng ta không nên cố gắng chống lại xu thế bằng cách tự viết tất cả code, điều này là không hiệu quả và lãng phí nguồn lực. 
+- Trong trường hợp chúng ta tự mình xây dựng app với sự hỗ trợ của AI thì điều quan trọng nhất của chúng ta là biết được nên dùng các gì và khi nào dùng, còn dùng như thế nào thì giao cho AI. Tức là:
+1. `Dùng cái nào ?` => Chúng ta quyết định
+2. `Khi nào thì dùng nó ?` => Chúng ta quyết định
+3. `Dùng nó như thế nào ?` => Giao cho AI
+4. `Kiểm định kết quả ?` => Chúng ta view kết quả, view code
+5. `Nếu cần chỉnh sửa, tối ưu lớn` => Giao cho AI
+6. `Nếu chỉ cần sửa nhỏ` => Tự ta làm 
+
+Để làm được như thế này, thì việc học lập trình của chúng ta sẽ không còn như trước nữa, bằng cách, khi học đến 1 bài mới, 1 khái niệm mới thì không cần phải học thật kỹ, sẽ tốn thời gian, mà hãy trả lời những câu hỏi sau (AI tổng hợp):
+1. `Khái niệm này/thuật ngữ này - nó là cái gì?`
+2. `Vai trò của nó là gì? `(Tại sao phải dùng nó, trước khi nó xuất hiện thì các dev xử lý như thế nào)
+3. `Khi nào thì nên sử dụng nó ?`
+4. Cách sử dụng nó như thế nào  ?(Cái này chưa cần, khi nào dùng thì hỏi trợ lý AI sau)
+
+**`Với cách học này tốc độ học sẽ tăng gấp x100 lần.   `**
+Có thể ta sẽ cảm thấy khá mơ hồ, mông lung khi mà chỉ hiểu được phần vỏ bên ngoài, vì ta không tự mình gõ code, nhưng dần dần thông qua các dự án thực tế ta sẽ hiểu được nguyên lý và cách hoạt động của chúng. 
