@@ -119,13 +119,30 @@ Một khi đã nắm được tinh thần cốt lõi của vấn đề và hoàn
 - `Hãy ưu tiên Nghe - Nói chứ không phải Đọc - Viết`. Khi bạn Nghe - Nói giỏi, việc còn lại chỉ là nhận biết mặt chữ thì sẽ Đọc - Viết tốt.
 - Hãy sử dụng các bài nghe (mp3, hoặc Video Youtube), và phải có script. Hãy nghe và tìm cách hiểu nghĩa của bài nghe. Hãy chủ động sử dụng công cụ AI (thay vì giáo viên) phân tích toàn bộ cấu trúc ngữ pháp và từ vựng mà bài nghe này dùng. Mục tiêu là bạn hiểu được `À, bài nghe này đang nói với ý như vậy`. `Chứ mục tiêu của bạn không phải là Nhớ mẫu ngữ pháp, hoặc là nhớ nghĩa của từ vựng`, bởi vì sẽ có nhiều từ vựng có nghĩa khác nhau trong tình huống khác nhau. 
 - Các ngữ pháp hoặc từ vững đó sẽ được lặp lại trong nhiều bài nghe khác. Cho đến khi bạn nghe lại kiểu nói đó mà bạn hoàn toàn hiểu ý nghĩa (không phải dịch sang tiếng Việt), thì bạn đã hiểu được ngữ pháp/từ vựng mà không cần học nó. Bạn học ngữ pháp, từ vựng bằng cách nghe thực tế. 
-- Nếu có thể nghe mỗi ngày 1 bài khoảng 10 - 15 phút. 1 năm nghe hơn 300 bài, thì trình độ nghe nói đã rất tốt. 
+- Nếu có thể nghe mỗi ngày 1 bài khoảng 30 - 60 phút. 1 năm nghe hơn 300 bài, thì trình độ nghe nói đã rất tốt. 
 
 - Nguồn tài liệu là vô hạn, các kênh Youtube, kênh Discovery, kênh TEDx...
 - 
 - Áp dụng các kỹ thuật học trên, tạo nhiều thẻ flashcard trong anki, mỗi thẻ là link đến 1 bài nghe trên Youtube, nghe đến khi 1 bài nào đó mà bạn hoàn toàn hiểu được thì ok. 
 
-- Luyện đọc cũng tương tự.
+- Như vậy là ta cần tập trung vào kỹ năng NGHE đầu tiên.
+- Với mỗi bài nghe đó đều có script. Ta sẽ dùng script này để luyện ĐỌC.
+- Và ta cũng có thể luyện shadowing để luyện nói theo bài Nghe.
+- Viết là kỹ năng sau cùng. 
+
+### 4.2 Những sai lầm khi học 1 ngôn ngữ 
+- Hãy dùng từ Ngôn ngữ thay vì Ngoại ngữ.
+- Khi học ngôn ngữ bản thân tôi và nhiều người thường có tâm lý muốn học thật nhanh. Nhiều người vì vậy mà chọn cách học thật nhiều từ vựng và ngữ pháp. Vì Từ Vững và Ngữ pháp có thể nhanh chóng học vì là chỉ cần ĐỌC hiểu.
+- Ta thấy rằng Có thể tăng tốc độ đọc gấp 5 vẫn hiểu được, nhưng không thể tăng tốc độ Nghe gấp 5 được.
+- Khi học bằng cách nhồi nhét thật nhiều từ vựng và ngữ pháp, sẽ khiến cho việc nghe nói sau này gặp nhiều khó khăn, chính là 1 sự cản trở bởi vì chúng ta đang học ý nghĩa của từ và ngữ pháp mà không hề gắn với ngữ cảnh cụ thể.
+- Chúng ta sẽ có xu hướng "ghép" các từ khi nghe nói và "phân tích" ngữ pháp của 1 câu khi nghe nói. Điều này khiến ta mất đi tính phản xạ của tự nhiên của ngôn ngữ.
+- Học ngôn ngữ là luyện tập cho "quen miệng" "quen tai", tăng cường sự phản xạ, và thuận tự nhiên thay cách nói của người bản xứ, chứ không phải là cố gắng ghi nhớ và sử dụng ngôn ngữ cứng nhắc. 
+### 4.3 Học những nội dung gì
+- Trừ trường hợp học để lấy chứng chỉ để phục vụ mục đích nào đó như du học, định cư. Về bản chất khi học ngôn ngữ chỉ cần đảm bảo 2 bộ phận:
+1 là giao tiếp: Học để có thể nghe nói đọc viết tốt trong cuộc sống, ở mọi nơi. ĐỌc báo, xem phim, tin tức... là đã quá đủ.
+2 là học thêm các từ ngữ chuyên ngành cho 1 lĩnh vực công việc nào đó, ví dụ làm IT, hay ngân hàng thì học từ ngữ chuyên cho ngành đó.
+- Chứ không phải học hết tất cả. Ngay cả 1 người Việt cũng không biết tất cả tiếng Việt, 1 người Việt bình thường chỉ có thể giao tiếp bình thường, đọc sách, xem tivi, nghe radio, và tùy chuyên ngành học mà sẽ trang bị thêm từ ngữ riêng. Ví dụ 1 bạn lập trình viên sẽ có bộ từ vựng khác với 1 bạn học kế toán. 
+> ==> Tập trung vào kỹ năng giao tiếp trước khi bổ sung chuyên ngành 
 
 ## 5. Cách học lập trình trong kỷ nguyên của AI 
 - Xu hướng nghề nghiệp của lập trình viên là chuyển từ gõ code sang review, đọc code do AI viết. Chúng ta không nên cố gắng chống lại xu thế bằng cách tự viết tất cả code, điều này là không hiệu quả và lãng phí nguồn lực. 
@@ -145,3 +162,21 @@ Một khi đã nắm được tinh thần cốt lõi của vấn đề và hoàn
 
 **`Với cách học này tốc độ học sẽ tăng gấp x100 lần.   `**
 Có thể ta sẽ cảm thấy khá mơ hồ, mông lung khi mà chỉ hiểu được phần vỏ bên ngoài, vì ta không tự mình gõ code, nhưng dần dần thông qua các dự án thực tế ta sẽ hiểu được nguyên lý và cách hoạt động của chúng. 
+
+# 6. Kỹ thuật học theo kiểu đóng cọc 
+
+## Cách học thông thường 
+>- Với các kiến thức khó và dài, ví dụ 1 chủ đề về Git Branching and Merging, hoặc chủ đề về Array trong JS sẽ cần nhiều thời gian, lượng kiến thức lớn.  
+>- Một chủ đề như vậy thường kèm theo nhiều nguồn tài liệu tham khảo cần đọc.
+Nếu như nghiên cứu sâu, đọc tất cả các tài liệu đó và hiểu hết sẽ mất nhiều thời gian, hoặc có thể không hiểu hết được.  
+>- Thường với cách học như vậy chúng ta sẽ đào thật sâu 1 chủ đề (mất nhiều thời gian), xong thì chuyển qua đào sâu 1 chủ đề khác (và ít khi xem lại chủ đề cũ trước đó). Nên thường nhanh quên
+
+## Kỹ thuật học theo kiểu đóng cọc 
+>- Giả sử 1 chủ đề về Array với 10 nguồn tài liệu cần phải đọc để hiểu. Thay vì đọc và nghiên cứu cả 10 bài. Thì chỉ đọc và hiểu 1-2 bài là xong. Đó là Đóng cọc lần 1.
+>- Sử dụng kỹ thuật lặp lại  ngắt quãng như Anki app, khi chủ đề Array được lặp lại, bên cạnh việc ôn lại kiến thức, ta sẽ đọc 1-2 bài tài liệu tiếp theo, trong đó sẽ có nhiều kiến thức có thể trùng lặp với 2 tài liệu trước đó đã đọc, và sẽ có kiến thức mới. Lúc này ta sẽ bổ sung kiến thức mới. Đó là Đóng cọc lần 2.
+>- Tương tự như vậy, 1 chủ đề sẽ được Đóng cọc rất nhiều lần.
+
+Giống với hình ảnh khi ta muốn đóng nhiều cái cọc của 1 hàng rào, thay vì đóng sâu từng cọc. Ta sẽ đóng vừa đủ để cọc cắm xuống đất, đóng hết cả hàng rào. 
+Sau đó mới quay lại đóng chắc từng cọc, đóng đều.
+
+Nếu bạn nào làm cơ khí, thì điều này cũng tương tự như nguyên lý siết bu lông. Siết đều, chứ không phải siết chặt hết cơ 1 bulong rồi mới chuyển qua siết cái tiếp theo.
